@@ -1,7 +1,7 @@
 .booking-container {
-  position: fixed; /* Make the container fixed */
-  top: 20px; /* Adjust the top distance as needed */
-  right: 20px; /* Adjust the right distance as needed */
+  position: fixed;
+  top: 20px;
+  right: 20px;
   border: 1px solid #ddd;
   width: fit-content;
   height: fit-content;
@@ -9,22 +9,21 @@
   border-radius: 12px;
   padding: 24px;
   box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
-  /* Add more styles as needed */
   display: flex;
   flex-direction: column;
-  background-color: white; /* Add a background color if needed */
+  background-color: white;
   z-index: 999;
 }
 .flag {
-  position: absolute; /* Change to absolute positioning */
+  position: absolute;
   z-index: 999;
-  top: 100%; /* Position it below the "Check Availability" button initially */
+  top: 100%;
   right: 0;
   display: inline-block;
 }
 
 .flag.flag-hidden {
-  display: none; /* Hide the flag initially */
+  display: none;
 }
 .flag a {
   text-decoration: none;

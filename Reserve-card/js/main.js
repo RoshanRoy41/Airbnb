@@ -105,7 +105,8 @@ $(document).ready(function () {
     const guestCount = parseInt(
       document.querySelector(".textGuest p").textContent
     );
-    const rateIncreasePercentage = guestCount > 1 ? 0.1 : 0; // 10% increase if guestCount > 1, else 0% increase
+    // 10% increase if guestCount > 1, else 0% increase
+    const rateIncreasePercentage = guestCount > 1 ? 0.1 : 0;
 
     totalPrice = pricePerNight * numberOfDays * (1 + rateIncreasePercentage);
     // Create a new card
@@ -129,7 +130,6 @@ $(document).ready(function () {
     return newCard;
   }
   function updateFinalProduct(element, numberOfDays) {
-    //   m
     element.textContent = `Total: ₹${totalPrice}`;
   }
 });
