@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <link
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+  </head>
+  <body>
+    <div class="booking-container">
+      <div class="booking-card">
+        <div class="firstSection">
+          <div class="rateNight">
+            <p id="rate">₹4000</p>
+            <p id="night">night</p>
+          </div>
+          <div class="reviewStar">
+            <p id="star">4.83</p>
+            <p id="review">172 reviews</p>
+          </div>
+        </div>
+        <div class="secondSection">
+          <div class="check-in-out">
+            <input
+              type="text"
+              id="txtCheckin"
+              placeholder="Pick Check-In Date"
+            />
+            <input
+              type="text"
+              id="txtCheckout"
+              placeholder="Pick Check-Out Date"
+            />
+          </div>
+          <div class="GuestPicker">
+            <div class="textGuest">
+              <label for="">Guest</label>
+              <p>1</p>
+            </div>
+            <div class="guestBtns">
+              <button id="incrementButton">+</button>
+              <button id="decrementButton">-</button>
+            </div>
+          </div>
+        </div>
+        <div class="thirdSection">
+          <button class="ChkBtn">Check Availability</button>
+        </div>
+      </div>
+      <div class="new-booking-card" style="display: none">
+        <!-- New card content will be added here -->
+      </div>
+      <div class="flag">
+        <a href="flag.html">🏴Report This Listing</a>
+      </div>
+    </div>
+  </body>
+  <script src="/js/main.js"></script>
+</html>
