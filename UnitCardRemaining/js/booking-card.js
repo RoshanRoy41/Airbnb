@@ -118,7 +118,9 @@ $(document).ready(function () {
     // 10% increase if guestCount > 1, else 0% increase
     const rateIncreasePercentage = guestCount > 1 ? 0.1 : 0;
 
-    totalPrice = pricePerNight * numberOfDays * (1 + rateIncreasePercentage);
+    totalPrice = Math.trunc(
+      pricePerNight * numberOfDays * (1 + rateIncreasePercentage)
+    );
     // Create a new card
     const newCard = document.createElement("div");
     newCard.classList.add("booking-card");
@@ -132,7 +134,7 @@ $(document).ready(function () {
         <!-- Your new card content here -->
         <div class="centered-text">You won't be charged yet</div>
         <div class="price-info">₹${pricePerNight} per night x ${numberOfDays} nights</div>
-        
+       
     `;
 
     newCard.appendChild(finalProductDiv);
