@@ -1,0 +1,74 @@
+body{
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    line-height: 1.43;
+    color: #222;
+}
+
+
+.Why-Airbnb-outer_container{
+    margin: 120px 0px;
+    padding: 0px 80px;
+}
+.Why-Airbnb-container img{
+    width: 100%;
+    height: 20%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    
+}
+
+.Why-Airbnb-container h2{
+   text-align: center;
+   margin: 0px 0px 40px;
+   padding: 0px 40px;
+   font-size: 40px;
+   letter-spacing: -0.01em;
+   
+}
+
+.Why-Airbnb-content-container{
+    display: flex;
+    gap: 40px;
+    margin: 40px 0px 0px;
+    padding: 0px 40px;
+    line-height: 1.43;
+    color: #222;
+}
+
+.Why-Airbnb-content{
+    flex: 1;
+}
+
+.Why-Airbnb-content h3{
+    font-size: 18px;
+    margin: 0px 0px 10px;
+}
+
+.Why-Airbnb-content div{
+    color: #717171;
+    font-size: 16px;
+}
+
+
+.Aircover-outer-container{
+    width: 100%;
+    
+}
+
+.Aircover-logo{
+    width: 200px;
+    justify-content: center;
+}
+.Aircover-middle-container{
+    justify-content: center;
+}
+.Aircover-table-container{
+    margin: 10px 10% 0px 10% ;
+    border: 2px solid black;
+    width: 80%;
+}
+.Aircover-table th{
+    
+    
+    
+}
