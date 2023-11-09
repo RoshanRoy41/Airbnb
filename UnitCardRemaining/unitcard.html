@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>OpenStreetMap Integration</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="/UnitCardRemaining/css/unitcard.css" />
+  </head>
+  <body>
+    <div class="map-container">
+      <section>
+        <h2>Where You Will Be</h2>
+      </section>
+
+      <section id="map">
+        <!-- Map will be rendered here -->
+      </section>
+      <section id="location">
+        <p>London, United Kingdom</p>
+      </section>
+    </div>
+    <hr />
+
+    <div class="thingsToKnow-container">
+      <div class="thingsToKnow-title">
+        <h2>Things To Know</h2>
+      </div>
+      <div class="rules-container"></div>
+    </div>
+    <hr />
+    <div id="explore-container">
+      <h2>Explore Other Options</h2>
+
+      <div id="places-container"></div>
+    </div>
+    <hr />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/UnitCardRemaining/js/unitcard.js"></script>
+    <script src="/UnitCardRemaining/js/thingsToKnow.js"></script>
+    <script src="/UnitCardRemaining/js/explore.js"></script>
+  </body>
+</html>

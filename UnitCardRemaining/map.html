@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Map</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    />
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h2>Map</h2>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+      const apiKey = "5ae2e3f221c38a28845f05b66bd1d0f72739e54291361135e77c3a3b";
+
+      // Get latitude and longitude from URL parameters
+      const urlParams = new URLSearchParams(window.location.search);
+      const lat = urlParams.get("lat");
+      const lon = urlParams.get("lon");
+
+      // Create the map centered on the specified location
+      const map = L.map("map").setView([lat, lon], 13);
+
+      // Add the OpenStreetMap layer
+      L.tileLayer(`https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png`, {
+        attribution: "© OpenStreetMap contributors",
+        maxZoom: 18,
+      }).addTo(map);
+
+      // Add a marker for the selected location with a custom popup
+      L.marker([lat, lon])
+        .addTo(map)
+        .bindPopup(`Selected Location: ${lat}, ${lon}`)
+        .openPopup();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,78 @@
+#map {
+  height: 400px;
+  width: 100%;
+}
+.map-container,
+.thingsToKnow-container,
+hr {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.column {
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.points {
+  display: none; /* Initially hide points beyond the first 3 */
+}
+.thingsToKnow-container {
+  margin-top: 38px;
+  margin-bottom: 38px;
+  display: flex;
+  flex-direction: column;
+}
+.rules-container {
+  display: flex;
+  /* margin: 0px; */
+  justify-content: space-between;
+}
+
+.rule-section {
+  flex: 1;
+  /* border: 1px solid #ddd; */
+  /* padding: 20px;
+  margin: 10px; */
+  border-radius: 10px;
+  /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box; */
+}
+.rule-section a {
+  color: black;
+  text-decoration: none;
+}
+.rule-section a:hover {
+  color: black;
+  text-decoration: underline;
+}
+#explore-container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+#places-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.place {
+  text-align: center;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.bold-text {
+  font-weight: bold;
+}
