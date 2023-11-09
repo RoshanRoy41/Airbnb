@@ -1,0 +1,154 @@
+.booking-container {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  border: 1px solid #ddd;
+  width: fit-content;
+  height: fit-content;
+  border: 1px solid rgb(221, 221, 221);
+  border-radius: 12px;
+  padding: 24px;
+  box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  z-index: 999;
+}
+.flag {
+  position: absolute;
+  z-index: 999;
+  top: 100%;
+  right: 0;
+  display: inline-block;
+}
+
+.flag.flag-hidden {
+  display: none;
+}
+.flag a {
+  text-decoration: none;
+  color: #ccc;
+}
+.flag a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: black;
+}
+.firstSection {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.firstSection div {
+  display: flex;
+  flex-direction: row;
+}
+.rateNight {
+  flex: 1;
+  text-align: start;
+  align-items: center;
+  /* margin: 20px; */
+}
+.reviewStar {
+  flex: 1;
+  /* text-align: end; */
+  align-items: center;
+  justify-content: end;
+}
+#rate {
+  font-size: 23px;
+  font-weight: bold;
+}
+#night {
+  font-size: 14px;
+  margin-left: 5px;
+}
+#star {
+  font-size: 20px;
+  font-weight: bold;
+}
+#review {
+  font-size: 14px;
+  margin-left: 5px;
+}
+.secondSection {
+  display: flex;
+  flex-direction: column;
+}
+.check-in-out {
+  display: flex;
+}
+#txtCheckin,
+#txtCheckout {
+  height: 35px;
+  border-radius: 3px;
+  border: 1px solid #ccc;
+}
+
+#NoGuestPicker {
+  width: 335px;
+  font-size: 13px;
+}
+.GuestPicker {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  display: flex;
+  /* justify-content: space-between; */
+}
+.textGuest {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 0px;
+}
+.textGuest label {
+  font-size: 17px;
+}
+.textGuest p {
+  align-items: start;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-size: 35px;
+}
+.guestBtns {
+  flex: 1;
+  /* align-items: end; */
+  justify-content: center;
+  display: flex;
+  margin-bottom: 0px;
+  align-items: center;
+}
+.guestBtns button {
+  cursor: pointer;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  border: 1px solid #ccc;
+  background: transparent;
+  border-radius: 50%;
+  height: 50px;
+  width: 50px;
+}
+#incrementButton {
+  margin-right: 64px;
+}
+
+.thirdSection {
+  margin-top: 15px;
+}
+
+.ChkBtn {
+  width: -webkit-fill-available;
+  font-size: 20px;
+  height: 40px;
+  background-color: #f20771;
+  color: white;
+  border-radius: 9px;
+  border: none;
+}
+
+.centered-text {
+  /* align-items: center; */
+  text-align: center;
+}
