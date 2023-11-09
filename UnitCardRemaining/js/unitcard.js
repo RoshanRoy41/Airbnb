@@ -36,3 +36,5 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Location not found in the mapping.");
   }
 });
+
+

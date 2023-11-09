@@ -90,7 +90,8 @@ $(document).ready(function () {
         reserveNowClicked = true;
       } else {
         // Redirect to a new HTML page on the second click
-        window.location.href = "confirmation_page.html"; // Replace "new_page.html" with your desired HTML page
+        window.location.href =
+          "/UnitCardRemaining/tem_pages/confirmation_page.html";
       }
     }
   }
