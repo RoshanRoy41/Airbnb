@@ -59,6 +59,7 @@ $(document).ready(function () {
 
   // Add an event listener to the "Check Availability" button
   const checkAvailabilityButton = document.querySelector(".ChkBtn");
+  let reserveNowClicked = false;
 
   checkAvailabilityButton.addEventListener("click", function () {
     openDatePickerIfDatesNotSet();
@@ -83,6 +84,14 @@ $(document).ready(function () {
       newBookingCardContainer.appendChild(newBookingCard);
       newBookingCardContainer.style.display = "block";
       checkAvailabilityButton.textContent = "Reserve now";
+      if (!reserveNowClicked) {
+        // Change the text to "Reserve now" on the first click
+        checkAvailabilityButton.textContent = "Reserve now";
+        reserveNowClicked = true;
+      } else {
+        // Redirect to a new HTML page on the second click
+        window.location.href = "confirmation_page.html"; // Replace "new_page.html" with your desired HTML page
+      }
     }
   }
   let totalPrice;
