@@ -43,7 +43,8 @@
 }
 
 .right {
-  flex: 1;
+  flex: 2 1;
+  margin-left: 320px;
 }
 .lower-head-div p {
   margin: 0%;
@@ -94,6 +95,7 @@
 }
 .star-rating {
   height: 15px;
+  margin-right: 5px;
   align-self: center;
 }
 .p {
@@ -117,6 +119,7 @@
 }
 .details-about-unit-host-flex {
   display: flex;
+  padding: 10px;
   font-family: Poppins-Light;
   align-content: center;
 }
@@ -142,7 +145,7 @@
   width: 50px;
   height: 50px;
   position: relative;
-  top: 20px;
+  top: 7px;
   background-color: rgb(209, 209, 209);
   border-radius: 50%;
 }
@@ -180,4 +183,23 @@
 .policy hr {
   margin: 10px;
   width: 650px;
+}
+.details-about-unit-host-flex-text h3 {
+  display: inline;
+}
+.two {
+  align-items: center;
+  margin-left: 5px;
+}
+.reviewHeader {
+  align-items: center;
+  display: flex;
+  font-family: Poppins-thin;
+}
+.oneReview {
+  font-family: Poppins-thin;
+}
+.oneReview {
+  width: 40%;
+  height: auto;
 }

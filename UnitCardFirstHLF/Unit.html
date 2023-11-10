@@ -12,14 +12,14 @@
       <div>
         <div class="header-container">
           <div class="header">
-            <h2 class="name">
-              Aura House 2bds Eco Bamboo House, Pool, River View
-            </h2>
+            <h2 class="name" id="title"></h2>
             <div class="lower-head">
               <div class="lower-head-div">
                 <img src="icons/star.png" class="star-rating" />
-                <p>&nbsp; 4.84</p>
-                <p>&nbsp; | &nbsp; 250 reviews</p>
+                <p id="rating"></p>
+                <p>&nbsp; | &nbsp;</p>
+                <p id="reviewsNum"></p>
+                <p>&nbsp; reviews</p>
                 <p>&nbsp; | &nbsp; Abiansemal, Bali, Indonesia</p>
               </div>
               <div class="lower-head-div right">
@@ -38,32 +38,25 @@
         <div class="image container">
           <div class="images">
             <div class="images-left">
-              <img
-                src="https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg?im_w=960"
-              />
+              <img id="img1" src="" />
             </div>
             <div class="images-right">
               <div>
-                <img
-                  src="https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg?im_w=960"
-                />
+                <img id="img5" src="" />
               </div>
               <div>
-                <img
-                  class="right-image-border"
-                  src="https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg?im_w=960"
-                />
+                <img id="img2" class="right-image-border" src="" />
               </div>
 
               <div>
-                <img
-                  src="https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg?im_w=960"
-                />
+                <img id="img3" src="" />
               </div>
               <div>
                 <img
+                  id="img4"
                   class="right-image-border-down"
-                  src="https://a0.muscache.com/im/pictures/e25a9b25-fa98-4160-bfd1-039287bf38b6.jpg?im_w=960"
+                  src=""
+                  alt="my bad"
                 />
               </div>
             </div>
@@ -73,7 +66,11 @@
           <div class="details-about-unit-host">
             <div class="details-about-unit-host-flex">
               <div class="details-about-unit-host-flex-text">
-                <h3>Hut hosted by Made</h3>
+                <div>
+                  <h3>Hut hosted by</h3>
+                  <h3 id="author"></h3>
+                </div>
+
                 <p>2 guests | &nbsp;</p>
                 <p>1 bedroom | &nbsp;</p>
                 <p>1 bed | &nbsp;</p>
@@ -107,9 +104,33 @@
               </div>
               <hr />
             </div>
+            <div class="reviewsSection">
+              <div class="reviewHeader">
+                <img src="icons/star.png" class="star-rating two" />
+                <h3 id="rating two"></h3>
+                <p>&nbsp;|&nbsp;</p>
+                <h3 id="reviewsNum two"></h3>
+              </div>
+              <div class="reviewsTexts">
+                <div class="oneReview">
+                  <h4 class="oneReview-Name">ABCD</h4>
+                  <p>
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
+                    do eiusmod tempor incididunt ut labore et dolore magna
+                    aliqua. Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit
+                    esse cillum dolore eu fugiat nulla pariatur. Excepteur sint
+                    occaecat cupidatat non proident, sunt in culpa qui officia
+                    deserunt mollit anim id est laborum.
+                  </p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </body>
+  <script src="Unit.js"></script>
 </html>
