@@ -1,0 +1,124 @@
+body{
+    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    line-height: 1.43;
+    color: #222;
+}
+
+
+.Why-Airbnb-outer_container{
+    margin: 120px 0px;
+    padding: 0px 80px;
+}
+.Why-Airbnb-container img{
+    width: 100%;
+    height: 20%;
+    overflow-clip-margin: content-box;
+    overflow: clip;
+    
+}
+
+.Why-Airbnb-container h2{
+   text-align: center;
+   margin: 0px 0px 40px;
+   padding: 0px 40px;
+   font-size: 40px;
+   letter-spacing: -0.01em;
+   
+}
+
+.Why-Airbnb-content-container{
+    display: flex;
+    gap: 40px;
+    margin: 40px 0px 0px;
+    padding: 0px 40px;
+    line-height: 1.43;
+    color: #222;
+}
+
+.Why-Airbnb-content{
+    flex: 1;
+}
+
+.Why-Airbnb-content h3{
+    font-size: 18px;
+    margin: 0px 0px 10px;
+}
+
+.Why-Airbnb-content div{
+    color: #717171;
+    font-size: 16px;
+}
+
+
+.Aircover-outer-container{
+    width: 80%;
+    margin: 40px 10% 0px 10% ;
+    
+}
+
+.Aircover-inner-container {
+    display: block;
+    text-align: center;
+}
+
+
+
+.Aircover-logo img{
+    width: 200px;
+}
+
+.Aircover-table-container{
+    margin: 10px 15% 0px 15%;
+    
+    width: 70%;
+}
+
+
+.Aircover-table-container th,td{
+    padding: 20px 0px 0px 0px;
+    text-align: left; 
+
+}
+
+.Aircover-thead tr{
+    border-bottom:solid black 2px;
+    border-collapse: collapse;
+}
+
+.Aircover-thead th{
+    padding: 0px 0px 20px 0px;
+    width: 120px;
+    text-align: center; 
+    
+}
+
+.Aircover-table-container table{
+   
+    
+}
+
+.Aircover-tbody th{
+    padding: 0px 0px 20px 0px;
+    
+}
+
+.Aircover-tbody td{
+    padding: 0px 0px 30px 0px;
+    
+}
+
+
+.Aircover-table-container tbody{
+    border: 2px solid black;
+   
+}
+
+.cell-image{
+    text-align: center;
+}
+
+.cell-image img{
+    height: 20px;
+    width: 20px;
+}
+
