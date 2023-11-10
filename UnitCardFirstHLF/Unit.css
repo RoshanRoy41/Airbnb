@@ -1,10 +1,10 @@
 @font-face {
   font-family: Poppins-thin;
-  src: url("/poppins_font/Poppins-Thin.ttf") format("truetype");
+  src: url("./poppins_font/Poppins-Thin.ttf") format("truetype");
 }
 @font-face {
   font-family: Poppins-light;
-  src: url("/poppins_font/Poppins-Light.ttf") format("truetype");
+  src: url("./poppins_font/Poppins-Light.ttf") format("truetype");
 }
 .body {
   font-family: Poppins-thin;
@@ -194,12 +194,32 @@
 .reviewHeader {
   align-items: center;
   display: flex;
+  font-size: 20px;
+  height: 50px;
   font-family: Poppins-thin;
 }
+
 .oneReview {
-  font-family: Poppins-thin;
-}
-.oneReview {
-  width: 40%;
+  width: 90%;
   height: auto;
+  font-family: Poppins-thin;
+  padding: 5px;
+}
+.reviewsTexts {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* gap: 1.6rem; */
+}
+
+.oneReview h3 {
+  font-size: 18px;
+  margin: 10px;
+  margin-bottom: 0px;
+}
+.oneReview p {
+  font-weight: 800;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-bottom: 0px;
 }
