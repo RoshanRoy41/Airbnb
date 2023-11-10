@@ -1,91 +1,83 @@
+const url = "https://picsum.photos/v2/list?page=2&limit=20";
 
-  const url = 'https://picsum.photos/v2/list?page=2&limit=20';
- 
-    const getData = async(url)=>{
-        try{
-            const response = await fetch(url);
-            const data = await response.json();
-            console.log(data);
-            data.map((userData)=>{
-                imageCard = document.getElementById('listings');
-                const cardData = createCardData(userData);
-                imageCard.appendChild(cardData);
-            })
-        }
-        catch(e){
-            console.log(e)
-        }
-       
-    }
- 
-    getData(url);
- 
-    const createCardData = (userData)=>{
- 
-        const div = document.createElement("div");
-        div.classList.add("card");
+const getData = async (url) => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+    data.map((userData) => {
+      imageCard = document.getElementById("listings");
+      const cardData = createCardData(userData);
+      imageCard.appendChild(cardData);
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};
 
-        const img = document.createElement("img");
+getData(url);
 
-        const div1 = document.createElement("div");
-        div1.classList.add("wishlist-icon");
-        div1.innerHTML ="<i class='fas fa-heart'></i>"  
-        img.src = userData.download_url;
-        console.log(userData.download_url);
+const createCardData = (userData) => {
+  const div = document.createElement("div");
+  div.classList.add("card");
 
-        const div2 = document.createElement("div");
+  const img = document.createElement("img");
 
-        const div3 = document.createElement("div");
-        div3.classList.add("card-title");
-        const h4 = document.createElement("h4");
-        const p = document.createElement("p");
-        h4.textContent="Sample City";
-        let num =(Math.random()*4+1).toFixed(1)+ " <i class='fa-solid fa-star'></i>";
-        p.innerHTML = num;
+  const div1 = document.createElement("div");
+  div1.classList.add("wishlist-icon");
+  div1.innerHTML = "<i class='fas fa-heart'></i>";
+  img.src = userData.download_url;
+  console.log(userData.download_url);
 
-        const p1 = document.createElement("p");
-        const span = document.createElement("span");
-        span.classList.add("grey");
-        span.innerHTML="Hosted by "+  userData.author;
+  const div2 = document.createElement("div");
 
-        let distance = (Math.random()*300+1).toFixed(2);
-        const p3 = document.createElement("p");
-        const span1 = document.createElement("span");
-        span1.classList.add("grey");
-        span1.innerHTML=distance+" km to National Park";
+  const div3 = document.createElement("div");
+  div3.classList.add("card-title");
+  const h4 = document.createElement("h4");
+  const p = document.createElement("p");
+  h4.textContent = "Sample City";
+  let num =
+    (Math.random() * 4 + 1).toFixed(1) + " <i class='fa-solid fa-star'></i>";
+  p.innerHTML = num;
 
-    
-        const p2 = document.createElement("p");
-        let num1 = userData.width;
-        p2.innerHTML="₹"+num1+ " night";
+  const p1 = document.createElement("p");
+  const span = document.createElement("span");
+  span.classList.add("grey");
+  span.innerHTML = "Hosted by " + userData.author;
 
-        div.appendChild(img);
-        div.appendChild(div1);
-        div3.appendChild(h4);
-        div3.appendChild(p);
-        div2.appendChild(div3);
-        p1.appendChild(span);
-        div2.appendChild(p1);
-        p3.appendChild(span1);
-        div2.appendChild(p3);
-        div2.appendChild(p2);
-        div.appendChild(div2);
-        imageCard.append(div);
+  let distance = (Math.random() * 300 + 1).toFixed(2);
+  const p3 = document.createElement("p");
+  const span1 = document.createElement("span");
+  span1.classList.add("grey");
+  span1.innerHTML = distance + " km to National Park";
 
-        div.addEventListener('click',()=>{
-            openNewPage(userData);
-            console.log("hello event");
-            console.log(userData.id);
-        })
-                 return div;
-            
-    }
+  const p2 = document.createElement("p");
+  let num1 = userData.width;
+  p2.innerHTML = "₹" + num1 + " night";
 
-    const openNewPage = (userData)=>{
-        window.location.href = `unitInner.html?id=${userData.id}`
-    }
- 
-   
+  div.appendChild(img);
+  div.appendChild(div1);
+  div3.appendChild(h4);
+  div3.appendChild(p);
+  div2.appendChild(div3);
+  p1.appendChild(span);
+  div2.appendChild(p1);
+  p3.appendChild(span1);
+  div2.appendChild(p3);
+  div2.appendChild(p2);
+  div.appendChild(div2);
+  imageCard.append(div);
 
+  div.addEventListener("click", () => {
+    openNewPage(userData);
+    console.log("hello event");
+    console.log(userData.id);
+  });
+  return div;
+};
 
+const openNewPage = (userData) => {
+  window.location.href = `Unit.html?id=${userData.id}`;
+};
 
+//getting julias Id
