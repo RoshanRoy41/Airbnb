@@ -145,3 +145,19 @@ $(document).ready(function () {
     element.textContent = `Total: ₹${totalPrice}`;
   }
 });
+// Add an event listener to check the scroll position
+document.addEventListener("scroll", function () {
+  // Get the position of the hr tag
+  var hrPosition = document.getElementById("bookingContainerStop").offsetTop;
+
+  // Get the booking container element
+  var bookingContainer = document.querySelector(".booking-container");
+
+  // Check if the scroll position is above the hr tag
+  if (window.pageYOffset < hrPosition) {
+    bookingContainer.style.position = "fixed";
+    bookingContainer.style.top = "20px"; // Adjust this value as needed
+  } else {
+    bookingContainer.style.position = "static";
+  }
+});
