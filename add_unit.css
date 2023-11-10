@@ -51,24 +51,74 @@ body{
 
 
 .Aircover-outer-container{
-    width: 100%;
+    width: 80%;
+    margin: 40px 10% 0px 10% ;
     
 }
 
-.Aircover-logo{
+.Aircover-inner-container {
+    display: block;
+    text-align: center;
+}
+
+
+
+.Aircover-logo img{
     width: 200px;
-    justify-content: center;
 }
-.Aircover-middle-container{
-    justify-content: center;
-}
+
 .Aircover-table-container{
-    margin: 10px 10% 0px 10% ;
+    margin: 10px 15% 0px 15%;
+    
+    width: 70%;
+}
+
+
+.Aircover-table-container th,td{
+    padding: 20px 0px 0px 0px;
+    text-align: left; 
+
+}
+
+.Aircover-thead tr{
+    border-bottom:solid black 2px;
+    border-collapse: collapse;
+}
+
+.Aircover-thead th{
+    padding: 0px 0px 20px 0px;
+    width: 120px;
+    text-align: center; 
+    
+}
+
+.Aircover-table-container table{
+   
+    
+}
+
+.Aircover-tbody th{
+    padding: 0px 0px 20px 0px;
+    
+}
+
+.Aircover-tbody td{
+    padding: 0px 0px 30px 0px;
+    
+}
+
+
+.Aircover-table-container tbody{
     border: 2px solid black;
-    width: 80%;
+   
 }
-.Aircover-table th{
-    
-    
-    
+
+.cell-image{
+    text-align: center;
 }
+
+.cell-image img{
+    height: 20px;
+    width: 20px;
+}
+
