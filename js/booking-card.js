@@ -73,8 +73,7 @@ document.addEventListener("DOMContentLoaded", function () {
         reserveNowClicked = true;
       } else {
         // Redirect to a new HTML page on the second click
-        window.location.href =
-          "/UnitCardRemaining/tem_pages/confirmation_page.html";
+        window.location.href = "confirmation_page.html";
       }
     }
   }
@@ -140,14 +139,14 @@ document.addEventListener("scroll", function () {
 
   // Check if the scroll position is above the hr tag
   if (window.scrollY < hrPosition) {
-    bookingContainer.style.position = "fixed";
+    bookingContainer.style.position = "sticky";
     bookingContainer.style.top = "20px"; // Adjust this value as needed
   } else {
     bookingContainer.style.position = "static";
   }
 });
 
-const url = "https://picsum.photos/v2/list?page=2&limit=20";
+let url = "https://picsum.photos/v2/list?page=2&limit=20";
 
 const getData = async (url) => {
   try {

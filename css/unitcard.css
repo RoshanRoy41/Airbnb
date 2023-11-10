@@ -83,7 +83,7 @@ hr {
 }
 .reserve-card-float-container {
   display: flex;
-  margin-bottom: -200px;
+  margin-bottom: -130px;
 }
 .left-side {
   flex-basis: 60%;
