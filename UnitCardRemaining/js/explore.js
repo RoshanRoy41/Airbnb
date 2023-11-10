@@ -1,11 +1,13 @@
 const apiKey = "5ae2e3f221c38a28845f05b66bd1d0f72739e54291361135e77c3a3b";
 
 // Fetch random places in London from OpenTripMap API
-fetch(
-  `https://api.opentripmap.com/0.1/en/places/bbox?lon_min=-0.510375&lat_min=51.286760&lon_max=0.334015&lat_max=51.691874&kinds=interesting_places&format=json&apikey=${apiKey}`
-)
-  .then((response) => response.json())
-  .then((data) => {
+async function fetchPlaces() {
+  try {
+    const response = await fetch(
+      `https://api.opentripmap.com/0.1/en/places/bbox?lon_min=-0.510375&lat_min=51.286760&lon_max=0.334015&lat_max=51.691874&kinds=interesting_places&format=json&apikey=${apiKey}`
+    );
+
+    const data = await response.json();
     console.log("API Response:", data);
 
     const placesContainer = document.getElementById("places-container");
@@ -44,8 +46,13 @@ fetch(
     } else {
       console.error("No features found in the response.");
     }
-  })
-  .catch((error) => console.error("Error fetching places:", error));
+  } catch (error) {
+    console.error("Error fetching places:", error);
+  }
+}
+
+// Call the async function
+fetchPlaces();
 
 // Function to get random elements from an array
 function getRandomElements(array, num) {

@@ -7,13 +7,10 @@ $(document).ready(function () {
     mode: "range",
     inline: true,
     dateFormat: "Y-m-d",
-    showMonths: 2, // Display two months
-    minDate: "today", // Set minimum date to today
+    showMonths: 2,
+    minDate: "today",
     onChange: function (selectedDates, dateStr, instance) {
-      // Update the text content of the nights title and selected dates paragraph
       updateBookingDetails(selectedDates);
-
-      // Update the check-in and check-out calendars in the booking container
       updateBookingCalendars(selectedDates);
     },
   });
@@ -24,12 +21,20 @@ $(document).ready(function () {
     dateFormat: "Y-m-d",
     minDate: "today",
     onClose: function (selectedDates) {
-      // Update the text content of the nights title and selected dates paragraph
       updateBookingDetails(selectedDates);
-
-      // Update the left calendar
       leftCalendar.setDate(selectedDates[0], selectedDates[1]);
     },
+  });
+
+  // Placeholder IDs for Check-In and Check-Out calendars
+  const chkinCalendar = flatpickr("#txtCheckin", {
+    dateFormat: "Y-m-d",
+    // Other options...
+  });
+
+  const chkoutCalendar = flatpickr("#txtCheckout", {
+    dateFormat: "Y-m-d",
+    // Other options...
   });
 
   function updateBookingDetails(selectedDates) {
