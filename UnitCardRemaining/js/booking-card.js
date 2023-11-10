@@ -90,7 +90,8 @@ $(document).ready(function () {
         reserveNowClicked = true;
       } else {
         // Redirect to a new HTML page on the second click
-        window.location.href = "confirmation_page.html"; // Replace "new_page.html" with your desired HTML page
+        window.location.href =
+          "/UnitCardRemaining/tem_pages/confirmation_page.html";
       }
     }
   }
@@ -117,7 +118,9 @@ $(document).ready(function () {
     // 10% increase if guestCount > 1, else 0% increase
     const rateIncreasePercentage = guestCount > 1 ? 0.1 : 0;
 
-    totalPrice = pricePerNight * numberOfDays * (1 + rateIncreasePercentage);
+    totalPrice = Math.trunc(
+      pricePerNight * numberOfDays * (1 + rateIncreasePercentage)
+    );
     // Create a new card
     const newCard = document.createElement("div");
     newCard.classList.add("booking-card");
@@ -131,7 +134,7 @@ $(document).ready(function () {
         <!-- Your new card content here -->
         <div class="centered-text">You won't be charged yet</div>
         <div class="price-info">₹${pricePerNight} per night x ${numberOfDays} nights</div>
-        
+       
     `;
 
     newCard.appendChild(finalProductDiv);
