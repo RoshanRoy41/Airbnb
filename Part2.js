@@ -1,26 +1,47 @@
-const request=fetch('https://dummyjson.com/users');
-console.log(request);
-request.then((response) => response.json())
-  .then((data) => {
-    console.log(data);
-    const elements = document.getElementById("container");
-    for (let i = 0; i <6; i++) {
-        const inspirationContainer = document.createElement("div");
-        inspirationContainer.classList.add("inspiration");
-        const p1 = document.createElement("p");
-        const p2 = document.createElement("p");
-        const p3 = document.createElement("p");
-        p1.textContent = data.users[i].firstName;
-        p2.textContent = data.users[i+1].firstName;
-        p3.textContent = data.users[i+2].firstName;
-        inspirationContainer.appendChild(p1);
-        inspirationContainer.appendChild(p2);
-        inspirationContainer.appendChild(p3);
-        inspirationContainer.style.display = "block";
-        inspirationContainer.style.padding = "20px"
-        inspirationContainer.style.marginRight = "150px"
-        elements.append(inspirationContainer)
+document.addEventListener('DOMContentLoaded', function () {
+    const emailInput = document.getElementById('email');
+    const passwordInput = document.getElementById('password');
+    const continueButton = document.querySelector('.continue');
+
+    continueButton.addEventListener('click', function () {
+        // Validate email and password length
+        const isValidEmail = validateEmail(emailInput.value);
+        const isValidPassword = validatePassword(passwordInput.value);
+
+        if (isValidEmail && isValidPassword) {
+            // Redirect to part1.html
+            window.location.href = 'part1.html';
+        } else {
+            // Show error messages or take other actions
+            showErrorMessages(isValidEmail, isValidPassword);
         }
-        elements.style.display = "flex"
-    })
-    .catch((error) =>  console.log(error.message));
+    });
+
+    function validateEmail(email) {
+        // Add your email validation logic here
+        // For simplicity, let's check if it contains '@'
+        return email.includes('@');
+    }
+
+    function validatePassword(password) {
+        // Check if the password has at least 6 characters
+        return password.length >= 6;
+    }
+
+    function showErrorMessages(isValidEmail, isValidPassword) {
+        const emailErrorMessage = document.getElementById('email-error-message');
+        const passwordErrorMessage = document.getElementById('password-error-message');
+
+        if (!isValidEmail) {
+            emailErrorMessage.style.display = 'block';
+        } else {
+            emailErrorMessage.style.display = 'none';
+        }
+
+        if (!isValidPassword) {
+            passwordErrorMessage.style.display = 'block';
+        } else {
+            passwordErrorMessage.style.display = 'none';
+        }
+    }
+});
