@@ -3,7 +3,53 @@ body{
     line-height: 1.43;
     color: #222;
 }
+/*nav-bar*/
+.navbar {
+    width: 100%;
+    border-bottom: 1px solid #eeeeee;
+    display: flex;
+    align-items: center; 
+   
+  }
+  .navbar-right{
+    display: flex;
+    
+  }
 
+  .navbar img {
+    padding-left:50px;
+    height: 40px;
+    width: 180px;
+  }
+  
+  .navbar p{
+    width: 100%;
+    margin-right: 20px;
+  }
+
+  .Airbnb-button-container {
+ 
+  }
+  .Airbnb-button-group {
+    text-align: center;
+    background-color:  #ff385c;
+    width: 150px;
+    height: 50px;
+    vertical-align: center;
+    border-radius: 5px;
+  }
+  .Airbnb-button-group svg {
+   
+    color: white;
+
+  }
+  .Airbnb-button-group a{
+   
+    text-decoration: none;
+    color: white;
+    font-weight: bolder;
+    font-size: 15px;
+  }
 
 .Why-Airbnb-outer_container{
     margin: 120px 0px;
@@ -81,7 +127,7 @@ body{
 }
 
 .Aircover-thead tr{
-    border-bottom:solid black 2px;
+    border-bottom:solid rgb(233, 233, 233) 2px;
     border-collapse: collapse;
 }
 
@@ -109,7 +155,7 @@ body{
 
 
 .Aircover-table-container tbody{
-    border: 2px solid black;
+    
    
 }
 
@@ -122,3 +168,126 @@ body{
     width: 20px;
 }
 
+
+/*footer*/
+.future-getaways {
+    margin-left: 80px;
+    margin-right: 80px;
+  }
+  
+  .bottom-nav-link div {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 40px;
+  }
+  
+  .future-getaways-title {
+    font-size: 30px;
+    font-weight: 500;
+    margin-bottom: 10px;
+  }
+  
+  .bottom-nav-link div button {
+    cursor: pointer;
+    border: none;
+    background-color: white;
+    height: 40px;
+  }
+  
+  .bottom-nav-link div button:hover {
+    background-color: rgb(241, 239, 239);
+    border-radius: 5px;
+  }
+  
+  .loctaions-nav {
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  .location-nav-link {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .location-nav-link-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .location-city {
+    margin-bottom: 20px;
+    color: gray;
+  }
+  
+  .location-nav-link-item span {
+    cursor: pointer;
+  }
+  
+  .show-more {
+    text-decoration: underline;
+  }
+  
+  .footer {
+    height: 450px;
+    background-color: rgb(247, 244, 244);
+  }
+  .footer-item {
+    display: flex;
+    margin-top: 50px;
+    margin-left: 90px;
+    margin-right: 0px;
+  }
+  
+  .location-nav-link {
+    margin-top: 50px;
+  }
+  
+  .location-nav-link-title {
+    font-size: 16px;
+    font-weight: 600;
+  }
+  
+  .footer-nav-link-item {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .footer-nav-link-item span {
+    margin-top: 20px;
+    font-size: 0.875rem;
+  }
+  
+  .footer-nav-link-item span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  
+  hr {
+    margin: 50px;
+  }
+  
+  .copyright-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px;
+    padding-bottom: 20px;
+  }
+  
+  .languange-currency {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .languange-currency div {
+    margin-right: 45px;
+  }
+  
+  .languange-currency img {
+    width: 20px;
+    margin-right: 20px;
+  }
