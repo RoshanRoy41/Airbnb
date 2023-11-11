@@ -8,6 +8,11 @@ hr {
   margin-left: 5%;
   margin-right: 5%;
 }
+.about-user-container {
+  display: flex;
+  flex-direction: column;
+  margin-left: 10%;
+}
 
 #columns {
   display: flex;
@@ -78,6 +83,7 @@ hr {
 }
 .reserve-card-float-container {
   display: flex;
+  margin-bottom: -130px;
 }
 .left-side {
   flex-basis: 60%;
@@ -99,4 +105,16 @@ hr {
 
 #calendar-container {
   margin-top: 20px;
+}
+
+#showMoreBtn,
+#showLessBtn {
+  text-decoration: none;
+  color: black;
+}
+
+#showMoreBtn,
+#showLessBtn :hover {
+  text-decoration: underline;
+  color: black;
 }

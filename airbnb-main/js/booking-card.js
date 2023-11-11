@@ -1,28 +1,13 @@
-$(document).ready(function () {
-  $("#txtCheckin").datepicker({
-    dateFormat: "dd-M-yy",
-    onSelect: function (date) {
-      var date2 = $("#txtCheckin").datepicker("getDate");
-      date2.setDate(date2.getDate());
-      $("#txtCheckout").datepicker("setDate", date2);
-      //sets minDate to dateofbirth date + 1
-      $("#txtCheckout").datepicker("option", "minDate", date2);
-    },
-  });
-  $("#txtCheckout").datepicker({
-    dateFormat: "dd-M-yy",
-    onClose: function () {
-      var dt1 = $("#txtCheckin").datepicker("getDate");
-      console.log(dt1);
-      var dt2 = $("#txtCheckout").datepicker("getDate");
-      if (dt2 <= dt1) {
-        var minDate = $("#txtCheckout").datepicker("option", "minDate");
-        $("#txtCheckout").datepicker("setDate", minDate);
-      }
-    },
-  });
-});
 document.addEventListener("DOMContentLoaded", function () {
+  // Initialize Flatpickr for Check-In and Check-Out input fields
+  flatpickr("#txtCheckin", {
+    dateFormat: "d-m-Y",
+  });
+
+  flatpickr("#txtCheckout", {
+    dateFormat: "d-m-Y",
+  });
+
   const incrementButton = document.getElementById("incrementButton");
   const decrementButton = document.getElementById("decrementButton");
   const guestCount = document.querySelector(".textGuest p");
@@ -44,16 +29,14 @@ document.addEventListener("DOMContentLoaded", function () {
       guestCount.textContent = currentCount;
     }
   });
-});
 
-$(document).ready(function () {
   // Function to open the date picker for Check-In or Check-Out when dates are not set
   function openDatePickerIfDatesNotSet() {
-    const checkinDate = $("#txtCheckin").datepicker("getDate");
-    const checkoutDate = $("#txtCheckout").datepicker("getDate");
+    const checkinDate = flatpickr("#txtCheckin").selectedDates[0];
+    const checkoutDate = flatpickr("#txtCheckout").selectedDates[0];
 
     if (!checkinDate || !checkoutDate) {
-      $("#txtCheckin").datepicker("show");
+      flatpickr("#txtCheckin").open();
     }
   }
 
@@ -68,8 +51,8 @@ $(document).ready(function () {
 
   // Function to check and display availability
   function checkAndDisplayAvailability() {
-    const checkinDate = $("#txtCheckin").datepicker("getDate");
-    const checkoutDate = $("#txtCheckout").datepicker("getDate");
+    const checkinDate = flatpickr("#txtCheckin").selectedDates[0];
+    const checkoutDate = flatpickr("#txtCheckout").selectedDates[0];
 
     if (checkinDate && checkoutDate) {
       // Fetch availability and create the new booking card
@@ -90,11 +73,11 @@ $(document).ready(function () {
         reserveNowClicked = true;
       } else {
         // Redirect to a new HTML page on the second click
-        window.location.href =
-          "/UnitCardRemaining/tem_pages/confirmation_page.html";
+        window.location.href = "confirmation_page.html";
       }
     }
   }
+
   let totalPrice;
   // Function to create a new booking card with availability details
   function createNewBookingCard(checkinDate, checkoutDate) {
@@ -111,7 +94,6 @@ $(document).ready(function () {
     const pricePerNight = parseFloat(rateElement.textContent.replace("₹", "")); // Extract and parse the numeric value
 
     // Calculate the total price
-
     const guestCount = parseInt(
       document.querySelector(".textGuest p").textContent
     );
@@ -121,6 +103,7 @@ $(document).ready(function () {
     totalPrice = Math.trunc(
       pricePerNight * numberOfDays * (1 + rateIncreasePercentage)
     );
+
     // Create a new card
     const newCard = document.createElement("div");
     newCard.classList.add("booking-card");
@@ -131,17 +114,51 @@ $(document).ready(function () {
     updateFinalProduct(finalProductDiv, totalPrice);
 
     newCard.innerHTML = `
-        <!-- Your new card content here -->
-        <div class="centered-text">You won't be charged yet</div>
-        <div class="price-info">₹${pricePerNight} per night x ${numberOfDays} nights</div>
-       
+      <!-- Your new card content here -->
+      <div class="centered-text">You won't be charged yet</div>
+      <div class="price-info">₹${pricePerNight} per night x ${numberOfDays} nights</div>
     `;
 
     newCard.appendChild(finalProductDiv);
 
     return newCard;
   }
+
   function updateFinalProduct(element, numberOfDays) {
     element.textContent = `Total: ₹${totalPrice}`;
   }
 });
+
+// Add an event listener to check the scroll position
+document.addEventListener("scroll", function () {
+  // Get the position of the hr tag
+  let hrPosition = document.getElementById("bookingContainerStop").offsetTop;
+
+  // Get the booking container element
+  let bookingContainer = document.querySelector(".booking-container");
+
+  // Check if the scroll position is above the hr tag
+  if (window.scrollY < hrPosition) {
+    bookingContainer.style.position = "sticky";
+    bookingContainer.style.top = "20px"; // Adjust this value as needed
+  } else {
+    bookingContainer.style.position = "static";
+  }
+});
+
+let url = "https://picsum.photos/v2/list?page=2&limit=20";
+
+const getData = async (url) => {
+  try {
+    const response = await fetch(url);
+    const data = await response.json();
+    console.log(data);
+    data.map((userData) => {
+      imageCard = document.getElementById("listings");
+      const cardData = createCardData(userData);
+      imageCard.appendChild(cardData);
+    });
+  } catch (e) {
+    console.log(e);
+  }
+};

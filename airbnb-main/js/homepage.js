@@ -1,4 +1,4 @@
-const url = "https://picsum.photos/v2/list?page=2&limit=20";
+let url = "https://picsum.photos/v2/list?page=2&limit=20";
 
 const getData = async (url) => {
   try {
@@ -77,7 +77,7 @@ const createCardData = (userData) => {
 };
 
 const openNewPage = (userData) => {
-  window.location.href = `Unit.html?id=${userData.id}`;
+  window.location.href = `unitcard.html?id=${userData.id}`;
 };
 
 //getting julias Id

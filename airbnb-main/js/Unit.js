@@ -1,8 +1,8 @@
-const getImages = fetch("https://picsum.photos/v2/list?page=3&limit=100");
+let imgData = fetch("https://picsum.photos/v2/list?page=3&limit=100");
 let images = [];
 let rand = Math.floor(Math.random() * 90);
 
-getImages
+imgData
   .then((response) => response.json())
   .then((data) => {
     data.forEach((element) => {
@@ -45,32 +45,39 @@ getCountry
   })
   .catch((error) => console.log("Error:", error));
 
-const url = "https://dummyjson.com/users";
+let dataUrl = "https://dummyjson.com/users";
 
-const getData = async (url) => {
+let getTextData = async (url) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
     console.log(data);
-    const showData = document.querySelector(".reviewsTexts");
-    let startingNumber = Math.floor(Math.random() * 25);
-    document.getElementById("imgHost").src = data.users[startingNumber].image;
 
-    for (
-      let i = startingNumber;
-      i < startingNumber + 4 && i < data.users.length;
-      i++
-    ) {
-      const userData = data.users[i];
-      const oneReview = createReviewCard(userData);
-      showData.appendChild(oneReview);
+    const showData = document.querySelector(".reviewsTexts");
+
+    if (data.users && data.users.length > 0) {
+      let startingNumber = Math.floor(Math.random() * 25);
+      document.getElementById("imgHost").src = data.users[startingNumber].image;
+
+      for (
+        let i = startingNumber;
+        i < startingNumber + 4 && i < data.users.length;
+        i++
+      ) {
+        const userData = data.users[i];
+        const oneReview = createReviewCard(userData);
+        showData.appendChild(oneReview);
+      }
+    } else {
+      console.error("Invalid data structure: users array is missing or empty");
+      // You can add fallback behavior or display a message to the user
     }
   } catch (e) {
     console.log(e);
   }
 };
 
-getData(url);
+getTextData(dataUrl);
 
 const createReviewCard = (userData) => {
   const oneReview = document.createElement("div");
@@ -100,55 +107,3 @@ const createReviewCard = (userData) => {
 
   return oneReview;
 };
-
-// async function fetchData() {
-//   try {
-//     const response = await fetch("https://picsum.photos/200/300");
-//     const result = await response.text();
-//     console.log(result);
-//   } catch (error) {
-//     console.error(error);
-//   }
-// }
-// fetchData();
-// const getNamesforReview = fetch("https://dummyjson.com/users/");
-// // console.log(getNamesforReview);
-
-// getNamesforReview
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log(data);
-//     const usersForReview = [];
-//     data.users.forEach((element) => {
-//       usersForReview.push(element);
-//       console.log(usersForReview.firstName);
-//     });
-//     let reviewsTexts = document.querySelector(".reviewsTexts");
-
-//     for (let i = 0; i < 4; i++) {
-//       const oneReview = document.createElement("div");
-//       oneReview.classList.add("oneReview");
-//       const oneReviewName = document.createElement("h4");
-//       oneReviewName.classList.add("oneReview-Name");
-//       const oneReviewPara = document.createElement("p");
-//       oneReviewPara.setAttribute("id", "oneReviewPara");
-//     }
-//     document.querySelector(
-//       ".oneReview-Name"
-//     ).textContent = `${usersForReview[0].firstName} ${usersForReview[0].lastName}`;
-//     document.getElementById(
-//       "oneReviewPara"
-//     ).textContent = `Lorem ipsum  quis nostrud exercitation . Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.`;
-
-//     oneReview.appendChild(oneReviewName);
-//     oneReview.appendChild(oneReviewPara);
-//     reviewsTexts.appendChild(oneReview);
-//   })
-//   .catch((error) => console.error("Error:", error));
-//getting julias ID
-// const urlParam = new URLSearchParams(window.location.search);
-
-// const id = Number(urlParam.get("id"));
-// console.log(typeof id);
-
-// dataProcess(url, id);

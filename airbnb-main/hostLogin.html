@@ -4,18 +4,18 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="part1.css" />
+    <link rel="stylesheet" type="text/css" href="/css/hostTraveller.css" />
   </head>
   <body>
     <nav>
       <div class="logo">
-        <img src="logo.png" alt="Airbnb Logo" />
+        <img src="/images/logo.png" alt="Airbnb Logo" />
       </div>
       <div class="button">
         <div class="im">
           <a href="#" id="image-button">
-            <img src="three line.png" alt="Button Image" />
-            <img src="account-icon2.png" alt="Button Image" />
+            <img src="/images/three line.png" alt="Button Image" />
+            <img src="/images/account-icon2.png" alt="Button Image" />
           </a>
         </div>
         <div class="dropdown-content" id="image-button-dropdown">
@@ -28,24 +28,45 @@
       </div>
     </nav>
     <hr />
-    <div class="text">
-      <div class="img">
-        <h1>
-          Welcome to<br />
-          airbnb
-        </h1>
-        <img src="logo.png" id="logo" alt="air-bnb" />
-      </div>
-      <h3>Select an option to continue</h3>
-    </div>
-    <div class="main">
-      <div class="host">
-        <button id="host">HOST</button>
-      </div>
-      <div class="traveller">
-        <button id="traveller">
-          <a href="Part2.html">TRAVELLER</a>
+    <div class="outer-box">
+      <div class="box">
+        <h2>Log In</h2>
+        <hr />
+        <h1>Welcome to airbnb</h1>
+        <form class="login-form">
+          <label for="email"></label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <br />
+          <label for="password"></label>
+          <input
+            type="password"
+            id="password"
+            name="password"
+            placeholder="Enter your password"
+            required
+          />
+        </form>
+        <button class="continue" id="traveller">
+          <a href="add_unit.html" style="text-decoration: none; color: white"
+            >Continue</a
+          >
         </button>
+        <br />
+        <p id="fp"><b>Forgot Password?</b></p>
+        <br />
+        <p id="or"><b>Or</b></p>
+        <div class="container">
+          <h2>Login with Social Media</h2>
+          <button class="social-button facebook">Login with Facebook</button>
+          <button class="social-button google">Login with Google</button>
+          <button class="social-button apple">Login with Apple</button>
+        </div>
       </div>
     </div>
     <br />
@@ -114,5 +135,5 @@
       </div>
     </div>
   </body>
-  <script src="Part2.js"></script>
+  <script src="/js/hostTraveller.js"></script>
 </html>
