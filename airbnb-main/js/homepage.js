@@ -1,4 +1,4 @@
-let url = "https://picsum.photos/v2/list?page=2&limit=20";
+let url = "https://picsum.photos/v2/list?page=1&limit=20";
 
 const getData = async (url) => {
   try {
