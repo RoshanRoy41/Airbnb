@@ -1,6 +1,8 @@
-let imgData = fetch("https://picsum.photos/v2/list?page=3&limit=100");
+let imgData = fetch("https://picsum.photos/v2/list?page=1&limit=100");
 let images = [];
-let rand = Math.floor(Math.random() * 90);
+const UrlParams = new URLSearchParams(window.location.search)
+const userId = UrlParams.get("id");
+let rand = userId;
 
 imgData
   .then((response) => response.json())

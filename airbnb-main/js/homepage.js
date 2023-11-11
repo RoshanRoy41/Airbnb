@@ -19,7 +19,7 @@ const closeClick = (event)=>{
 closeButton.addEventListener('click',closeClick);
 
 
-  const url = 'https://picsum.photos/v2/list?page=3&limit=50';
+  const url = 'https://picsum.photos/v2/list?page=1&limit=30';
   const url2 ='https://dummyjson.com/users';
  
     const getData = async(url,url2)=>{
