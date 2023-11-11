@@ -1,10 +1,31 @@
-let url = "https://picsum.photos/v2/list?page=1&limit=20";
+let url = "https://picsum.photos/v2/list?page=1&limit=50";
 
-const getData = async (url) => {
+const subCContainer = document.querySelector(".sub-container");
+const searchBar = document.querySelector(".search-bar");
+const searchButton = document.querySelector(".search-button");
+const closeButton = document.querySelector(".close-button");
+subCContainer.style.display = "none";
+
+const buttonClick = (event) => {
+  subCContainer.style.display = "block";
+  event.preventDefault();
+};
+
+searchButton.addEventListener("click", buttonClick);
+const closeClick = (event) => {
+  subCContainer.style.display = "none";
+  event.preventDefault();
+};
+closeButton.addEventListener("click", closeClick);
+
+//   const url = 'https://picsum.photos/v2/list?page=1&limit=30';
+// const url2 = "https://dummyjson.com/users";
+
+const getData = async (url, url2) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
+
     data.map((userData) => {
       imageCard = document.getElementById("listings");
       const cardData = createCardData(userData);
@@ -77,7 +98,5 @@ const createCardData = (userData) => {
 };
 
 const openNewPage = (userData) => {
-  window.location.href = `unitcard.html?id=${userData.id}`;
+  window.location.href = `unitcard.html?id=${userData.id}&price=${userData.width}`;
 };
-
-//getting julias Id

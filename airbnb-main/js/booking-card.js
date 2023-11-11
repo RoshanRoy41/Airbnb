@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const userPrice = urlParams.get("price");
+  let priceElement = document.getElementById("rate");
+
+  if (priceElement) {
+    priceElement.textContent = "₹" + userPrice;
+  } else {
+    console.error("Element with ID 'rate' not found");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   // Initialize Flatpickr for Check-In and Check-Out input fields
   flatpickr("#txtCheckin", {
     dateFormat: "d-m-Y",
@@ -145,5 +157,3 @@ document.addEventListener("scroll", function () {
     bookingContainer.style.position = "static";
   }
 });
-
-// Get userId from the URL
