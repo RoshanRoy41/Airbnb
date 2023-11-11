@@ -1,4 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
+  const urlParams = new URLSearchParams(window.location.search);
+  const userPrice = urlParams.get("price");
+  let priceElement = document.getElementById("rate");
+
+  if (priceElement) {
+    priceElement.textContent = "₹" + userPrice;
+  } else {
+    console.error("Element with ID 'rate' not found");
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
   // Initialize Flatpickr for Check-In and Check-Out input fields
   flatpickr("#txtCheckin", {
     dateFormat: "d-m-Y",
@@ -145,20 +157,3 @@ document.addEventListener("scroll", function () {
     bookingContainer.style.position = "static";
   }
 });
-
-let url = "https://picsum.photos/v2/list?page=2&limit=20";
-
-const getData = async (url) => {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-    console.log(data);
-    data.map((userData) => {
-      imageCard = document.getElementById("listings");
-      const cardData = createCardData(userData);
-      imageCard.appendChild(cardData);
-    });
-  } catch (e) {
-    console.log(e);
-  }
-};
