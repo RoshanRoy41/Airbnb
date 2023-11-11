@@ -1,6 +1,15 @@
-let imgData = fetch("https://picsum.photos/v2/list?page=3&limit=100");
+// Get the full URL
+let urlOwn = new URL(window.location.href);
+
+// Get the value of the 'id' parameter
+let id = urlOwn.searchParams.get("id");
+
+console.log(id);
+
+let imgData = fetch("https://picsum.photos/v2/list?page=3&limit=50");
 let images = [];
-let rand = Math.floor(Math.random() * 90);
+let rand = Math.floor(Math.random() * 50);
+console.log(rand);
 
 imgData
   .then((response) => response.json())
@@ -37,13 +46,13 @@ getName
   .then((response) => response.json())
   .then((data) => (document.getElementById("title").textContent = data.title));
 
-const getCountry = fetch("https://api.apipip.com/v1/random-country/");
-getCountry
-  .then((response) => response.json())
-  .then((data) => {
-    console.log("Name:", data.name);
-  })
-  .catch((error) => console.log("Error:", error));
+// const getCountry = fetch("https://api.apipip.com/v1/random-country/");
+// getCountry
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log("Name:", data.name);
+//   })
+//   .catch((error) => console.log("Error:", error));
 
 let dataUrl = "https://dummyjson.com/users";
 
