@@ -1,4 +1,3 @@
-let url = "https://picsum.photos/v2/list?page=1&limit=50";
 
 const subCContainer = document.querySelector('.sub-container');
 const searchBar = document.querySelector('.search-bar');
@@ -20,7 +19,7 @@ const closeClick = (event)=>{
 closeButton.addEventListener('click',closeClick);
 
 
-//   const url = 'https://picsum.photos/v2/list?page=1&limit=30';
+  const url = 'https://picsum.photos/v2/list?page=3&limit=50';
   const url2 ='https://dummyjson.com/users';
  
     const getData = async(url,url2)=>{
@@ -105,7 +104,7 @@ closeButton.addEventListener('click',closeClick);
     }
 
     const openNewPage = (userData)=>{
-        window.location.href = `unitcard.html?id=${userData.id}`
+        window.location.href = `unitInner.html?id=${userData.id}`
     }
  
    

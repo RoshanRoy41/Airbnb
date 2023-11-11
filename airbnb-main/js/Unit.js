@@ -1,15 +1,8 @@
-// Get the full URL
-let urlOwn = new URL(window.location.href);
-
-// Get the value of the 'id' parameter
-let id = urlOwn.searchParams.get("id");
-
-console.log(id);
-
-let imgData = fetch("https://picsum.photos/v2/list?page=3&limit=50");
+let imgData = fetch("https://picsum.photos/v2/list?page=1&limit=100");
 let images = [];
-let rand = Math.floor(Math.random() * 50);
-console.log(rand);
+const UrlParams = new URLSearchParams(window.location.search)
+const userId = UrlParams.get("id");
+let rand = userId;
 
 imgData
   .then((response) => response.json())
