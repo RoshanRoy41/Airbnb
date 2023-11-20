@@ -1,5 +1,5 @@
 # Ignore Node.js dependencies
-airbnb-main/node_modules/
+node_modules/
 
 # Ignore npm package lock file
-airbnb-main/package-lock.json
+package-lock.json
