@@ -3,14 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Report this listing</title>
-    <link rel="stylesheet" href="css/flag.css" />
+    <title>Report This Listing</title>
+    <link rel="stylesheet" href="/css/flag.css" />
   </head>
   <body>
     <div class="flag-container">
       <img src="/images/logo2.png" alt="Airbnb Logo" class="logo" />
       <h1 class="heading">Report this listing</h1>
-      <form id="reportForm">
+      <form id="reportForm" action="/submit-report" method="post">
         <label for="reason">Reason for reporting:</label>
         <select id="reason" name="reason">
           <option value="misleading">Misleading information</option>
@@ -27,7 +27,7 @@
           placeholder="Please provide more details..."
         ></textarea>
 
-        <button type="button" onclick="submitReport()">Submit Report</button>
+        <button type="submit" onclick="submitReport()">Submit Report</button>
       </form>
 
       <div id="confirmation" style="display: none">
@@ -37,6 +37,6 @@
       </div>
     </div>
 
-    <script src="js/flag.js"></script>
+    <script src="/js/flag.js"></script>
   </body>
 </html>
