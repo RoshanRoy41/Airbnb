@@ -3,9 +3,40 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Report this listing</title>
+    <link rel="stylesheet" href="css/flag.css" />
   </head>
   <body>
-    Flagged this post
+    <div class="flag-container">
+      <img src="/images/logo2.png" alt="Airbnb Logo" class="logo" />
+      <h1 class="heading">Report this listing</h1>
+      <form id="reportForm">
+        <label for="reason">Reason for reporting:</label>
+        <select id="reason" name="reason">
+          <option value="misleading">Misleading information</option>
+          <option value="inappropriate">Inappropriate content</option>
+          <option value="other">Other</option>
+        </select>
+
+        <label for="details">Details:</label>
+        <textarea
+          id="details"
+          name="details"
+          rows="4"
+          cols="50"
+          placeholder="Please provide more details..."
+        ></textarea>
+
+        <button type="button" onclick="submitReport()">Submit Report</button>
+      </form>
+
+      <div id="confirmation" style="display: none">
+        <p>
+          Thank you for reporting this listing. We will investigate the issue.
+        </p>
+      </div>
+    </div>
+
+    <script src="js/flag.js"></script>
   </body>
 </html>

@@ -18,6 +18,10 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="/css/styles.css" />
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
@@ -32,119 +36,163 @@
     <script src="/js/about-user.js"></script>
   </head>
   <body>
+    <div class="navbar-container">
+      <div class="navbar">
+        <div>
+          <img src="/images/logo2.png" style="border-radius: 4px" />
+        </div>
+        <div class="search" id="searchButton">
+          <form>
+            <div class="input-container">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search Properties"
+              />
+            </div>
+            <div>
+              <button class="search-button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <button class="close-button">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="menu">
+          <ul class="nav-menu">
+            <li>
+              <a onclick="closeMenu()" href="#listings" class="nav-link"
+                >Airbnb your home</a
+              >
+            </li>
+            <li>
+              <a onclick="closeMenu()" href="#featured" class="nav-link"
+                >Featured</a
+              >
+            </li>
+            <li>
+              <a onclick="closeMenu()" href="#popular" class="nav-link"
+                >Popular</a
+              >
+            </li>
+          </ul>
+          <div onclick="mobileMenu()" class="mobile">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </div>
     <div>
-      <div>
-        <div class="header-container">
-          <div class="header">
-            <h2 class="name" id="title"></h2>
-            <div class="lower-head">
-              <div class="lower-head-div">
-                <img src="icons/star.png" class="star-rating" />
-                <p id="rating"></p>
-                <p>&nbsp; | &nbsp;</p>
-                <p id="reviewsNum"></p>
-                <p>&nbsp; reviews</p>
-                <p>&nbsp; | &nbsp; Abiansemal, Bali, Indonesia</p>
+      <div class="header-container">
+        <div class="header">
+          <h2 class="name" id="title"></h2>
+          <div class="lower-head">
+            <div class="lower-head-div">
+              <img src="icons/star.png" class="star-rating" />
+              <p id="rating"></p>
+              <p>&nbsp; | &nbsp;</p>
+              <p id="reviewsNum"></p>
+              <p>&nbsp; reviews</p>
+              <p>&nbsp; | &nbsp; Abiansemal, Bali, Indonesia</p>
+            </div>
+            <div class="lower-head-div right">
+              <div class="lower-head-div-button">
+                <img src="icons/share.png" class="star-rating" />
+                <a href=""> Share</a>
               </div>
-              <div class="lower-head-div right">
-                <div class="lower-head-div-button">
-                  <img src="icons/share.png" class="star-rating" />
-                  <a href=""> Share</a>
-                </div>
-                <div class="lower-head-div-button">
-                  <img src="icons/wishlist.png" class="star-rating" />
-                  <a href="">Save</a>
-                </div>
+              <div class="lower-head-div-button">
+                <img src="icons/wishlist.png" class="star-rating" />
+                <a href="">Save</a>
               </div>
             </div>
           </div>
         </div>
-        <div class="image images-container">
-          <div class="images">
-            <div class="images-left">
-              <img id="img1" src="" />
-            </div>
-            <div class="images-right">
-              <div>
-                <img id="img5" src="" />
-              </div>
-              <div>
-                <img id="img2" class="right-image-border" src="" />
-              </div>
-
-              <div>
-                <img id="img3" src="" />
-              </div>
-              <div>
-                <img
-                  id="img4"
-                  class="right-image-border-down"
-                  src=""
-                  alt="my bad"
-                />
-              </div>
-            </div>
+      </div>
+      <div class="image images-container">
+        <div class="images">
+          <div class="images-left">
+            <img id="img1" src="" />
           </div>
-        </div>
-        <div class="about">
-          <div class="details-about-unit-host">
-            <div class="details-about-unit-host-flex">
-              <div class="details-about-unit-host-flex-text">
-                <div>
-                  <h3>Hut hosted by</h3>
-                  <h3 id="author"></h3>
-                </div>
+          <div class="images-right">
+            <div>
+              <img id="img5" src="" />
+            </div>
+            <div>
+              <img id="img2" class="right-image-border" src="" />
+            </div>
 
-                <p>2 guests | &nbsp;</p>
-                <p>1 bedroom | &nbsp;</p>
-                <p>1 bed | &nbsp;</p>
-                <p>1 bathroom &nbsp;</p>
-              </div>
-              <div class="user-image">
-                <img class="user-image-src" id="imgHost" src="icons/user.png" />
-              </div>
+            <div>
+              <img id="img3" src="" />
             </div>
-            <hr />
-          </div>
-          <div>
-            <div class="policy">
-              <div class="policy-single">
-                <img src="./icons/workspace.png" class="policy-icons" />
-                <div>
-                  <h3>Dedicated workspace</h3>
-                  <p>A common area with wifi that’s well suited for working.</p>
-                </div>
-              </div>
-              <div class="policy-single">
-                <img src="./icons/check-in.png" class="policy-icons" />
-                <div>
-                  <h3>Self check-in</h3>
-                  <p>You can check in with the building staff.</p>
-                </div>
-              </div>
-              <div class="policy-single">
-                <img src="./icons/calendar.png" class="policy-icons" />
-                <div><h3>Free cancellation for 48 hours</h3></div>
-              </div>
-              <hr />
-            </div>
-            <div class="reviewsSection">
-              <div class="reviewHeader">
-                <img src="./icons/star.png" class="star-rating two" />
-                <h3 id="rating two"></h3>
-                <p>&nbsp;|&nbsp;</p>
-                <h3 id="reviewsNum two"></h3>
-              </div>
-              <div class="reviewsTexts"></div>
+            <div>
+              <img
+                id="img4"
+                class="right-image-border-down"
+                src=""
+                alt="my bad"
+              />
             </div>
           </div>
         </div>
       </div>
     </div>
+
     <div class="second-section-container">
-      <hr />
       <div class="reserve-card-float-container">
         <div class="left-side">
+          <div class="about">
+            <div class="details-about-unit-host">
+              <div class="details-about-unit-host-flex">
+                <div class="details-about-unit-host-flex-text">
+                  <div>
+                    <h3>Hut hosted by</h3>
+                    <h3 id="author"></h3>
+                  </div>
+
+                  <p>2 guests | &nbsp;</p>
+                  <p>1 bedroom | &nbsp;</p>
+                  <p>1 bed | &nbsp;</p>
+                  <p>1 bathroom &nbsp;</p>
+                </div>
+                <div class="user-image">
+                  <img
+                    class="user-image-src"
+                    id="imgHost"
+                    src="icons/user.png"
+                  />
+                </div>
+              </div>
+              <hr />
+            </div>
+            <div>
+              <div class="policy">
+                <div class="policy-single">
+                  <img src="./icons/workspace.png" class="policy-icons" />
+                  <div>
+                    <h3>Dedicated workspace</h3>
+                    <p>
+                      A common area with wifi that’s well suited for working.
+                    </p>
+                  </div>
+                </div>
+                <div class="policy-single">
+                  <img src="./icons/check-in.png" class="policy-icons" />
+                  <div>
+                    <h3>Self check-in</h3>
+                    <p>You can check in with the building staff.</p>
+                  </div>
+                </div>
+                <div class="policy-single">
+                  <img src="./icons/calendar.png" class="policy-icons" />
+                  <div><h3>Free cancellation for 48 hours</h3></div>
+                </div>
+                <hr />
+              </div>
+            </div>
+          </div>
           <div class="about-user-container">
             <div class="about-user-title">
               <h2>About Host</h2>
@@ -223,7 +271,18 @@
         </section>
       </div>
       <hr />
-
+      <div class="review-container">
+        <div class="reviewsSection">
+          <div class="reviewHeader">
+            <img src="./icons/star.png" class="star-rating two" />
+            <h3 id="rating two"></h3>
+            <p>&nbsp;|&nbsp;</p>
+            <h3 id="reviewsNum two"></h3>
+          </div>
+          <div class="reviewsTexts"></div>
+        </div>
+      </div>
+      <hr />
       <div class="thingsToKnow-container">
         <div class="thingsToKnow-title">
           <h2>Things To Know</h2>
@@ -236,7 +295,6 @@
 
         <div id="places-container"></div>
       </div>
-      <hr />
     </div>
     <div class="footer">
       <div class="footer-item">
