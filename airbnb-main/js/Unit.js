@@ -1,4 +1,4 @@
-let imgData = fetch("https://picsum.photos/v2/list?page=1&limit=100");
+let imgData = fetch("https://mocki.io/v1/88b5a5e0-06f8-4a92-9750-93a6555387ce");
 let images = [];
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get("id");
