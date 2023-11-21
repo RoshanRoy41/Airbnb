@@ -1,4 +1,4 @@
-let url = "https://picsum.photos/v2/list?page=1&limit=20";
+let url = "https://mocki.io/v1/88b5a5e0-06f8-4a92-9750-93a6555387ce";
 
 const subCContainer = document.querySelector(".sub-container");
 const searchBar = document.querySelector(".search-bar");
