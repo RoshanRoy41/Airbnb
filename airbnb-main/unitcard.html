@@ -90,7 +90,7 @@
       </div>
     </div>
 
-    <div>
+    <div class="contentOfPage">
       <div class="header-container">
         <div class="header">
           <h2 class="name" id="title"></h2>
@@ -129,28 +129,33 @@
               <img id="img2" class="right-image-border" src="" />
             </div>
 
-              <div>
-                <img id="img3" src="" />
-              </div>
-              <div>
-                <img
-                  id="img4"
-                  class="right-image-border-down"
-                  src=""
-                  alt="my bad"
-                />
-              </div>
+            <div>
+              <img id="img3" src="" />
+            </div>
+            <div>
+              <img
+                id="img4"
+                class="right-image-border-down"
+                src=""
+                alt="my bad"
+              />
             </div>
           </div>
         </div>
-        <div class="about">
-          <div class="details-about-unit-host">
-            <div class="details-about-unit-host-flex">
-              <div class="details-about-unit-host-flex-text">
-                <div>
-                  <h3>Hut hosted by</h3>
-                  <h3 id="author"></h3>
-                </div>
+      </div>
+    </div>
+
+    <div class="second-section-container">
+      <div class="reserve-card-float-container">
+        <div class="left-side">
+          <div class="about">
+            <div class="details-about-unit-host">
+              <div class="details-about-unit-host-flex">
+                <div class="details-about-unit-host-flex-text">
+                  <div>
+                    <h3>Hut hosted by</h3>
+                    <h3 id="author"></h3>
+                  </div>
 
                   <p>2 guests | &nbsp;</p>
                   <p>1 bedroom | &nbsp;</p>
@@ -199,8 +204,9 @@
             </div>
             <div id="aboutOwnerContainer"></div>
           </div>
-          <hr />
+
           <div class="calender-container-main">
+            <hr />
             <div class="calendar-container">
               <h3 class="nights-title">0 nights in Great London</h3>
               <p id="selectedDates" class="selected-dates">Selected dates:</p>
@@ -223,7 +229,7 @@
                 </div>
               </div>
               <div class="secondSection">
-                <div class="check-in-out">
+                <div class="check-in-out" style="border-radius: 10px">
                   <input
                     type="text"
                     id="txtCheckin"
@@ -235,13 +241,18 @@
                     placeholder="Pick Check-Out Date"
                   />
                 </div>
-                <div class="GuestPicker">
+                <div
+                  class="GuestPicker"
+                  style="border-radius: 10px; margin-top: 7px"
+                >
                   <div class="textGuest">
                     <label for="">Guest</label>
                     <p>1</p>
                   </div>
                   <div class="guestBtns">
-                    <button id="incrementButton">+</button>
+                    <button id="incrementButton" style="margin-right: 30px">
+                      +
+                    </button>
                     <button id="decrementButton">-</button>
                   </div>
                 </div>

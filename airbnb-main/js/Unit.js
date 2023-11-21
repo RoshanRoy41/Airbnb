@@ -1,60 +1,29 @@
-
-let imgData = "https://picsum.photos/v2/list?page=1&limit=100";
+let imgData = fetch("https://mocki.io/v1/88b5a5e0-06f8-4a92-9750-93a6555387ce");
 let images = [];
 const urlParams = new URLSearchParams(window.location.search);
-let userId = urlParams.get("id");
-// let userId = 190;
-let index;
+const userId = urlParams.get("id");
+let rand = userId;
 
-const getData = async (url) => {
-  try {
-    const response = await fetch(url);
-    const data = await response.json();
-
-    data.forEach((userData) => {
-      console.log(userData);
-      images.push(userData);
+imgData
+  .then((response) => response.json())
+  .then((data) => {
+    data.forEach((element) => {
+      images.push(element);
+      console.log(images);
+      //   console.log(images.download_url);
     });
-    updateImagesAndAuthor();
-  } catch (e) {
-    console.error(e);
-  }
-};
-
-const updateImagesAndAuthor = () => {
-  if (images.length > 0) {
-    document.getElementById("img1").src = findImageById(userId).download_url;
-
-    document.getElementById("img2").src = findImageById(
-      userId + 1
-    ).download_url;
-    document.getElementById("img3").src = findImageById(
-      userId + 2
-    ).download_url;
-    document.getElementById("img4").src = findImageById(
-      userId + 3
-    ).download_url;
-    document.getElementById("img5").src = findImageById(
-      userId + 4
-    ).download_url;
-
+    //random images for unit
+    document.getElementById("img1").src = images[rand++].download_url;
+    document.getElementById("img2").src = images[rand++].download_url;
+    document.getElementById("img3").src = images[rand++].download_url;
+    document.getElementById("img4").src = images[rand++].download_url;
+    document.getElementById("img5").src = images[rand++].download_url;
     // author name
-    document.getElementById("author").textContent =
-      images[userId % images.length].author;
-  } else {
-    console.error("User ID not found or images array is empty");
-  }
-};
-// Function to find image by id
-function findImageById(idToFind) {
-  return images.find((image) => image.id === String(idToFind));
-}
-// Call the function to get data from the API
-getData(imgData);
-
+    document.getElementById("author").textContent = images[rand++].author;
+  });
 let rating = 1 + Math.random() * 4;
 let reviewNum = Math.floor(Math.random() * 1000);
-
+console.log(rand);
 // random rating out of 5
 document.getElementById("rating").textContent = "   " + rating.toFixed(2);
 document.getElementById("rating two").textContent = "   " + rating.toFixed(2);
@@ -69,6 +38,14 @@ const getName = fetch(`https://jsonplaceholder.typicode.com/todos/${rand}`);
 getName
   .then((response) => response.json())
   .then((data) => (document.getElementById("title").textContent = data.title));
+
+// const getCountry = fetch("https://api.apipip.com/v1/random-country/");
+// getCountry
+//   .then((response) => response.json())
+//   .then((data) => {
+//     console.log("Name:", data.name);
+//   })
+//   .catch((error) => console.log("Error:", error));
 
 let dataUrl = "https://dummyjson.com/users";
 

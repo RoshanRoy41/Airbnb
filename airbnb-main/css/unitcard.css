@@ -12,8 +12,13 @@ hr {
 .about-user-container {
   display: flex;
   flex-direction: column;
-  margin-left: 10%;
+  margin-left: 17%;
   margin-right: 5%;
+}
+.calender-container-main hr {
+  width: 75%;
+  height: 1px;
+  margin-left: 85px;
 }
 
 #columns {
@@ -41,6 +46,9 @@ hr {
   /* margin: 0px; */
   justify-content: space-between;
 }
+.GuestPicker {
+  border-radius: 10px;
+}
 
 .rule-section {
   flex: 1;
@@ -63,7 +71,11 @@ hr {
   margin-left: 5%;
   margin-right: 5%;
 }
-
+.booking-container {
+  margin: 20px;
+  border-radius: 10px;
+  margin-bottom: 150px;
+}
 #places-container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -97,7 +109,7 @@ hr {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 100vh;
+  height: 95vh;
 }
 .calendar-container {
   max-width: 600px;
