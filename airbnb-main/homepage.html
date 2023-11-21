@@ -1,75 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Airbnb</title>
     <link rel="stylesheet" href="/css/homepage.css" />
     <link
-      rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"/>
-</head>
-<body>
-    <div class="container">
-        <!-- nav bar -->
-        <div class="navbar">
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
+  </head>
+  <body>
+    <div class="navbar-container">
+      <div class="navbar">
+        <div>
+          <img src="/images/logo2.png" style="border-radius: 4px" />
+        </div>
+        <div class="search" id="searchButton">
+          <form>
+            <div class="input-container">
+              <input
+                type="text"
+                id="searchInput"
+                placeholder="Search Properties"
+              />
+            </div>
             <div>
-              <img src="/images/logo2.png">
+              <button class="search-button">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+              <button class="close-button">
+                <i class="fa fa-times" aria-hidden="true"></i>
+              </button>
             </div>
-            <div class="search" id="searchButton">
-              <form>
-                <div class="input-container">
-                  <input type="text" id="searchInput" placeholder="Search Properties" />
-                </div>
-                <div>
-                  <button class="search-button"><i class="fa-solid fa-magnifying-glass"></i></button>
-                  <button class ="close-button"><i class="fa fa-times" aria-hidden="true"></i></button>
-                </div>
-              </form>
-            </div>
-          
-            <div class="menu">
-              <ul class="nav-menu">
-                <li>
-                  <a onclick="closeMenu()" href="#listings" class="nav-link">Airbnb your home</a>
-                </li>
-                <li>
-                  <a onclick="closeMenu()" href="#featured" class="nav-link">Featured</a>
-                </li>
-                <li>
-                  <a onclick="closeMenu()" href="#popular" class="nav-link">Popular</a>
-                </li>
-              </ul>
-              <div onclick="mobileMenu()" class="mobile">
-                <i class="fa-solid fa-bars"></i>
-              </div>
-            </div>
-          </div>
-          <!-- below navbar -->
-          <div class="sub-container">
-            <div class="search-bar">
-              <form>
-                <div class="location-input">
-                  <label>Location</label>
-                  <input type="text" placeholder="Where are you going?">
-                </div>
-                <div class="check-in-input">
-                  <label>Check-in</label>
-                  <input type="text" placeholder="Add date">
-                </div>
-                <div class="check-out-input">
-                  <label>Check-out</label>
-                  <input type="text" placeholder="Add date">
-                </div>
-                <div class="guest-input">
-                  <label>Guest</label>
-                  <input type="text" placeholder="Add guest">
-                </div>
-                <button><i class="fa-solid fa-magnifying-glass"></i></button>
-              </form>
-            </div>
-          </div>
+          </form>
+        </div>
 
-           <!-- sort Bar -->
+        <div class="menu">
+          <ul class="nav-menu">
+            <li>
+              <a onclick="closeMenu()" href="#listings" class="nav-link"
+                >Airbnb your home</a
+              >
+            </li>
+            <li>
+              <a onclick="closeMenu()" href="#featured" class="nav-link"
+                >Featured</a
+              >
+            </li>
+            <li>
+              <a onclick="closeMenu()" href="#popular" class="nav-link"
+                >Popular</a
+              >
+            </li>
+          </ul>
+          <div onclick="mobileMenu()" class="mobile">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <!-- nav bar -->
+
+      <!-- below navbar -->
+      <div class="sub-container">
+        <div class="search-bar">
+          <form>
+            <div class="location-input">
+              <label>Location</label>
+              <input type="text" placeholder="Where are you going?" />
+            </div>
+            <div class="check-in-input">
+              <label>Check-in</label>
+              <input type="text" placeholder="Add date" />
+            </div>
+            <div class="check-out-input">
+              <label>Check-out</label>
+              <input type="text" placeholder="Add date" />
+            </div>
+            <div class="guest-input">
+              <label>Guest</label>
+              <input type="text" placeholder="Add guest" />
+            </div>
+            <button><i class="fa-solid fa-magnifying-glass"></i></button>
+          </form>
+        </div>
+      </div>
+
+      <!-- sort Bar -->
       <div class="sort-bar">
         <div>
           <i class="fa-solid fa-house-chimney"></i>
@@ -96,9 +115,9 @@
           <p>Beach</p>
         </div>
         <div>
-            <i class="fa-solid fa-rocket"></i>
-            <p>OMG!</p>
-          </div>
+          <i class="fa-solid fa-rocket"></i>
+          <p>OMG!</p>
+        </div>
         <div>
           <i class="fa-solid fa-volleyball"></i>
           <p>Games</p>
@@ -108,70 +127,66 @@
 
       <div id="listings" class="listings">
         <!-- Rental Card -->
-        </div>
-        
-          <!-- footer -->
-      <div class="footer">
-        <div class="footer-item">
-          <div class="location-nav-link">
-            <div class="location-nav-link-title">
-              <span>Support</span>
-            </div>
-            <div class="footer-nav-link-item">
-                <span>Help center</span>
-                <span>Safety information</span>
-                <span>Cancellation options</span>
-                <span>Anti-discrimination</span>
-                <span>Cancellation options</span>
-                <span>Reportneighbourhood concern</span>
-              </div>
-          </div>
+      </div>
+    </div>
 
-          <div class="location-nav-link">
-            <div class="location-nav-link-title">
-              <span>Hosting</span>
-            </div>
-            <div class="footer-nav-link-item">
-              <span>Airbnb your home</span>
-              <span>AirCover for Hosts</span>
-              <span>Hosting resources</span>
-              <span>Community forum</span>
-              <span>Hosting responsibly</span>
-            </div>
+    <!-- footer -->
+    <div class="footer">
+      <div class="footer-item">
+        <div class="location-nav-link">
+          <div class="location-nav-link-title">
+            <span>Support</span>
           </div>
-
-          <div class="location-nav-link">
-            <div class="location-nav-link-title">
-              <span>Airbnb</span>
-            </div>
-            <div class="footer-nav-link-item">
-              <span>Newsroom</span>
-              <span>New features</span>
-              <span>Careers</span>
-              <span>Investors</span>
-              <span>Airbnb Luxe</span>
-            </div>
+          <div class="footer-nav-link-item">
+            <span>Help center</span>
+            <span>Safety information</span>
+            <span>Cancellation options</span>
+            <span>Anti-discrimination</span>
+            <span>Cancellation options</span>
+            <span>Reportneighbourhood concern</span>
           </div>
         </div>
-        <hr />
-        <div class="copyright-section">
-          <div class="copyright">
-            © 2023 Airbnb, Inc. · Privacy · Terms · Sitemap · Company details
+
+        <div class="location-nav-link">
+          <div class="location-nav-link-title">
+            <span>Hosting</span>
           </div>
-          <div class="languange-currency">
-            <div>English (IN)</div>
-            <div>₹ INR</div>
-            <img src="/images/facebook.png" alt="" />
-            <img src="/images/twitter.png" alt="" />
-            <img src="/images/instagram.png" alt="" />
+          <div class="footer-nav-link-item">
+            <span>Airbnb your home</span>
+            <span>AirCover for Hosts</span>
+            <span>Hosting resources</span>
+            <span>Community forum</span>
+            <span>Hosting responsibly</span>
+          </div>
+        </div>
+
+        <div class="location-nav-link">
+          <div class="location-nav-link-title">
+            <span>Airbnb</span>
+          </div>
+          <div class="footer-nav-link-item">
+            <span>Newsroom</span>
+            <span>New features</span>
+            <span>Careers</span>
+            <span>Investors</span>
+            <span>Airbnb Luxe</span>
           </div>
         </div>
       </div>
-<<<<<<< HEAD:Homepage/homepage.html
+      <hr />
+      <div class="copyright-section">
+        <div class="copyright">
+          © 2023 Airbnb, Inc. · Privacy · Terms · Sitemap · Company details
+        </div>
+        <div class="languange-currency">
+          <div>English (IN)</div>
+          <div>₹ INR</div>
+          <img src="/images/facebook.png" alt="" />
+          <img src="/images/twitter.png" alt="" />
+          <img src="/images/instagram.png" alt="" />
+        </div>
+      </div>
     </div>
-      <script src="homepage.js"></script>
-=======
-      <script src="/js/homepage.js"></script>
->>>>>>> 3e01f3681713ee79fd21bd0d0a9067e93acf9f07:airbnb-main/homepage.html
-</body>
+    <script src="/js/homepage.js"></script>
+  </body>
 </html>
