@@ -50,11 +50,11 @@
   margin: 0%;
 }
 .images {
-  margin-left: 10%;
-  margin-right: 10%;
+  margin-left: 5%;
+  margin-right: 5%;
   display: flex;
   /* padding: 10px; */
-  width: 80%;
+  width: 90%;
   overflow: hidden;
   border-radius: 15px;
 }
@@ -150,11 +150,11 @@
   border-radius: 50%;
 }
 .details-about-unit-host hr {
-  /* width: 2px; */
   bottom: 0px;
   margin-top: 20px;
   color: rgb(168, 168, 168);
-  position: relative;
+  margin-left: -49px;
+  width: 117%;
 }
 .policy {
   font-family: Poppins-thin;
@@ -181,8 +181,11 @@
   color: rgb(139, 139, 139);
 }
 .policy hr {
-  margin: 10px;
-  width: 650px;
+  bottom: 0px;
+  margin-top: 20px;
+  color: rgb(168, 168, 168);
+  margin-left: -40px;
+  width: 111%;
 }
 .details-about-unit-host-flex-text h3 {
   display: inline;
