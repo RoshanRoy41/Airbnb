@@ -1,4 +1,4 @@
-let imgData = "https://picsum.photos/v2/list?page=2&limit=100";
+let imgData = "https://picsum.photos/v2/list?page=1&limit=100";
 let images = [];
 const urlParams = new URLSearchParams(window.location.search);
 let userId = urlParams.get("id");
