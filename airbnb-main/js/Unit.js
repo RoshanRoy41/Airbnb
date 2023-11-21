@@ -1,8 +1,8 @@
 let imgData = "https://picsum.photos/v2/list?page=2&limit=100";
 let images = [];
 const urlParams = new URLSearchParams(window.location.search);
-// let userId = urlParams.get("id");
-let userId = 190;
+let userId = urlParams.get("id");
+// let userId = 190;
 let index;
 
 const getData = async (url) => {
