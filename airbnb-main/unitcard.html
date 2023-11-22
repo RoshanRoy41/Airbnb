@@ -90,13 +90,13 @@
       </div>
     </div>
 
-    <div>
+    <div class="contentOfPage">
       <div class="header-container">
         <div class="header">
-          <h2 class="name" id="title"></h2>
+          <h2 class="name" id="title">ABCD</h2>
           <div class="lower-head">
             <div class="lower-head-div">
-              <img src="icons/star.png" class="star-rating" />
+              <img src="icons/star.png" class="star-rating-header" />
               <p id="rating"></p>
               <p>&nbsp; | &nbsp;</p>
               <p id="reviewsNum"></p>
@@ -154,7 +154,7 @@
                 <div class="details-about-unit-host-flex-text">
                   <div>
                     <h3>Hut hosted by</h3>
-                    <h3 id="author"></h3>
+                    <h3 id="author">ABCD</h3>
                   </div>
 
                   <p>2 guests | &nbsp;</p>
@@ -204,8 +204,9 @@
             </div>
             <div id="aboutOwnerContainer"></div>
           </div>
-          <hr />
+
           <div class="calender-container-main">
+            <hr />
             <div class="calendar-container">
               <h3 class="nights-title">0 nights in Great London</h3>
               <p id="selectedDates" class="selected-dates">Selected dates:</p>
@@ -228,25 +229,30 @@
                 </div>
               </div>
               <div class="secondSection">
-                <div class="check-in-out">
+                <div class="check-in-out" style="border-radius: 10px">
                   <input
                     type="text"
                     id="txtCheckin"
-                    placeholder="Pick Check-In Date"
+                    placeholder=" Pick Check-In Date"
                   />
                   <input
                     type="text"
                     id="txtCheckout"
-                    placeholder="Pick Check-Out Date"
+                    placeholder=" Pick Check-Out Date"
                   />
                 </div>
-                <div class="GuestPicker">
+                <div
+                  class="GuestPicker"
+                  style="border-radius: 10px; margin-top: 7px"
+                >
                   <div class="textGuest">
                     <label for="">Guest</label>
                     <p>1</p>
                   </div>
                   <div class="guestBtns">
-                    <button id="incrementButton">+</button>
+                    <button id="incrementButton" style="margin-right: 30px">
+                      +
+                    </button>
                     <button id="decrementButton">-</button>
                   </div>
                 </div>
@@ -275,8 +281,9 @@
           <p>London, United Kingdom</p>
         </section>
       </div>
-      <hr />
+
       <div class="review-container">
+        <hr />
         <div class="reviewsSection">
           <div class="reviewHeader">
             <img src="./icons/star.png" class="star-rating two" />
@@ -286,8 +293,8 @@
           </div>
           <div class="reviewsTexts"></div>
         </div>
+        <hr />
       </div>
-      <hr />
       <div class="thingsToKnow-container">
         <div class="thingsToKnow-title">
           <h2>Things To Know</h2>
