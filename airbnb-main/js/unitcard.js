@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let locationMappings = {
     [locationText]: { lat: latitude, lng: longitude },
   };
+  
 
   // Check if the specified location exists in the mapping
   if (locationMappings.hasOwnProperty(locationText)) {

@@ -25,16 +25,11 @@ body {
   margin-right: 40%;
 }
 .details {
-  /* align-items: center; */
   display: contents;
 }
-.details h2 {
+.card {
   font-family: Poppins-light;
 }
-.details h5 {
-  font-family: Poppins-light;
-  font-size: 15px;
-}
-.card-body {
-  font-family: Poppins-light;
+.text-center {
+  margin-top: 25px;
 }
