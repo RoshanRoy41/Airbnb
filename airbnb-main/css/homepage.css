@@ -54,7 +54,8 @@ html {
   justify-self: center;
   width: 100%;
 }
-img {
+
+.imgUnit {
   border-radius: 15px;
 }
 
