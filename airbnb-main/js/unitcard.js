@@ -12,6 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
     "paris, france": { lat: 48.8566, lng: 2.3522 },
     // Add more locations as needed
   };
+  
 
   // Check if the specified location exists in the mapping
   if (locationMappings.hasOwnProperty(locationText)) {

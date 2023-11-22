@@ -1,6 +1,17 @@
+@font-face {
+  font-family: Poppins-thin;
+  src: url("/poppins_font/Poppins-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: Poppins-light;
+  src: url("/poppins_font/Poppins-Light.ttf") format("truetype");
+}
 #map {
   height: 400px;
   width: 100%;
+}
+h1 h2 h3 h4 h5 h6 {
+  font-family: Poppins-light;
 }
 .map-container,
 .thingsToKnow-container,
@@ -101,6 +112,14 @@ hr {
 }
 .left-side {
   flex-basis: 60%;
+  font-family: Poppins-light;
+}
+.final-product {
+  font-size: 150%;
+  text-align: right;
+}
+.price-info {
+  text-align: right;
 }
 .calender-container-main {
   font-family: Arial, sans-serif;
