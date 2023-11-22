@@ -1,4 +1,4 @@
-let imgData = fetch("https://mocki.io/v1/88b5a5e0-06f8-4a92-9750-93a6555387ce");
+let imgData = fetch("https://mocki.io/v1/184543ec-2095-48df-98b8-aa792352fcdf");
 let images = [];
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get("id");
@@ -38,14 +38,6 @@ const getName = fetch(`https://jsonplaceholder.typicode.com/todos/${rand}`);
 getName
   .then((response) => response.json())
   .then((data) => (document.getElementById("title").textContent = data.title));
-
-// const getCountry = fetch("https://api.apipip.com/v1/random-country/");
-// getCountry
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log("Name:", data.name);
-//   })
-//   .catch((error) => console.log("Error:", error));
 
 let dataUrl = "https://dummyjson.com/users";
 
