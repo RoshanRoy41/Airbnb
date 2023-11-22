@@ -424,12 +424,3 @@ hr {
   width: 20px;
   margin-right: 20px;
 }
-.carousel-images {
-  display: flex;
-  overflow: hidden;
-}
-
-.carousel-images img {
-  width: fit-content; /* Adjust the width as needed */
-  margin-right: 10px; /* Adjust the margin as needed */
-}

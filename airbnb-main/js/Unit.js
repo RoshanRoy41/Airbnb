@@ -1,4 +1,4 @@
-let imgData = fetch("https://mocki.io/v1/184543ec-2095-48df-98b8-aa792352fcdf");
+let imgData = fetch("https://mocki.io/v1/6537cb01-a5eb-466a-b650-c363fc48ef49");
 let images = [];
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get("id");
@@ -19,13 +19,13 @@ imgData
     document.getElementById("img4").src = images[rand++].download_url;
     document.getElementById("img5").src = images[rand++].download_url;
     // author name
-    document.getElementById("author").textContent = images[rand++].author;
+    document.getElementById("author").textContent = images[userId].author_name;
   });
 let rating = 1 + Math.random() * 4;
 let reviewNum = Math.floor(Math.random() * 1000);
 console.log(rand);
 // random rating out of 5
-document.getElementById("rating").textContent = "   " + rating.toFixed(2);
+document.getElementById("rating").textContent = "   " + imgData.rating;
 document.getElementById("rating two").textContent = "   " + rating.toFixed(2);
 //number of reviews
 document.getElementById("reviewsNum").textContent = reviewNum + " ";

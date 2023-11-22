@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Airbnb-like Listings</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f2f2f2;
+      }
+
+      .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+      }
+
+      .card {
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: 200px;
+        object-fit: cover;
+      }
+
+      .card-content {
+        padding: 15px;
+      }
+
+      .carousel {
+        display: flex;
+        overflow: hidden;
+      }
+
+      .carousel img {
+        width: 100%;
+        transition: transform 0.5s ease;
+      }
+
+      /* Optional: Add your own styling for better appearance */
+      h2,
+      p {
+        margin: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container" id="listings-container"></div>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const container = document.getElementById("listings-container");
+
+        fetch("https://mocki.io/v1/184543ec-2095-48df-98b8-aa792352fcdf")
+          .then((response) => response.json())
+          .then((data) => {
+            for (let i = 0; i < 100; i = i + 5) {
+              const card = createCard(data[i]);
+              container.appendChild(card);
+            }
+          })
+          .catch((error) => console.error("Error fetching data:", error));
+
+        function createCard(listing) {
+          const card = document.createElement("div");
+          card.classList.add("card");
+
+          const carousel = document.createElement("div");
+          carousel.classList.add("carousel");
+
+          for (let j = Number(listing.id); j < Number(listing.id) + 5; j++) {
+            const img = document.createElement("img");
+            img.src = listing.id[j].download_url;
+            img.alt = `Image ${j + 1}`;
+            carousel.appendChild(img);
+          }
+
+          const cardContent = document.createElement("div");
+          cardContent.classList.add("card-content");
+
+          const title = document.createElement("h2");
+          title.textContent = listing.id + ": " + listing.title;
+
+          const description = document.createElement("p");
+          description.textContent = listing.description;
+
+          cardContent.appendChild(title);
+          cardContent.appendChild(description);
+
+          card.appendChild(carousel);
+          card.appendChild(cardContent);
+
+          return card;
+        }
+      });
+    </script>
+  </body>
+</html>

@@ -1,4 +1,4 @@
-const url = "https://mocki.io/v1/184543ec-2095-48df-98b8-aa792352fcdf";
+const url = "https://mocki.io/v1/6537cb01-a5eb-466a-b650-c363fc48ef49";
 
 const subCContainer = document.querySelector(".sub-container");
 const searchBar = document.querySelector(".search-bar");
