@@ -21,7 +21,7 @@ imgData
     document.getElementById("img3").src = images[rand++].download_url;
     document.getElementById("img4").src = images[rand++].download_url;
     document.getElementById("img5").src = images[rand++].download_url;
-    // Set author name
+    // Set author names
     document.getElementById("rating").textContent =
       "   " + images[rand].rating.toFixed(2);
     document.getElementById("rating two").textContent =
