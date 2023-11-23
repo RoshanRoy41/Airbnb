@@ -1,4 +1,4 @@
-const url = "http://localhost:3001/api";
+const url = "https://mocki.io/v1/a333851f-8d2f-473c-bd8e-7c3b1a39e8c8";
 
 const subCContainer = document.querySelector(".sub-container");
 const searchBar = document.querySelector(".search-bar");
