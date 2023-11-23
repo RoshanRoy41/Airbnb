@@ -1,4 +1,4 @@
-let url = "https://mocki.io/v1/88b5a5e0-06f8-4a92-9750-93a6555387ce";
+const url = "http://localhost:3001/api";
 
 const subCContainer = document.querySelector(".sub-container");
 const searchBar = document.querySelector(".search-bar");
@@ -18,17 +18,17 @@ const closeClick = (event) => {
 };
 closeButton.addEventListener("click", closeClick);
 
-//   const url = 'https://picsum.photos/v2/list?page=1&limit=30';
-// const url2 = "https://dummyjson.com/users";
-
-const getData = async (url, url2) => {
+const getData = async (url) => {
   try {
     const response = await fetch(url);
     const data = await response.json();
 
-    data.map((userData) => {
-      imageCard = document.getElementById("listings");
-      const cardData = createCardData(userData);
+    const imageCard = document.getElementById("listings"); // Define imageCard here
+
+    const filteredData = data.filter((userData, index) => index % 5 === 0);
+
+    filteredData.forEach((userData) => {
+      const cardData = createCardData(userData, imageCard); // Pass imageCard as a parameter
       imageCard.appendChild(cardData);
     });
   } catch (e) {
@@ -38,7 +38,8 @@ const getData = async (url, url2) => {
 
 getData(url);
 
-const createCardData = (userData) => {
+const createCardData = (userData, imageCard) => {
+  // Add imageCard as a parameter
   const div = document.createElement("div");
   div.classList.add("card");
 
@@ -48,7 +49,6 @@ const createCardData = (userData) => {
   div1.classList.add("wishlist-icon");
   div1.innerHTML = "<i class='fas fa-heart'></i>";
   img.src = userData.download_url;
-  console.log(userData.download_url);
 
   const div2 = document.createElement("div");
 
@@ -56,17 +56,16 @@ const createCardData = (userData) => {
   div3.classList.add("card-title");
   const h4 = document.createElement("h4");
   const p = document.createElement("p");
-  h4.textContent = "Sample City";
-  let num =
-    (Math.random() * 4 + 1).toFixed(1) + " <i class='fa-solid fa-star'></i>";
+  h4.textContent = userData.name;
+  let num = userData.rating + " <i class='fa-solid fa-star'></i>";
   p.innerHTML = num;
 
   const p1 = document.createElement("p");
   const span = document.createElement("span");
   span.classList.add("grey");
-  span.innerHTML = "Hosted by " + userData.author;
+  span.innerHTML = "Hosted by " + userData.author_name;
 
-  let distance = (Math.random() * 300 + 1).toFixed(2);
+  let distance = (Math.random() * 30 + 1).toFixed(2);
   const p3 = document.createElement("p");
   const span1 = document.createElement("span");
   span1.classList.add("grey");
@@ -87,7 +86,7 @@ const createCardData = (userData) => {
   div2.appendChild(p3);
   div2.appendChild(p2);
   div.appendChild(div2);
-  imageCard.append(div);
+  imageCard.appendChild(div);
 
   div.addEventListener("click", () => {
     openNewPage(userData);
@@ -98,5 +97,5 @@ const createCardData = (userData) => {
 };
 
 const openNewPage = (userData) => {
-  window.location.href = `unitcard.html?id=${userData.id}&price=${userData.width}`;
+  window.location.href = `unitcard.html?id=${userData.id}&price=${userData.width}&lat=${userData.latitude}&long=${userData.longitude}&place=${userData.location}`;
 };

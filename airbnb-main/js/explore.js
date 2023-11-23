@@ -1,10 +1,14 @@
 const apiKey = "5ae2e3f221c38a28845f05b66bd1d0f72739e54291361135e77c3a3b";
-
+const mapParams = new URLSearchParams(window.location.search);
+const latitude = mapParams.get("lat");
+const longitude = mapParams.get("long");
 // Fetch random places in London from OpenTripMap API
 async function fetchPlaces() {
   try {
+    const radius = 500; // You can adjust the radius as needed (in kilometers)
+
     const response = await fetch(
-      `https://api.opentripmap.com/0.1/en/places/bbox?lon_min=-0.510375&lat_min=51.286760&lon_max=0.334015&lat_max=51.691874&kinds=interesting_places&format=json&apikey=${apiKey}`
+      `https://api.opentripmap.com/0.1/en/places/radius?radius=${radius}&lat=${latitude}&lon=${longitude}&kinds=interesting_places&format=json&apikey=${apiKey}`
     );
 
     const data = await response.json();
