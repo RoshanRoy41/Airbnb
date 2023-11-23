@@ -90,6 +90,9 @@
   height: 370px;
   object-fit: cover;
 }
+.img {
+  border-radius: 0px;
+}
 .images-right img {
   float: left;
   width: 245px;
@@ -109,6 +112,7 @@
   height: 25px;
   margin-bottom: 10px;
   margin-right: 8px;
+  border-radius: 0px;
   align-self: center;
 }
 .p {
