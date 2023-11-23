@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AirBnb Booking</title>
+    <link
+      href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet" href="css/unitcard.css" />
+    <link rel="stylesheet" href="css/add_unit_image.css" />
+    <link rel="stylesheet" href="css/homepage.css" />
+    <link rel="stylesheet" href="css/add_unit.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-H5p8TkMC4qNLWsaW5F3KjjPH5cPiKRytaQFb7A7Yq2Po2i46F4giCAsn2Z3CZbYI" crossorigin="anonymous">     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="/js/calendar.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/js/unitcard.js"></script>
+    <script src="/js/add_unit_image.js"></script>
+    <script src="/js/.js"></script>
+    <script src="/js/thingsToKnow.js"></script>
+    <script src="/js/explore.js"></script>
+    <script src="/js/booking-card.js"></script>
+    <script src="/js/about-user.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="navbar container">
+        <img src="images/logo2.png">
+        <div class="navbar-right">
+            <p> Ready to Airbnb it?</p>
+            <div class="Airbnb-button-container">
+                    <div class="Airbnb-button-group">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-add" viewBox="0 0 16 16">
+                            <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h4a.5.5 0 1 0 0-1h-4a.5.5 0 0 1-.5-.5V7.207l5-5 6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
+                            <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 1 0 1 0v-1h1a.5.5 0 1 0 0-1h-1v-1a.5.5 0 0 0-.5-.5Z"/>
+                          </svg>
+                        <a href="add_unit_image.html"> Airbnb Setup</a>
+                    </div>
+            </div>
+        </div>
+    </div>
+    </header>
+  
+       
+      
+        <div class="upload_image container ">
+          <div class="upload_image_row row container gx-10">
+            <div class="upload_image_row col-md-6 col-lg-6 ">
+              <div class="upload_image_row left">
+                <button class="icon-btn">
+                  <svg viewBox="0 0 48 48" version="1" xmlns="http://www.w3.org/2000/svg" enable-background="new 0 0 48 48" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill="#8CBCD6" d="M40,41H8c-2.2,0-4-1.8-4-4V11c0-2.2,1.8-4,4-4h32c2.2,0,4,1.8,4,4v26C44,39.2,42.2,41,40,41z"></path> <circle fill="#B3DDF5" cx="35" cy="16" r="3"></circle> <polygon fill="#9AC9E3" points="20,16 9,32 31,32"></polygon> <polygon fill="#B3DDF5" points="31,22 23,32 39,32"></polygon> <circle fill="#43A047" cx="38" cy="38" r="10"></circle> <g fill="#ffffff"> <rect x="36" y="32" width="4" height="12"></rect> <rect x="32" y="36" width="12" height="4"></rect> </g> </g></svg>
+                  Add Image
+                </button>
+              </div>
+            </div>
+            <div class="upload_image_row middle col-md-3 col-lg-3">
+                <div class=" upload_image_row top "></div>
+                <div class=" upload_image_row bottom " ></div>
+            </div>
+            <div class="upload_image_row right col-md-3  col-lg-3">
+              <div class=" upload_image_row top"></div>
+              
+            </div>
+          </div>
+        </div>
+    
+
+        
+        <div class="details container">
+                  <form action="" class="form_container row ">
+                    <div class="details_input col-lg-6">
+                      <input type="text" placeholder="Add Title">
+                    </div>
+                    <div class="details_input col-lg-4">
+                      <input type="text" placeholder=""> 
+                    </div>
+                    <div class="details_input col-lg-2">
+                      <input type="number" placeholder="Guests"> 
+                    </div>
+
+                    <p class="details_input_heading">Rooms</p>
+
+                    <div class="details_input col-lg-2">
+                        <input type="number" placeholder="Halls"> 
+                    </div>
+                    <div class="details_input col-lg-2">
+                      <input type="number" placeholder="Bedrooms"> 
+                    </div>
+                    <div class="details_input col-lg-2">
+                      <input type="number" placeholder="Bathrooms"> 
+                    </div>
+                    <div class="details_input col-lg-2">
+                      <input type="number" placeholder="Kitchen"> 
+                    </div>
+                    <div class="details_input col-lg-2">
+                      <button class="add_more"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><style>svg{fill:#ff385c}</style><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
+                        </button>
+                    </div>
+
+                    <p class="details_input_heading">Location</p>
+
+                    <div class="details_input col-lg-4">
+                      <input type="text" placeholder="Address"> 
+                    </div>
+                    <div class="details_input col-lg-3">
+                      <input type="text" placeholder="City"> 
+                    </div>
+                    <div class="details_input col-lg-3">
+                      <input type="text" placeholder="Country"> 
+                    </div>
+                    <div class="details_input col-lg-2">
+                      <input type="text" placeholder="ZIP/Postal Code"> 
+                    </div>
+
+                   <div class="tag_location gy-3">
+                    <button  onclick="map">Tag your location</button>
+                   </div>
+
+                   <div class="map hidden container gy-3">
+                      <img src="images/sampleMap.jpg" alt="">
+                   </div>
+
+                   <p class="details_input_heading">Amenities</p>
+
+                   <div class="amenities container gy-3">
+                      <input type="text" placeholder="Describe about the place">
+                   </div>
+
+                   <p class="details_input_heading container">Pricing</p>
+                   <div class="pricing_option row gy-2">
+                      <p class="pricing_option_title col-lg-6">Select type of pricings</p>
+                      <div class="pricing_option col-lg-6 row">
+                          <div class="col-md-4 col-lg-4">
+                            <input type="checkbox" id="" name="pricing_option" value="perNight">
+                            <label for="">Per Night</label>
+                          </div>
+                          <div class="col-md-4 col-lg-4">
+                            <input type="checkbox" id="" name="pricing_option" value="weekly">
+                            <label for="">Weekly</label>
+                          </div>
+                          <div class="col-md-4 col-lg-4">
+                            <input type="checkbox" id="" name="pricing_option" value="monthly">
+                            <label for="">Monthly</label>
+                          </div>
+                      </div>
+                    </div>
+
+                    <div class="pricing_option row gy-2 ">
+                      <p class="pricing_option_title col-md-6 col-lg-6">Additional charges</p>
+                          <div class="pricing_option_additional col-md-4 col-lg-4">
+                            <select>
+                              <option selected disabled hidden>-----Select-------</option>
+                              <option>Holidays</option>
+                              <option>Extra guest fee</option>
+                              <option>Add custom</option>
+                            </select>
+                          </div>
+
+                          <div class="pricing_option_additional_charge col-md-2 col-lg-2">
+                            <input type="text" placeholder="">
+                          </div>
+                      </div>
+                    
+                      <div class="pricing row gy-2">
+                        <p class="price_rent_title col-md-6 col-lg-6">Fixed Rent</p>
+                        <div class="price_rent_input col-md-6 col-lg-6">
+                          <input type="text" placeholder="₹">
+                        </div>
+                      </div>
+                
+
+                      <div class="submit gy-5">
+                        <input type="submit" placeholder="SUBMIT">
+                      </div>
+            </form>
+        </div> 
+
+ 
+  
+
+    
+                <!--footer-->
+                <div class="footer">
+                    <div class="footer-item">
+                      <div class="location-nav-link">
+                        <div class="location-nav-link-title">
+                          <span>Support</span>
+                        </div>
+                        <div class="footer-nav-link-item">
+                            <span>Help center</span>
+                            <span>Safety information</span>
+                            <span>Cancellation options</span>
+                            <span>Anti-discrimination</span>
+                            <span>Cancellation options</span>
+                            <span>Reportneighbourhood concern</span>
+                          </div>
+                      </div>
+            
+                      <div class="location-nav-link">
+                        <div class="location-nav-link-title">
+                          <span>Hosting</span>
+                        </div>
+                        <div class="footer-nav-link-item">
+                          <span>Airbnb your home</span>
+                          <span>AirCover for Hosts</span>
+                          <span>Hosting resources</span>
+                          <span>Community forum</span>
+                          <span>Hosting responsibly</span>
+                        </div>
+                      </div>
+            
+                      <div class="location-nav-link">
+                        <div class="location-nav-link-title">
+                          <span>Airbnb</span>
+                        </div>
+                        <div class="footer-nav-link-item">
+                          <span>Newsroom</span>
+                          <span>New features</span>
+                          <span>Careers</span>
+                          <span>Investors</span>
+                          <span>Airbnb Luxe</span>
+                        </div>
+                      </div>
+                    </div>
+                    <hr />
+                    <div class="copyright-section">
+                      <div class="copyright">
+                        © 2023 Airbnb, Inc. · Privacy · Terms · Sitemap · Company details
+                      </div>
+                      <div class="languange-currency">
+                        <div>English (IN)</div>
+                        <div>₹ INR</div>
+                        <img src="images/facebook.png" alt="" />
+                        <img src="images/twitter.png" alt="" />
+                        <img src="images/instagram.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </body>
+</html>
+

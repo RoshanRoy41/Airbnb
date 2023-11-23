@@ -51,6 +51,7 @@ hr {
   margin-bottom: 38px;
   display: flex;
   flex-direction: column;
+  font-family: Poppins-light;
 }
 .rules-container {
   display: flex;
@@ -81,6 +82,7 @@ hr {
 #explore-container {
   margin-left: 5%;
   margin-right: 5%;
+  font-family: Poppins-bold;
 }
 .booking-container {
   margin: 20px;

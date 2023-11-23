@@ -1,0 +1,308 @@
+@font-face {
+  font-family: Poppins-thin;
+  src: url("/poppins_font/Poppins-Thin.ttf") format("truetype");
+}
+@font-face {
+  font-family: Poppins-light;
+  src: url("/poppins_font/Poppins-Light.ttf") format("truetype");
+}
+.body {
+  font-family: Poppins-thin;
+}
+
+.header {
+  margin-left: 10%;
+  margin-right: 10%;
+}
+.upload_image{
+  margin-top: 100px;
+  width: 100%;
+  height: 500px;
+ 
+}
+.upload_image_row {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.icon-btn {
+  font-size: 30px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: rgb(156, 156, 156);
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+/* Style the icon */
+.icon-btn svg {
+  width: 50px; /* Adjust the width as needed */
+  height: 50px; /* Adjust the height as needed */
+  margin-right: 5px;
+  fill: #fff;
+}
+.left{
+  width: 100%;
+  height: 100%;
+  border: solid rgb(177, 177, 177) 1px;
+  border-radius: 20px;  
+}
+.middle{
+  width: 100%;
+  height: 100%;
+
+}
+.right{
+  width: 100%;
+  height: 100%;
+  
+ 
+}
+.name {
+  line-height: 1.43;
+  font-size: 1.7em;
+  font-family: Poppins-light;
+  width: fit-content;
+  margin: 0;
+  margin-top: 0.7em;
+}
+.top{
+  width: 100%;
+  height: 48%;
+  border: solid rgb(177, 177, 177) 1px;
+  margin-bottom:20px;
+  border-radius: 20px;  
+}
+.bottom{
+  width: 100%;
+  height: 48%;
+  margin-bottom:20px;
+  border: solid rgb(177, 177, 177) 1px;
+  border-radius: 20px;  
+}
+
+.details form{
+  width: 100%;
+  margin-top: 5%;
+}
+.details_input input{
+  
+  width: 100%;
+  height: 50px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 5px 10px 1px #b1afaf;
+  padding-left: 10px;
+}
+
+.details_input_heading{
+  padding-top: 50px;  
+  font-size: 40px;
+  
+}
+
+.add_more {
+  width: 30%;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  background-color: #fff;
+}
+
+.add_more svg{
+  height:6vh;
+}
+
+.tag_location button {
+
+  background-color: #fff;
+  border: none;
+  text-decoration: underline;
+}
+
+.map{
+  
+  width: 100%;
+}
+
+.map img{
+  width: 100%;
+}
+
+.amenities{
+  width: 100%;
+  height: 300px;
+  
+}
+.amenities input{
+  width: 50%;
+  height: 200px;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 2px 5px 10px 1px #b1afaf;
+  padding-left: 10px;
+}
+
+.pricing_option{
+  font-size: 20px;
+}
+.pricing_option_additional{
+  text-align: end;
+}
+.pricing_option_additional select{
+  text-align: center;
+  width: 100%;
+  border: none;
+  box-shadow: 2px 5px 10px 1px #b1afaf;
+}
+
+
+.pricing_option_additional_charge{
+  width: 100% ;
+  text-align: end;
+  margin-bottom:10px ;
+}
+
+.pricing_option_additional_charge input{
+  width: 100%;
+  height: 83%;
+  padding-left: 10px;
+  border: none;
+  box-shadow: 2px 5px 10px 1px #b1afaf;
+}
+.price_rent_title{
+  font-size: 20px;
+  font-weight: bold;
+}
+.price_rent_input input{
+  height: 82%;
+  padding-left: 10px;
+  border: none;
+  box-shadow: 2px 5px 10px 1px #b1afaf;
+}
+
+.submit{
+  width: 100%;
+  text-align: center;
+}
+.submit input{
+  width: 10%;
+  height: 40px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff385c;
+  color: #fff;
+}
+.lower-head {
+  display: flex;
+  height: 1.5em;
+  margin: 10px;
+}
+.lower-head-div {
+  flex: 6.5;
+  display: flex;
+  font-size: 1em;
+  font-family: Poppins-light;
+}
+
+.lower-head-div p {
+  margin: 0%;
+}
+.star-rating {
+  height: 15px;
+  margin-right: 5px;
+  align-self: center;
+}
+.p {
+  font-family: Poppins-thin;
+}
+.lower-head-div-button {
+  margin-right: 10px;
+}
+.lower-head-div-button .star-rating {
+  height: 12px;
+}
+.about {
+  margin-left: 10%;
+  margin-right: 10%;
+ 
+  padding: 10px;
+  font-family: Poppins-Light;
+  align-content: center;
+}
+
+.policy {
+  font-family: Poppins-thin;
+}
+.policy-icons {
+  width: 50px;
+  height: 50px;
+}
+.policy-single {
+  margin-left: 20px;
+  display: flex;
+}
+.policy-single img {
+  margin: 10px;
+}
+.policy-single h3 {
+  margin: 10px;
+  margin-bottom: 5px;
+}
+.policy-single p {
+  margin-left: 10px;
+  font-weight: 800;
+  margin-top: 2px;
+  color: rgb(139, 139, 139);
+}
+.policy hr {
+  margin: 10px;
+  width: 650px;
+}
+.details-about-unit-host-flex-text h3 {
+  display: inline;
+}
+.two {
+  align-items: center;
+  margin-left: 5px;
+}
+.reviewHeader {
+  align-items: center;
+  display: flex;
+  font-size: 20px;
+  height: 50px;
+  font-family: Poppins-thin;
+}
+
+.oneReview {
+  width: 90%;
+  height: auto;
+  font-family: Poppins-thin;
+  padding: 5px;
+}
+.reviewsTexts {
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  /* gap: 1.6rem; */
+}
+
+.oneReview h3 {
+  font-size: 18px;
+  margin: 10px;
+  margin-bottom: 0px;
+}
+.oneReview p {
+  font-weight: 800;
+  font-size: 14px;
+  margin-left: 10px;
+  margin-bottom: 0px;
+}
