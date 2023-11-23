@@ -3,30 +3,35 @@ let images = [];
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get("id");
 let rand = userId;
-
+let reviewNum = Math.floor(Math.random() * 1000);
 imgData
   .then((response) => response.json())
   .then((data) => {
-    data.forEach((element) => {
-      images.push(element);
-      console.log(images);
-      //   console.log(images.download_url);
-    });
-    //random images for unit
+    images = data;
+    console.log(images);
+    // Ensure that rand is initialized appropriately (e.g., rand = 0)
+
+    // Set src attributes for image elements
+    document.getElementById("title1").innerHTML = images[rand].name;
+    console.log(images[rand].rating);
+    document.getElementById("locationOfUnit").textContent =
+      "\u00A0 \u00A0" + images[rand++].location;
     document.getElementById("img1").src = images[rand++].download_url;
     document.getElementById("img2").src = images[rand++].download_url;
     document.getElementById("img3").src = images[rand++].download_url;
     document.getElementById("img4").src = images[rand++].download_url;
     document.getElementById("img5").src = images[rand++].download_url;
-    // author name
-    document.getElementById("author").textContent = images[userId].author_name;
+    // Set author names
+    document.getElementById("rating").textContent =
+      "   " + images[rand].rating.toFixed(2);
+    document.getElementById("rating two").textContent =
+      "   " + images[rand].rating.toFixed(2);
+    document.getElementById("author").textContent = images[rand].author_name;
+  })
+  .catch((error) => {
+    console.error("Error fetching data:", error);
   });
-let rating = 1 + Math.random() * 4;
-let reviewNum = Math.floor(Math.random() * 1000);
-console.log(rand);
-// random rating out of 5
-document.getElementById("rating").textContent = "   " + imgData.rating;
-document.getElementById("rating two").textContent = "   " + rating.toFixed(2);
+
 //number of reviews
 document.getElementById("reviewsNum").textContent = reviewNum + " ";
 document.getElementById("reviewsNum two").textContent =

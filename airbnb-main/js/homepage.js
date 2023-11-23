@@ -44,7 +44,7 @@ const createCardData = (userData, imageCard) => {
   div.classList.add("card");
 
   const img = document.createElement("img");
-
+  img.classList.add("imgUnit");
   const div1 = document.createElement("div");
   div1.classList.add("wishlist-icon");
   div1.innerHTML = "<i class='fas fa-heart'></i>";
