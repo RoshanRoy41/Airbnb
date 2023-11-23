@@ -10,12 +10,53 @@
   font-family: Poppins-thin;
 }
 
-.header {
-  margin-left: 10%;
-  margin-right: 10%;
+
+/*nav-bar*/
+.navbar {
+  
+  width: 100%;
+  font-family: Poppins-thin;
+}
+.navbar-right{
+
+}
+
+.navbar {
+ 
+  height: 40px;
+  width: 100%;
+}
+
+.navbar p{
+  width: 100%;
+  margin-right: 20px;
+}
+
+.Airbnb-button-container {
+
+}
+.Airbnb-button-group {
+  text-align: center;
+  background-color:  #ff385c;
+  width: 150px;
+  height: 50px;
+  vertical-align: center;
+  border-radius: 5px;
+}
+.Airbnb-button-group svg {
+ 
+  color: white;
+
+}
+.Airbnb-button-group a{
+ 
+  text-decoration: none;
+  color: white;
+  font-weight: bolder;
+  font-size: 15px;
 }
 .upload_image{
-  margin-top: 100px;
+  margin-top: 50px;
   width: 100%;
   height: 500px;
  
