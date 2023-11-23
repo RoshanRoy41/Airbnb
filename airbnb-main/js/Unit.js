@@ -1,4 +1,4 @@
-let imgData = fetch("https://mocki.io/v1/6537cb01-a5eb-466a-b650-c363fc48ef49");
+let imgData = fetch("http://localhost:3001/api");
 let images = [];
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get("id");
