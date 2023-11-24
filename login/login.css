@@ -15,7 +15,7 @@ margin-left: 50px;
 body{
     font-family:'Poppins', sans-serif;
 }
-/* Reset some default styles */
+
 .im{
     display: flex;
     margin-left: 3px;
@@ -37,7 +37,7 @@ nav {
 }
 
 .logo img {
-    width: 100px; /* Adjust the width as needed */
+    width: 100px; 
     height: auto;
 }
 
@@ -54,7 +54,7 @@ nav {
 }
 
 .button img {
-    width: 30px; /* Adjust the width as needed */
+    width: 30px; 
     height: auto;
     cursor: pointer;
     margin-top: 5px;

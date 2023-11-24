@@ -19,10 +19,10 @@ fetch(scriptURL, { method: "POST", body: new FormData(form) })
   .then((response) => response.json())
   .then((data) => {
     alert("Thank you! Your form is submitted successfully.");
-    window.location.reload(); // Reload the page immediately
+    window.location.reload(); 
   })
   .catch((error) => {
     console.error("Error!", error.message);
-    // Handle error appropriately (e.g., display an error message to the user)
+   
   });
 });
