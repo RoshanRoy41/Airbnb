@@ -16,7 +16,7 @@ margin-left: 50px;
 body{
     font-family:'Poppins', sans-serif;
 }
-/* Reset some default styles */
+
 .im{
     display: flex;
     margin-left: 3px;
@@ -38,7 +38,7 @@ nav {
 }
 
 .logo img {
-    width: 100px; /* Adjust the width as needed */
+    width: 100px; 
     height: auto;
 }
 
@@ -55,7 +55,7 @@ nav {
 }
 
 .button img {
-    width: 40px; /* Adjust the width as needed */
+    width: 40px; 
     height: auto;
     cursor: pointer;
     margin-top: 5px;
@@ -83,7 +83,7 @@ nav {
     margin-top: 20px;
     margin-bottom: 20px;
     margin-left:10px;
-}@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap');
+}
 body{
     font-family:'Poppins', sans-serif;
 }
