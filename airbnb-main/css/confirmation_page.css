@@ -1,0 +1,35 @@
+@font-face {
+  font-family: Poppins-light;
+  src: url("/poppins_font/Poppins-Light.ttf") format("truetype");
+}
+
+.card {
+  margin-left: 25%;
+  margin-right: 25%;
+  border: 1px solid;
+  border-radius: 15px;
+  margin-top: 10%;
+  position: relative;
+  margin-bottom: 10%;
+  height: 150px;
+  align-items: center;
+  /* background-color: rgb(243, 243, 243); */
+}
+body {
+  width: 100%;
+  height: 100%;
+  font-family: Poppins-light;
+}
+.animation {
+  margin-left: 40%;
+  margin-right: 40%;
+}
+.details {
+  display: contents;
+}
+.card {
+  font-family: Poppins-light;
+}
+.text-center {
+  margin-top: 25px;
+}

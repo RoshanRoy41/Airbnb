@@ -27,18 +27,19 @@ const createCardData = (userData) => {
         'col-sm-6',
         'col-xs-6',
         'border-0',
-        'mx-auto'
+       
     );
     const img = document.createElement('img');
     const div1 = document.createElement('div');
     div1.classList.add('wishlist-icon');
   
     // Create the heart icon
+    // div1.innerHTML = '<i class="fas fa-heart"></i>';
+    // div1.addEventListener('click', () => toggleWishlistHandler(userData));
+
     const heartIcon = document.createElement('i');
     heartIcon.classList.add('fas', 'fa-heart');
-    heartIcon.addEventListener('click', () => toggleWishlistHandler(userData));
-  
-    // Append the heart icon to div1
+    heartIcon.addEventListener('click', () => addToWishlist(userData));
     div1.appendChild(heartIcon);
   
     img.src = userData.download_url;
@@ -105,7 +106,7 @@ function getWishlist() {
   localStorage.setItem('wishlist', JSON.stringify(wishlist));
   }
   
-  function toggleWishlistHandler(userData) {
+  function addToWishlist(userData) {
     const wishlist = getWishlist();
     const isItemInWishlist = wishlist.some((item) => item.id === userData.id);
   
@@ -129,6 +130,6 @@ function getWishlist() {
   
   // Function to handle adding/removing items to/from the wishlist
   function toggleWishlist(userData) {
-    toggleWishlistHandler(userData);
+    addToWishlist(userData);
   }
   

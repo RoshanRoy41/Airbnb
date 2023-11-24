@@ -6,8 +6,18 @@
   font-family: Poppins-light;
   src: url("/poppins_font/Poppins-Light.ttf") format("truetype");
 }
+@font-face {
+  font-family: Poppins-bold;
+  src: url("/poppins_font/Poppins-Regular.ttf") format("truetype");
+}
 .body {
-  font-family: Poppins-thin;
+  font-family: Poppins-light;
+  width: 100%;
+}
+.contentOfPage {
+  margin-left: 10%;
+  margin-right: 10%;
+  /* width: 80%; */
 }
 .images-container {
   /* width: 100%; */
@@ -19,13 +29,14 @@
   border: 2px solid black;
 }
 .header {
-  margin-left: 10%;
-  margin-right: 10%;
+  /* margin-left: 5%;
+  margin-right: 5%; */
+  margin-bottom: 10px;
 }
 .name {
   line-height: 1.43;
   font-size: 1.7em;
-  font-family: Poppins-light;
+  font-family: Poppins-bold;
   width: fit-content;
   margin: 0;
   margin-top: 0.7em;
@@ -33,7 +44,7 @@
 .lower-head {
   display: flex;
   height: 1.5em;
-  margin: 10px;
+  /* margin: 10px; */
 }
 .lower-head-div {
   flex: 6.5;
@@ -43,19 +54,20 @@
 }
 
 .right {
-  flex: 2 1;
+  flex: 2.5 1;
   margin-left: 320px;
 }
 .lower-head-div p {
   margin: 0%;
 }
 .images {
-  margin-left: 10%;
-  margin-right: 10%;
+  /* margin-left: 5%;
+  margin-right: 5%; */
   display: flex;
   /* padding: 10px; */
-  width: 80%;
+  width: 100%;
   overflow: hidden;
+  justify-content: space-between;
   border-radius: 15px;
 }
 .images-right {
@@ -78,6 +90,9 @@
   height: 370px;
   object-fit: cover;
 }
+.img {
+  border-radius: 0px;
+}
 .images-right img {
   float: left;
   width: 245px;
@@ -94,8 +109,10 @@
   border-radius: 0 0 15px 0;
 }
 .star-rating {
-  height: 15px;
-  margin-right: 5px;
+  height: 25px;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  border-radius: 0px;
   align-self: center;
 }
 .p {
@@ -104,11 +121,12 @@
 .lower-head-div-button {
   margin-right: 10px;
 }
-.lower-head-div-button .star-rating {
-  height: 12px;
+.star-rating-header {
+  height: 15px;
+  margin: 3px 5px 0 0;
 }
 .about {
-  margin-left: 10%;
+  margin-left: 15%;
   margin-right: 10%;
 }
 .details-about-unit-host {
@@ -124,7 +142,7 @@
   align-content: center;
 }
 .details-about-unit-host-flex-text {
-  margin-left: 20px;
+  /* margin-left: 20px; */
   flex: 3;
 }
 .details-about-unit-host-flex h3 {
@@ -150,11 +168,11 @@
   border-radius: 50%;
 }
 .details-about-unit-host hr {
-  /* width: 2px; */
   bottom: 0px;
   margin-top: 20px;
   color: rgb(168, 168, 168);
-  position: relative;
+  margin-left: 0px;
+  width: 105%;
 }
 .policy {
   font-family: Poppins-thin;
@@ -173,6 +191,8 @@
 .policy-single h3 {
   margin: 10px;
   margin-bottom: 5px;
+  font-weight: 800;
+  font-size: 1.25rem;
 }
 .policy-single p {
   margin-left: 10px;
@@ -181,8 +201,11 @@
   color: rgb(139, 139, 139);
 }
 .policy hr {
-  margin: 10px;
-  width: 650px;
+  bottom: 0px;
+  margin-top: 20px;
+  color: rgb(168, 168, 168);
+  margin-left: 15px;
+  width: 90%;
 }
 .details-about-unit-host-flex-text h3 {
   display: inline;
@@ -196,7 +219,8 @@
   display: flex;
   font-size: 20px;
   height: 50px;
-  font-family: Poppins-thin;
+  font-weight: 800;
+  font-family: Poppins-bold;
 }
 
 .oneReview {
@@ -214,6 +238,7 @@
 
 .oneReview h3 {
   font-size: 18px;
+  font-weight: 800;
   margin: 10px;
   margin-bottom: 0px;
 }

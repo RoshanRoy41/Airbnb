@@ -1,37 +1,25 @@
-let imgData = fetch("http://localhost:3001/api");
+let imgData = fetch("https://picsum.photos/v2/list?page=3&limit=100");
 let images = [];
-const urlParams = new URLSearchParams(window.location.search);
-const userId = urlParams.get("id");
-let rand = userId;
-let reviewNum = Math.floor(Math.random() * 1000);
+let rand = Math.floor(Math.random() * 90);
+
 imgData
   .then((response) => response.json())
   .then((data) => {
-    images = data;
-    console.log(images);
-    // Ensure that rand is initialized appropriately (e.g., rand = 0)
-
-    // Set src attributes for image elements
-    document.getElementById("title1").innerHTML = images[rand].name;
-    console.log(images[rand].rating);
-    document.getElementById("locationOfUnit").textContent =
-      "\u00A0 \u00A0" + images[rand++].location;
-    document.getElementById("img1").src = images[rand++].download_url;
-    document.getElementById("img2").src = images[rand++].download_url;
-    document.getElementById("img3").src = images[rand++].download_url;
-    document.getElementById("img4").src = images[rand++].download_url;
-    document.getElementById("img5").src = images[rand++].download_url;
-    // Set author names
-    document.getElementById("rating").textContent =
-      "   " + images[rand].rating.toFixed(2);
-    document.getElementById("rating two").textContent =
-      "   " + images[rand].rating.toFixed(2);
-    document.getElementById("author").textContent = images[rand].author_name;
-  })
-  .catch((error) => {
-    console.error("Error fetching data:", error);
+    data.forEach((element) => {
+      images.push(element);
+      console.log(images);
+      //   console.log(images.download_url);
+    });
+    //random images for unit
+    // author name
+    document.getElementById("author").textContent = images[rand++].author;
   });
-
+let rating = 1 + Math.random() * 4;
+let reviewNum = Math.floor(Math.random() * 1000);
+console.log(rand);
+// random rating out of 5
+document.getElementById("rating").textContent = "   " + rating.toFixed(2);
+document.getElementById("rating two").textContent = "   " + rating.toFixed(2);
 //number of reviews
 document.getElementById("reviewsNum").textContent = reviewNum + " ";
 document.getElementById("reviewsNum two").textContent =
@@ -43,6 +31,14 @@ const getName = fetch(`https://jsonplaceholder.typicode.com/todos/${rand}`);
 getName
   .then((response) => response.json())
   .then((data) => (document.getElementById("title").textContent = data.title));
+
+const getCountry = fetch("https://api.apipip.com/v1/random-country/");
+getCountry
+  .then((response) => response.json())
+  .then((data) => {
+    console.log("Name:", data.name);
+  })
+  .catch((error) => console.log("Error:", error));
 
 let dataUrl = "https://dummyjson.com/users";
 
@@ -106,5 +102,3 @@ const createReviewCard = (userData) => {
 
   return oneReview;
 };
-
-

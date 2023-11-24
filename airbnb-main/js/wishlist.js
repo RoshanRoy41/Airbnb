@@ -19,8 +19,27 @@ function displayWishlist() {
     wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
   }
 }
+
+function saveWishlist(wishlist) {
+  localStorage.setItem('wishlist', JSON.stringify(wishlist));
+  }
+
+function removeFromWishlist(item) {
+  console.log("Hi");
+  const wishlist = getWishlist();
+  console.log(wishlist);
+  const updatedWishlist = wishlist.filter((wishlistItem) => wishlistItem.id !== item.id);
+  saveWishlist(updatedWishlist);
+  const removedElement = document.getElementById(`wishlistItem-${item.id}`);
+  if (removedElement) {
+    removedElement.remove();
+  }
+  displayWishlist(); // Update the display after removing an item
+}
+
 // Function to create HTML for a wishlist item
 function createWishlistItem(item) {
+  
   const div = document.createElement('div');
   div.classList.add(
       'card',
@@ -29,19 +48,21 @@ function createWishlistItem(item) {
       'col-sm-6',
       'col-xs-6',
       'border-0',
-      'mx-auto'
+
   );
+  div.id = `wishlistItem-${item.id}`; 
   const img = document.createElement('img');
   const div1 = document.createElement('div');
   div1.classList.add('wishlist-icon');
 
   // Create the heart icon
-  const heartIcon = document.createElement('i');
-  heartIcon.classList.add('fas', 'fa-heart');
-  heartIcon.addEventListener('click', () => toggleWishlistHandler(userData));
+  const removeIcon = document.createElement('i');
+  removeIcon.classList.add('fa','fa-times');
+  removeIcon.addEventListener('click', () => removeFromWishlist(item));
+
 
   // Append the heart icon to div1
-  div1.appendChild(heartIcon);
+  div1.appendChild(removeIcon);
 
   img.src = item.download_url;
   const div2 = document.createElement('div');
@@ -89,6 +110,8 @@ function createWishlistItem(item) {
   wishlistContainer.append(div);
   return div;
 }
+
+
 
 
 document.addEventListener('DOMContentLoaded', () => {

@@ -55,13 +55,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const createCardData = (userData) => {
         const div = document.createElement("div");
-        div.classList.add("card", "col-lg-3", "col-md-4", "col-sm-6","col-xs-6","border-0","mx-auto");
-
-        
-        const img = document.createElement("img");
-        const div1 = document.createElement("div");
-        div1.classList.add("wishlist-icon");
-        div1.innerHTML = `<i class='fas fa-heart' onclick="toggleWishlistHandler(${JSON.stringify(userData)})"></i>`;
+        div.classList.add("card", "col-lg-3", "col-md-4", "col-sm-6","col-xs-6","border-0");
+        const img = document.createElement('img');
+        const div1 = document.createElement('div');
+        div1.classList.add('wishlist-icon');
+      
+        // Create the heart icon
+        // div1.innerHTML = '<i class="fas fa-heart"></i>';
+        // div1.addEventListener('click', () => toggleWishlistHandler(userData));
+    
+        const heartIcon = document.createElement('i');
+        heartIcon.classList.add('fas', 'fa-heart');
+        heartIcon.addEventListener('click', () => addToWishlist(userData));
+        div1.appendChild(heartIcon);
         img.src = userData.download_url;
 
         const div2 = document.createElement("div");

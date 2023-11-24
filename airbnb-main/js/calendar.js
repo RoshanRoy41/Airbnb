@@ -1,6 +1,9 @@
 $(document).ready(function () {
   const nightsTitle = document.querySelector(".nights-title");
   const selectedDatesParagraph = document.getElementById("selectedDates");
+  const locationCalendarParams = new URLSearchParams(window.location.search);
+  const locationCalName = locationCalendarParams.get("place");
+  nightsTitle.textContent = `0 nights in ${locationCalName}`;
 
   // Initialize Flatpickr for date picking on the left calendar
   const leftCalendar = flatpickr("#calendar-container", {
@@ -43,7 +46,7 @@ $(document).ready(function () {
         ? (selectedDates[1] - selectedDates[0]) / (1000 * 60 * 60 * 24)
         : 0;
 
-    nightsTitle.textContent = `${numberOfNights} nights in Great London`;
+    nightsTitle.textContent = `${numberOfNights} nights in ${locationCalName}`;
     selectedDatesParagraph.textContent = ` ${selectedDates
       .map((date) => date.toLocaleDateString())
       .join(" - ")}`;
