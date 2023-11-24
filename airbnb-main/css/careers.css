@@ -1,0 +1,109 @@
+.heading {
+  /* margin-top: 100px; */
+  height: 630px;
+  width: 100%;
+  text-align: center;
+  font-size: xx-large;
+  background-image: url("/images/careers/breakfast-pool-inn-at-dos-brisas-texas_upscaled.jpg");
+  background-size: cover;
+}
+@font-face {
+  font-family: Poppins-bold;
+  src: url("/poppins_font/Poppins-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+  font-family: Poppins-light;
+  src: url("/poppins_font/Poppins-Light.ttf") format("truetype");
+}
+@font-face {
+  font-family: Poppins-bold;
+  src: url("/poppins_font/Poppins-Regular.ttf") format("truetype");
+}
+.heading h2 {
+  padding-top: 250px;
+  color: rgb(255, 255, 255);
+  font-family: Poppins-bold;
+  font-weight: bolder;
+}
+.btn,
+.courses-detail h3 a {
+  color: #00704a !important;
+}
+
+/* Apply custom color to the "View Details" button inside .courses-info */
+.courses-info .btn {
+  background-color: #00704a;
+  border-color: #00704a;
+  color: white !important;
+}
+.btn:hover,
+.courses-info .btn:hover {
+  background-color: black;
+  color: #ffffff !important;
+}
+.applyNow {
+  background-color: #dc8e4c !important;
+  border-color: #dc8e4c !important;
+  color: white !important;
+}
+.applyNow:hover {
+  background-color: #54445c !important;
+  border-color: #54445c !important;
+  color: white !important;
+}
+.submitButton {
+  background-color: #00704a !important;
+  border-color: #00704a !important;
+  color: white !important;
+}
+.submitButton:hover {
+  background-color: #54445c !important;
+  border-color: #54445c !important;
+  color: white !important;
+}
+.courseElement {
+  box-shadow: #859d9d 0px 2px 5px -1px;
+  transition: box-shadow 0.3s ease-in-out;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  border-radius: 10px;
+  background-color: #ffffff;
+  opacity: 1;
+}
+.courseElement p {
+  margin-top: 30px;
+}
+.courseElement:hover {
+  box-shadow: #8ab7b4 0px 8px 20px;
+}
+/* Custom styles for the modal and enhanced animation */
+.modal-content {
+  animation: slide-up 0.5s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.modal-header .close {
+  transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.modal-header .close:hover {
+  color: #ff0000; /* Change the color on hover */
+  transform: rotate(180deg); /* Rotate the close button on hover */
+}
+@media (max-width: 1100px) {
+  .heading h2 {
+    color: #3a1617;
+    font-family: Poppins-bold;
+    font-weight: bolder;
+  }
+}

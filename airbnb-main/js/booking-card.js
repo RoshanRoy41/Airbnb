@@ -85,7 +85,14 @@ document.addEventListener("DOMContentLoaded", function () {
         reserveNowClicked = true;
       } else {
         // Redirect to a new HTML page on the second click
-        window.location.href = "confirmation_page.html";
+        const formattedCheckinDate = checkinDate.toISOString().split("T")[0];
+        const formattedCheckoutDate = checkoutDate.toISOString().split("T")[0];
+
+        // Now, use these formatted dates in your URL
+        // const url = ;
+
+        // Redirect to the confirmation page
+        window.location.href = `confirmation_page.html?chkin=${formattedCheckinDate}&chkout=${formattedCheckoutDate}`;
       }
     }
   }
