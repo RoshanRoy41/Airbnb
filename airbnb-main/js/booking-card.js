@@ -85,7 +85,6 @@ document.addEventListener("DOMContentLoaded", function () {
         reserveNowClicked = true;
       } else {
         // Redirect to a new HTML page on the second click
-        // Assuming checkinDate and checkoutDate are JavaScript Date objects
         const formattedCheckinDate = checkinDate.toISOString().split("T")[0];
         const formattedCheckoutDate = checkoutDate.toISOString().split("T")[0];
 
