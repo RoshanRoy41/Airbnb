@@ -4,7 +4,7 @@
   width: 100%;
   text-align: center;
   font-size: xx-large;
-  background-image: url("/images/careers/breakfast-pool-inn-at-dos-brisas-texas_upscaled.jpg");
+  background-image: url("/images/careers/grace-hotel-santorini-greece-pool-.jpg");
   background-size: cover;
 }
 @font-face {
@@ -16,18 +16,20 @@
   src: url("/poppins_font/Poppins-Light.ttf") format("truetype");
 }
 @font-face {
-  font-family: Poppins-bold;
+  font-family: Poppins-reg;
   src: url("/poppins_font/Poppins-Regular.ttf") format("truetype");
 }
 .heading h2 {
   padding-top: 250px;
-  color: rgb(255, 255, 255);
+  color: #727272;
+  /* 8f4155 */
+  /* 682860 */
   font-family: Poppins-bold;
   font-weight: bolder;
 }
 .btn,
 .courses-detail h3 a {
-  color: #00704a !important;
+  color: #ff5a5f !important;
 }
 
 /* Apply custom color to the "View Details" button inside .courses-info */
@@ -42,8 +44,8 @@
   color: #ffffff !important;
 }
 .applyNow {
-  background-color: #dc8e4c !important;
-  border-color: #dc8e4c !important;
+  background-color: #ff5a5f !important;
+  border-color: #ff5a5f !important;
   color: white !important;
 }
 .applyNow:hover {
@@ -67,11 +69,21 @@
   padding-top: 30px;
   padding-bottom: 30px;
   border-radius: 10px;
+  font-family: Poppins-light;
+  /* height: 320px; */
   background-color: #ffffff;
   opacity: 1;
 }
+/* .courseElement button {
+  bottom: 0px;
+  position: relative;
+} */
 .courseElement p {
   margin-top: 30px;
+}
+.courseElement div {
+  height: 245px;
+  overflow: hidden;
 }
 .courseElement:hover {
   box-shadow: #8ab7b4 0px 8px 20px;

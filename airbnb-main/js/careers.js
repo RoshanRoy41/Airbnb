@@ -42,18 +42,20 @@ function fetchData() {
             const coursesContainer = document.getElementById("coursesContainer");
             const row = document.createElement("div");
             row.className = "row justify-content-center";
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 12; i++) {
                 if (i % 2 === 0) {
                     const newRow = document.createElement("div");
                     newRow.className = "row justify-content-center";
                 }
                 randomId[i] = Math.floor(Math.random() * course.length);
                 const courseElement = document.createElement("div");
-                courseElement.className = "courseElement col-xl-5 col-lg-5 m-3";
+                courseElement.className = "courseElement col-xl-3 col-lg-3 m-3";
                 const jobTitle = document.createElement("h2");
                 jobTitle.textContent = `${course[randomId[i]].Jobs}`;
                 const jobDesc = document.createElement("p");
                 jobDesc.textContent = `${course[randomId[i]].Description}`;
+                const jobText = document.createElement("div");
+                jobText.className = "jobText";
                 const applyNow = document.createElement("button");
                 if (applyNow) {
                     applyNow.className =
@@ -66,8 +68,9 @@ function fetchData() {
                     });
                 }
                 applyNow.textContent = "Apply Now";
-                courseElement.appendChild(jobTitle);
-                courseElement.appendChild(jobDesc);
+                jobText.appendChild(jobTitle);
+                jobText.appendChild(jobDesc);
+                courseElement.appendChild(jobText);
                 courseElement.appendChild(applyNow);
                 row.appendChild(courseElement);
                 if (i === 9 || i % 2 !== 0) {
