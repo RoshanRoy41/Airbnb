@@ -12,7 +12,6 @@ document.addEventListener("DOMContentLoaded", function () {
     "paris, france": { lat: 48.8566, lng: 2.3522 },
     // Add more locations as needed
   };
-  
 
   // Check if the specified location exists in the mapping
   if (locationMappings.hasOwnProperty(locationText)) {
@@ -37,17 +36,22 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Location not found in the mapping.");
   }
 });
-document.querySelector('thirdSection').addEventListener('ChkBtn', function (event) {
-  const checkinInput = document.getElementById('txtCheckin');
-  const checkoutInput = document.getElementById('txtCheckout');
+// document
+//   .querySelector("thirdSection")
+//   .addEventListener("ChkBtn", function (event) {
+//     const checkinInput = document.getElementById("txtCheckin");
+//     const checkoutInput = document.getElementById("txtCheckout");
 
-  // Ensure the input fields have values
-  if (checkinInput.value && checkoutInput.value) {
-    const queryString = `?checkin=${encodeURIComponent(checkinInput.value)}&checkout=${encodeURIComponent(checkoutInput.value)}`;
-    window.location.href = 'nextPage.html' + queryString;
+//     // Ensure the input fields have values
+//     if (checkinInput.value && checkoutInput.value) {
+//       const queryString = `?checkin=${encodeURIComponent(
+//         checkinInput.value
+//       )}&checkout=${encodeURIComponent(
+//         checkoutInput.value
+//       )}`;
+//       window.location.href = "nextPage.html" + queryString;
 
-    // Prevent the form from submitting (to avoid a page reload)
-    event.preventDefault();
-  }
-});
-
+//       // Prevent the form from submitting (to avoid a page reload)
+//       event.preventDefault();
+//     }
+//   });
