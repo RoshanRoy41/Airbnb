@@ -58,14 +58,6 @@ getName
   .then((response) => response.json())
   .then((data) => (document.getElementById("title").textContent = data.title));
 
-// const getCountry = fetch("https://api.apipip.com/v1/random-country/");
-// getCountry
-//   .then((response) => response.json())
-//   .then((data) => {
-//     console.log("Name:", data.name);
-//   })
-//   .catch((error) => console.log("Error:", error));
-
 let dataUrl = "https://dummyjson.com/users";
 
 let getTextData = async (url) => {
