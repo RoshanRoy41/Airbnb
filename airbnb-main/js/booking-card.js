@@ -61,42 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
     checkAndDisplayAvailability();
   });
 
-  // Function to check and display availability
-  function checkAndDisplayAvailability() {
-    const checkinDate = flatpickr("#txtCheckin").selectedDates[0];
-    const checkoutDate = flatpickr("#txtCheckout").selectedDates[0];
-
-    if (checkinDate && checkoutDate) {
-      // Fetch availability and create the new booking card
-      const newBookingCard = createNewBookingCard(checkinDate, checkoutDate);
-      const newBookingCardContainer =
-        document.querySelector(".new-booking-card");
-
-      // Clear any existing new cards
-      newBookingCardContainer.innerHTML = "";
-
-      // Append the new card to the booking container and display it
-      newBookingCardContainer.appendChild(newBookingCard);
-      newBookingCardContainer.style.display = "block";
-      checkAvailabilityButton.textContent = "Reserve now";
-      if (!reserveNowClicked) {
-        // Change the text to "Reserve now" on the first click
-        checkAvailabilityButton.textContent = "Reserve now";
-        reserveNowClicked = true;
-      } else {
-        // Redirect to a new HTML page on the second click
-        const formattedCheckinDate = checkinDate.toISOString().split("T")[0];
-        const formattedCheckoutDate = checkoutDate.toISOString().split("T")[0];
-
-        // Now, use these formatted dates in your URL
-        // const url = ;
-
-        // Redirect to the confirmation page
-        window.location.href = `confirmation_page.html?chkin=${formattedCheckinDate}&chkout=${formattedCheckoutDate}`;
-      }
-    }
-  }
-
   let totalPrice;
   // Function to create a new booking card with availability details
   function createNewBookingCard(checkinDate, checkoutDate) {
@@ -145,6 +109,42 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateFinalProduct(element, numberOfDays) {
     element.textContent = `Total: ₹${totalPrice}`;
+  }
+
+  // Function to check and display availability
+  function checkAndDisplayAvailability() {
+    const checkinDate = flatpickr("#txtCheckin").selectedDates[0];
+    const checkoutDate = flatpickr("#txtCheckout").selectedDates[0];
+
+    if (checkinDate && checkoutDate) {
+      // Fetch availability and create the new booking card
+      const newBookingCard = createNewBookingCard(checkinDate, checkoutDate);
+      const newBookingCardContainer =
+        document.querySelector(".new-booking-card");
+
+      // Clear any existing new cards
+      newBookingCardContainer.innerHTML = "";
+
+      // Append the new card to the booking container and display it
+      newBookingCardContainer.appendChild(newBookingCard);
+      newBookingCardContainer.style.display = "block";
+      checkAvailabilityButton.textContent = "Reserve now";
+      if (!reserveNowClicked) {
+        // Change the text to "Reserve now" on the first click
+        checkAvailabilityButton.textContent = "Reserve now";
+        reserveNowClicked = true;
+      } else {
+        // Redirect to a new HTML page on the second click
+        const formattedCheckinDate = checkinDate.toISOString().split("T")[0];
+        const formattedCheckoutDate = checkoutDate.toISOString().split("T")[0];
+
+        // Now, use these formatted dates in your URL
+        // const url = ;
+
+        // Redirect to the confirmation page
+        window.location.href = `confirmation_page.html?chkin=${formattedCheckinDate}&chkout=${formattedCheckoutDate}&total=${totalPrice}`;
+      }
+    }
   }
 });
 
