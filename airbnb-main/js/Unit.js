@@ -1,4 +1,4 @@
-let imgData = fetch("http://localhost:3001/api");
+let imgData = fetch("https://mocki.io/v1/a333851f-8d2f-473c-bd8e-7c3b1a39e8c8");
 let images = [];
 const urlParams = new URLSearchParams(window.location.search);
 const userId = urlParams.get("id");
@@ -11,21 +11,35 @@ imgData
     console.log(images);
     // Ensure that rand is initialized appropriately (e.g., rand = 0)
 
+    console.log(images[rand].rating);
+    document.getElementById("rating").textContent =
+      images[rand].rating.toFixed(2);
+    document.getElementById("rating two").textContent =
+      "   " + images[rand].rating.toFixed(2);
+    document.getElementById("star").textContent =
+      "   " + images[rand].rating.toFixed(2);
+    document.getElementById("maxguests").textContent =
+      "   " + images[rand].guests + " Guests | ";
+    document.getElementById("noOfBeds").textContent =
+      "   " + images[rand].beds + " Beds | ";
+    document.getElementById("noOfRooms").textContent =
+      "   " + images[rand].bedrooms + " Rooms | ";
+    document.getElementById("noOfBath").textContent =
+      "   " + images[rand].bathrooms + " Baths ";
     // Set src attributes for image elements
     document.getElementById("title1").innerHTML = images[rand].name;
-    console.log(images[rand].rating);
     document.getElementById("locationOfUnit").textContent =
       "\u00A0 \u00A0" + images[rand++].location;
     document.getElementById("img1").src = images[rand++].download_url;
     document.getElementById("img2").src = images[rand++].download_url;
     document.getElementById("img3").src = images[rand++].download_url;
     document.getElementById("img4").src = images[rand++].download_url;
-    document.getElementById("img5").src = images[rand++].download_url;
+    document.getElementById("img5").src = images[rand].download_url;
     // Set author names
-    document.getElementById("rating").textContent =
-      "   " + images[rand].rating.toFixed(2);
-    document.getElementById("rating two").textContent =
-      "   " + images[rand].rating.toFixed(2);
+    // document.getElementById("rating").textContent =
+    //   "   " + images[rand].rating.toFixed(2);
+    // console.log(images[rand].rating.toFixed(2));
+
     document.getElementById("author").textContent = images[rand].author_name;
   })
   .catch((error) => {
@@ -36,7 +50,7 @@ imgData
 document.getElementById("reviewsNum").textContent = reviewNum + " ";
 document.getElementById("reviewsNum two").textContent =
   " " + reviewNum + " Reviews";
-
+document.getElementById("review").textContent = " " + reviewNum + " Reviews";
 const getName = fetch(`https://jsonplaceholder.typicode.com/todos/${rand}`);
 
 //getiing random name for Unit

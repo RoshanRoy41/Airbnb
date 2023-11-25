@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card Example</title>
+    <style>
+      /* Add some basic styling for the card */
+      .card {
+        width: 300px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        overflow: hidden;
+        margin: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .card img {
+        width: 100%;
+        height: auto;
+      }
+
+      .card-content {
+        padding: 16px;
+        align-items: center;
+      }
+
+      .card-title {
+        font-size: 1.2em;
+        font-weight: bold;
+        margin-bottom: 8px;
+        text-align: center;
+      }
+
+      .card-description {
+        font-size: 1em;
+        color: #555;
+        padding: 5px;
+        cursor: pointer;
+      }
+
+      #numberCard {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="card" id="mainCard">
+      <div class="card-content">
+        <div class="card-title">You can either</div>
+        <div style="display: flex">
+          <button class="card-description" onclick="showNumber()">
+            Call an expert
+          </button>
+          <p style="margin: 10px 15px 10px 15px">or</p>
+          <button class="card-description">Chat with bot</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" id="numberCard">
+      <div class="card-content">
+        <div class="card-title">Call at this Number</div>
+        <div class="card-description" style="text-align: center">
+          +91 90377 73165
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showNumber() {
+        document.getElementById("mainCard").style.display = "none";
+        document.getElementById("numberCard").style.display = "block";
+      }
+    </script>
+  </body>
+</html>
