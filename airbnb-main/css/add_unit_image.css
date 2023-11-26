@@ -12,52 +12,32 @@
 
 
 /*nav-bar*/
-.navbar {
-  
+.navbar{
+  font-family: Poppins-light;
+  height: 80px;
+}
+
+.navbar-brand img{
+  border-radius: 0px;
+}
+
+.navbar_row{
   width: 100%;
-  font-family: Poppins-thin;
-}
-.navbar-right{
-
+  margin-left: 10%;
+  margin-right: 10%;
 }
 
-.navbar {
- 
-  height: 40px;
-  width: 100%;
+.navbar-button{
+  border: none;
+  color: #fff;
+  background-color: #ff385c;
+  width:180px;
+  height: 45px;
+  border-radius: 50px;
 }
 
-.navbar p{
-  width: 100%;
-  margin-right: 20px;
-}
-
-.Airbnb-button-container {
-
-}
-.Airbnb-button-group {
-  text-align: center;
-  background-color:  #ff385c;
-  width: 150px;
-  height: 50px;
-  vertical-align: center;
-  border-radius: 5px;
-}
-.Airbnb-button-group svg {
- 
-  color: white;
-
-}
-.Airbnb-button-group a{
- 
-  text-decoration: none;
-  color: white;
-  font-weight: bolder;
-  font-size: 15px;
-}
 
 .upload_image{
-  margin-top: 50px;
   width: 100%;
   height: 500px;
  
@@ -200,6 +180,7 @@
 }
 .pricing_option_additional select{
   text-align: center;
+  font-size:18px ;
   width: 100%;
   border: none;
   box-shadow: 2px 5px 10px 1px #b1afaf;
@@ -214,7 +195,7 @@
 
 .pricing_option_additional_charge input{
   width: 100%;
-  height: 83%;
+  height: 76%;
   padding-left: 10px;
   border: none;
   box-shadow: 2px 5px 10px 1px #b1afaf;
@@ -224,7 +205,7 @@
   font-weight: bold;
 }
 .price_rent_input input{
-  height: 82%;
+  height: 75%;
   padding-left: 10px;
   border: none;
   box-shadow: 2px 5px 10px 1px #b1afaf;

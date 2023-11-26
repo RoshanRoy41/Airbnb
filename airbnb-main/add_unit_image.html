@@ -35,31 +35,21 @@
     <script src="/js/about-user.js"></script>
   </head>
   <body>
-    <header>
-      <div class="navbar container">
-        <div class="navbar row container-fluid">
-          <div class="navbar_logo col-lg-3">
-            <img src="images/logo2.png">
-          </div>
-          <div class="navbar-right col-lg-6 ">
-              <p> Ready to Airbnb it?</p>
-          </div>
-          <div class="Airbnb-button-container col-lg-3">
-                      <div class="Airbnb-button-group">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house-add" viewBox="0 0 16 16">
-                              <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h4a.5.5 0 1 0 0-1h-4a.5.5 0 0 1-.5-.5V7.207l5-5 6.646 6.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.707 1.5Z"/>
-                              <path d="M16 12.5a3.5 3.5 0 1 1-7 0 3.5 3.5 0 0 1 7 0Zm-3.5-2a.5.5 0 0 0-.5.5v1h-1a.5.5 0 0 0 0 1h1v1a.5.5 0 1 0 1 0v-1h1a.5.5 0 1 0 0-1h-1v-1a.5.5 0 0 0-.5-.5Z"/>
-                            </svg>
-                          <a href="add_unit_image.html"> Airbnb Setup</a>
-                      </div>
-          </div>
+ 
+    <nav class="navbar container-fluid bg-body  ">
+      <div class="navbar_row d-flex justify-content-between">
+        <a class="navbar-brand col-2" href="#">
+          <img src="images/logo2.png" alt="Your Logo" >
+        </a>
+        <div class="navbar-right col-3 d-flex justify-content-end ">
+          <span class="navbar-text me-4 fs-5">Questions?</span>
+          <Button class="navbar-button" >Save and Exit</Button>
         </div>
       </div>
-    </header>
-  
+    </nav>
        
       
-        <div class="upload_image container">
+        <div class="upload_image container mt-5">
           <div class="upload_image_row row container gx-10">
             <div class="upload_image_row col-md-6 col-lg-6 ">
               <div class="upload_image_row left">
@@ -85,28 +75,28 @@
         <div class="details container">
                   <form action="" class="form_container row ">
                     <div class="details_input col-lg-6">
-                      <input type="text" placeholder="Add Title">
+                      <input type="text" placeholder="Add Title" name="title" id="title">
                     </div>
                     <div class="details_input col-lg-4">
-                      <input type="text" placeholder=""> 
+                      <input type="text" placeholder="Hostname" name="hostname" id="hostname"> 
                     </div>
                     <div class="details_input col-lg-2">
-                      <input type="number" placeholder="Guests"> 
+                      <input type="number" placeholder="Guests" name="guests" id="guests"> 
                     </div>
 
                     <p class="details_input_heading">Rooms</p>
 
                     <div class="details_input col-lg-2">
-                        <input type="number" placeholder="Halls"> 
+                        <input type="number" placeholder="Halls" name="halls" id="halls"> 
                     </div>
                     <div class="details_input col-lg-2">
-                      <input type="number" placeholder="Bedrooms"> 
+                      <input type="number" placeholder="Bedrooms" name="bedrooms" id="bedrooms"> 
                     </div>
                     <div class="details_input col-lg-2">
-                      <input type="number" placeholder="Bathrooms"> 
+                      <input type="number" placeholder="Bathrooms" name="bathrooms" id="bathrooms"> 
                     </div>
                     <div class="details_input col-lg-2">
-                      <input type="number" placeholder="Kitchen"> 
+                      <input type="number" placeholder="Kitchen" name="kitchen" id="kitchen"> 
                     </div>
                     <div class="details_input col-lg-2">
                       <button class="add_more"><svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><style>svg{fill:#ff385c}</style><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/></svg>
@@ -116,16 +106,16 @@
                     <p class="details_input_heading">Location</p>
 
                     <div class="details_input col-lg-4">
-                      <input type="text" placeholder="Address"> 
+                      <input type="text" placeholder="Address" name="address" id="address"> 
                     </div>
                     <div class="details_input col-lg-3">
-                      <input type="text" placeholder="City"> 
+                      <input type="text" placeholder="City" name="city" id="city"> 
                     </div>
                     <div class="details_input col-lg-3">
-                      <input type="text" placeholder="Country"> 
+                      <input type="text" placeholder="Country" name="country" id="country"> 
                     </div>
                     <div class="details_input col-lg-2">
-                      <input type="text" placeholder="ZIP/Postal Code"> 
+                      <input type="text" placeholder="ZIP/Postal Code" name="zip" id="zip"> 
                     </div>
 
                    <div class="tag_location gy-3">
@@ -139,7 +129,7 @@
                    <p class="details_input_heading">Amenities</p>
 
                    <div class="amenities container gy-3">
-                      <input type="text" placeholder="Describe about the place">
+                      <input type="text" placeholder="Describe about the place" ameni>
                    </div>
 
                    <p class="details_input_heading container">Pricing</p>
