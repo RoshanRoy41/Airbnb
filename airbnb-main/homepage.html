@@ -19,24 +19,26 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
+    <!-- jQuery -->
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+    <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
     <link rel="stylesheet" href="/css/homepage.css" />
   </head>
   <body>
     
-      <!-- Pop up -->
-     
-
+      <!-- Preloader -->
     <div id="preloader">
     </div>
 
     <div class="container">
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light">
+
           <a class="navbar-brand" href="homepage.html">
             <img src="/images/logo2.png" alt="Logo" >
           </a>
@@ -64,13 +66,20 @@
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item">
-                <a class="nav-link" onclick="closeMenu()" href="#listings">Airbnb your home</a>
+                <a class="nav-link"id="listings-nav" onclick="closeMenu()" href="#listings">Airbnb your home</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" id="wish-nav" onclick="closeMenu()" href="wishlist.html">Favorites</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link" onclick="closeMenu()" href="#popular">Popular</a>
+              <li class="nav-item dropdown">
+                <a class="nav-link" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">
+                  <img src="images/account-icon2.png" alt="User Logo">
+                </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
+                  <a class="dropdown-item" href="#">Contact Us</a>
+                  <a class="dropdown-item" href="#">Sign Out</a>
+                </div>
               </li>
             </ul>
           </div>
@@ -78,58 +87,15 @@
 
       <!-- Sort Bar -->
       <div
-        id="sortBarCarousel"
-        class="sort-bar carousel slide"
-        data-ride="carousel">
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <div class="d-md-none">
-              <!-- Display flex layout only on small and medium screens -->
-              <div class="d-flex justify-content-around align-items-center" id="carouselContent1">
-                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
-                  <i class="fa-solid fa-house-chimney"></i>
-                  <p>House</p>
-                </div >
-                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
-                  <i class="fa-solid fa-snowflake" ></i>
-                  <p>Arctic</p>
-                </div>
-                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
-                  <i class="fa-solid fa-tree" ></i>
-                  <p>Trees</p>
-                </div>
-                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
-                  <i class="fa-solid fa-building"></i>
-                  <p>City</p>
-                </div>
-              </div>
-            </div>
-            <div class="carousel-item">
-              <div class="d-md-none">
-                <div class="d-flex justify-content-around align-items-center" id="carouselContent2">
-                  <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
-                    <i class="fa-solid fa-campground"></i>
-                    <p>Camping</p>
-                  </div>
-                  <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
-                    <i class="fa-solid fa-umbrella-beach"></i>
-                    <p>Beach</p>
-                  </div>
-                  <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
-                    <i class="fa-solid fa-rocket"></i>
-                    <p >OMG</p>
-                  </div>
-                  <div onclick="reloadPage()"class="d-flex flex-column align-items-center">
-                    <i class="fa-solid fa-volleyball"></i>
-                    <p>Games</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <!-- Display all elements on large screens -->
-            <div
-              class="sort-bar-element d-none d-md-flex justify-content-around align-items-center"
-            >
+      id="sortBarCarousel"
+      class="sort-bar carousel slide"
+      data-ride="carousel"
+    >
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="d-md-none">
+            <!-- Display flex layout only on small and medium screens -->
+            <div class="d-flex justify-content-around align-items-center" id="carouselContent">
               <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
                 <i class="fa-solid fa-house-chimney"></i>
                 <p>House</p>
@@ -140,12 +106,17 @@
               </div>
               <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
                 <i class="fa-solid fa-tree"></i>
-                <p>Forest</p>
+                <p>Trees</p>
               </div>
               <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
                 <i class="fa-solid fa-building"></i>
                 <p>City</p>
               </div>
+            </div>
+          </div>
+          <div class="d-md-none">
+            <!-- Display flex layout only on small and medium screens -->
+            <div class="d-flex justify-content-around align-items-center" id="carouselContent2">
               <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
                 <i class="fa-solid fa-campground"></i>
                 <p>Camping</p>
@@ -156,34 +127,56 @@
               </div>
               <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
                 <i class="fa-solid fa-rocket"></i>
-                <p >OMG</p>
+                <p>OMG</p>
               </div>
-              <div onclick="reloadPage()"class="d-flex flex-column align-items-center">
+              <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
                 <i class="fa-solid fa-volleyball"></i>
                 <p>Games</p>
               </div>
             </div>
           </div>
+          <!-- Display all elements on large screens -->
+          <div
+            class="sort-bar-element d-none d-md-flex justify-content-around align-items-center"
+          >
+            <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+              <i class="fa-solid fa-house-chimney"></i>
+              <p>House</p>
+            </div>
+            <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+              <i class="fa-solid fa-snowflake"></i>
+              <p>Arctic</p>
+            </div>
+            <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+              <i class="fa-solid fa-tree"></i>
+              <p>Forest</p>
+            </div>
+            <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+              <i class="fa-solid fa-building"></i>
+              <p>City</p>
+            </div>
+            <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+              <i class="fa-solid fa-campground"></i>
+              <p>Camping</p>
+            </div>
+            <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+              <i class="fa-solid fa-umbrella-beach"></i>
+              <p>Beach</p>
+            </div>
+            <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+              <i class="fa-solid fa-rocket"></i>
+              <p >OMG</p>
+            </div>
+            <div onclick="reloadPage()"class="d-flex flex-column align-items-center">
+              <i class="fa-solid fa-volleyball"></i>
+              <p>Games</p>
+            </div>
+          </div>
         </div>
-        <a
-          class="carousel-control-prev d-md-none"
-          href="#sortBarCarousel"
-          role="button"
-          data-slide="prev"
-        >
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a
-          class="carousel-control-next d-md-none"
-          href="#sortBarCarousel"
-          role="button"
-          data-slide="next"
-        >
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
       </div>
+    </div>
+
+
 
       <!-- Rental Cards -->
       <div id="listings" class="listings container">
@@ -276,7 +269,7 @@
     <script src="js/search-bar.js"></script>
     <script src="js/reload.js"></script>
     <script src="js/preload.js"></script>
-    <script src="js/carousel.js"></script>
+    <!-- <script src="js/carousel.js"></script> -->
   </body>
 </html>
 

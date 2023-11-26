@@ -18,79 +18,64 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
     />
-    <!-- <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    /> -->
+    <link
+    href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
-    <link rel="stylesheet" href="/css/styles.css" />
-    <link rel="stylesheet" href="/css/preload-unit.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="/js/calendar.js"></script>
-    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
-    <script src="/js/unitcard.js"></script>
-    <script src="/js/thingsToKnow.js"></script>
-    <script src="/js/explore.js"></script>
-    <script src="/js/booking-card.js"></script>
-    <script src="/js/about-user.js"></script>
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/preload-unit.css" />
+
   </head>
   <body>
     <div id="preloader"></div>
-    <div class="navbar-container">
-      <div class="navbar">
-        <div>
-          <img src="/images/logo2.png" style="border-radius: 4px" />
-        </div>
-        <div class="search" id="searchButton">
-          <form>
-            <div class="input-container">
-              <input
-                type="text"
-                id="searchInput"
-                placeholder="Search Properties"
-              />
-            </div>
-            <div>
-              <button class="search-button">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <button class="close-button">
-                <i class="fa fa-times" aria-hidden="true"></i>
-              </button>
-            </div>
-          </form>
-        </div>
+     <!-- Navbar -->
+     <nav class="navbar navbar-expand-lg navbar-light">
 
-        <div class="menu">
-          <ul class="nav-menu">
-            <li>
-              <a onclick="closeMenu()" href="#listings" class="nav-link"
-                >Airbnb your home</a
-              >
-            </li>
-            <li>
-              <a onclick="closeMenu()" href="#featured" class="nav-link"
-                >Featured</a
-              >
-            </li>
-            <li>
-              <a onclick="closeMenu()" href="#popular" class="nav-link"
-                >Popular</a
-              >
-            </li>
-          </ul>
-          <div onclick="mobileMenu()" class="mobile">
-            <i class="fa-solid fa-bars"></i>
-          </div>
-        </div>
+      <a class="navbar-brand" href="homepage.html">
+        <img src="/images/logo2.png" alt="Logo" >
+      </a>
+
+ 
+
+      <!-- Mobile Menu Button -->
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <!-- Navbar Items -->
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+            <a class="nav-link" id="listings-nav" onclick="closeMenu()" href="#listings">Airbnb your home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" id="wish-nav" onclick="closeMenu()" href="wishlist.html">Favorites</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+              aria-expanded="false">
+              <img src="images/account-icon2.png" alt="User Logo">
+            </a>
+            <div class="dropdown-menu" aria-labelledby="userDropdown">
+              <a class="dropdown-item" href="#">Contact Us</a>
+              <a class="dropdown-item" href="#">Sign Out</a>
+            </div>
+          </li>
+        </ul>
       </div>
-    </div>
+    </nav>
+
 
     <div class="contentOfPage">
       <div class="header-container">
@@ -373,6 +358,13 @@
         </div>
       </div>
     </div>
+    <script src="/js/calendar.js"></script>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="/js/unitcard.js"></script>
+    <script src="/js/thingsToKnow.js"></script>
+    <script src="/js/explore.js"></script>
+    <script src="/js/booking-card.js"></script>
+    <script src="/js/about-user.js"></script>
     <script src="/js/Unit.js"></script>
     <script src="/js/preload.js"></script>
     <script src="https://js.stripe.com/v3/" defer></script>
