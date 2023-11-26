@@ -4,189 +4,279 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Airbnb</title>
-    <link rel="stylesheet" href="/css/homepage.css" />
+    <!-- <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl"
+      crossorigin="anonymous"
+    /> -->
+    <link
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/homepage.css" />
   </head>
   <body>
-    <div class="navbar-container">
-      <div class="navbar">
-        <div>
-          <img src="/images/logo2.png" style="border-radius: 4px" />
-        </div>
-        <div class="search" id="searchButton">
-          <form>
-            <div class="input-container">
-              <input
-                type="text"
-                id="searchInput"
-                placeholder="Search Properties"
-              />
-            </div>
-            <div>
-              <button class="search-button">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <button class="close-button">
-                <i class="fa fa-times" aria-hidden="true"></i>
-              </button>
-            </div>
-          </form>
-        </div>
+    
+      <!-- Pop up -->
+     
 
-        <div class="menu">
-          <ul class="nav-menu">
-            <li>
-              <a onclick="closeMenu()" href="#listings" class="nav-link"
-                >Airbnb your home</a
-              >
-            </li>
-            <li>
-              <a onclick="closeMenu()" href="#featured" class="nav-link"
-                >Featured</a
-              >
-            </li>
-            <li>
-              <a onclick="closeMenu()" href="#popular" class="nav-link"
-                >Popular</a
-              >
-            </li>
-          </ul>
-          <div onclick="mobileMenu()" class="mobile">
-            <i class="fa-solid fa-bars"></i>
-          </div>
-        </div>
-      </div>
+    <div id="preloader">
     </div>
+
     <div class="container">
-      <!-- nav bar -->
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg navbar-light">
+          <a class="navbar-brand" href="homepage.html">
+            <img src="/images/logo2.png" alt="Logo" >
+          </a>
 
-      <!-- below navbar -->
-      <div class="sub-container">
-        <div class="search-bar">
-          <form>
-            <div class="location-input">
-              <label>Location</label>
-              <input type="text" placeholder="Where are you going?" />
+         <!-- Search Bar -->
+          <div class="search">
+            <form class="form-inline">
+              <div class="input-group">
+                <input type="text" class="form-control" id="searchInput" placeholder="Search Properties">
+                <div class="input-group-append">
+                  <button class=" btn-outline-secondary search-button" type="button">
+                    <i class="fas fa-search"></i>
+                </div>
+              </div>
+            </form>
+          </div>
+    
+          <!-- Mobile Menu Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+          </button>
+    
+          <!-- Navbar Items -->
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a class="nav-link" onclick="closeMenu()" href="#listings">Airbnb your home</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" id="wish-nav" onclick="closeMenu()" href="wishlist.html">Favorites</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" onclick="closeMenu()" href="#popular">Popular</a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+
+      <!-- Sort Bar -->
+      <div
+        id="sortBarCarousel"
+        class="sort-bar carousel slide"
+        data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-md-none">
+              <!-- Display flex layout only on small and medium screens -->
+              <div class="d-flex justify-content-around align-items-center" id="carouselContent1">
+                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                  <i class="fa-solid fa-house-chimney"></i>
+                  <p>House</p>
+                </div >
+                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                  <i class="fa-solid fa-snowflake" ></i>
+                  <p>Arctic</p>
+                </div>
+                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                  <i class="fa-solid fa-tree" ></i>
+                  <p>Trees</p>
+                </div>
+                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                  <i class="fa-solid fa-building"></i>
+                  <p>City</p>
+                </div>
+              </div>
             </div>
-            <div class="check-in-input">
-              <label>Check-in</label>
-              <input type="text" placeholder="Add date" />
+            <div class="carousel-item">
+              <div class="d-md-none">
+                <div class="d-flex justify-content-around align-items-center" id="carouselContent2">
+                  <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                    <i class="fa-solid fa-campground"></i>
+                    <p>Camping</p>
+                  </div>
+                  <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                    <i class="fa-solid fa-umbrella-beach"></i>
+                    <p>Beach</p>
+                  </div>
+                  <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                    <i class="fa-solid fa-rocket"></i>
+                    <p >OMG</p>
+                  </div>
+                  <div onclick="reloadPage()"class="d-flex flex-column align-items-center">
+                    <i class="fa-solid fa-volleyball"></i>
+                    <p>Games</p>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="check-out-input">
-              <label>Check-out</label>
-              <input type="text" placeholder="Add date" />
+            <!-- Display all elements on large screens -->
+            <div
+              class="sort-bar-element d-none d-md-flex justify-content-around align-items-center"
+            >
+              <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                <i class="fa-solid fa-house-chimney"></i>
+                <p>House</p>
+              </div>
+              <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                <i class="fa-solid fa-snowflake"></i>
+                <p>Arctic</p>
+              </div>
+              <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                <i class="fa-solid fa-tree"></i>
+                <p>Forest</p>
+              </div>
+              <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                <i class="fa-solid fa-building"></i>
+                <p>City</p>
+              </div>
+              <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                <i class="fa-solid fa-campground"></i>
+                <p>Camping</p>
+              </div>
+              <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                <i class="fa-solid fa-umbrella-beach"></i>
+                <p>Beach</p>
+              </div>
+              <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                <i class="fa-solid fa-rocket"></i>
+                <p >OMG</p>
+              </div>
+              <div onclick="reloadPage()"class="d-flex flex-column align-items-center">
+                <i class="fa-solid fa-volleyball"></i>
+                <p>Games</p>
+              </div>
             </div>
-            <div class="guest-input">
-              <label>Guest</label>
-              <input type="text" placeholder="Add guest" />
-            </div>
-            <button><i class="fa-solid fa-magnifying-glass"></i></button>
-          </form>
+          </div>
         </div>
+        <a
+          class="carousel-control-prev d-md-none"
+          href="#sortBarCarousel"
+          role="button"
+          data-slide="prev"
+        >
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a
+          class="carousel-control-next d-md-none"
+          href="#sortBarCarousel"
+          role="button"
+          data-slide="next"
+        >
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
       </div>
 
-      <!-- sort Bar -->
-      <div class="sort-bar">
-        <div>
-          <i class="fa-solid fa-house-chimney"></i>
-          <p>House</p>
-        </div>
-        <div>
-          <i class="fa-solid fa-snowflake"></i>
-          <p>Artic</p>
-        </div>
-        <div>
-          <i class="fa-solid fa-tree"></i>
-          <p>Trees</p>
-        </div>
-        <div>
-          <i class="fa-solid fa-building"></i>
-          <p>City</p>
-        </div>
-        <div>
-          <i class="fa-solid fa-campground"></i>
-          <p>Camping</p>
-        </div>
-        <div>
-          <i class="fa-solid fa-umbrella-beach"></i>
-          <p>Beach</p>
-        </div>
-        <div>
-          <i class="fa-solid fa-rocket"></i>
-          <p>OMG!</p>
-        </div>
-        <div>
-          <i class="fa-solid fa-volleyball"></i>
-          <p>Games</p>
+      <!-- Rental Cards -->
+      <div id="listings" class="listings container">
+        <div class="row" id="imageCard">
+          <!-- Rental Cards will be dynamically added here using JavaScript -->
+        
         </div>
       </div>
-      <!--Sort Bar -->
-
-      <div id="listings" class="listings">
-        <!-- Rental Card -->
-      </div>
+    <!-- Footer -->  
     </div>
-
-    <!-- footer -->
-    <div class="footer">
-      <div class="footer-item">
-        <div class="location-nav-link">
-          <div class="location-nav-link-title">
-            <span>Support</span>
-          </div>
-          <div class="footer-nav-link-item">
-            <span>Help center</span>
-            <span>Safety information</span>
-            <span>Cancellation options</span>
-            <span>Anti-discrimination</span>
-            <span>Cancellation options</span>
-            <span>Reportneighbourhood concern</span>
-          </div>
-        </div>
-
-        <div class="location-nav-link">
-          <div class="location-nav-link-title">
-            <span>Hosting</span>
-          </div>
-          <div class="footer-nav-link-item">
-            <span>Airbnb your home</span>
-            <span>AirCover for Hosts</span>
-            <span>Hosting resources</span>
-            <span>Community forum</span>
-            <span>Hosting responsibly</span>
+    <div class="container-fluid footer">
+      <div class="row footer-item">
+        <div class="col-md-4 col-sm-6">
+          <div class="location-nav-link">
+            <div class="location-nav-link-title">
+              <span>Support</span>
+            </div>
+            <div class="footer-nav-link-item">
+              <span>Help center</span>
+              <span>Safety information</span>
+              <span>Cancellation options</span>
+              <span>Anti-discrimination</span>
+              <span>Cancellation options</span>
+              <span>Report neighborhood concern</span>
+            </div>
           </div>
         </div>
 
-        <div class="location-nav-link">
-          <div class="location-nav-link-title">
-            <span>Airbnb</span>
+        <div class="col-md-4 col-sm-6">
+          <div class="location-nav-link">
+            <div class="location-nav-link-title">
+              <span>Hosting</span>
+            </div>
+            <div class="footer-nav-link-item">
+              <span>Airbnb your home</span>
+              <span>AirCover for Hosts</span>
+              <span>Hosting resources</span>
+              <span>Community forum</span>
+              <span>Hosting responsibly</span>
+            </div>
           </div>
-          <div class="footer-nav-link-item">
-            <span>Newsroom</span>
-            <span>New features</span>
-            <span>Careers</span>
-            <span>Investors</span>
-            <span>Airbnb Luxe</span>
+        </div>
+
+        <div class="col-md-4">
+          <div class="location-nav-link">
+            <div class="location-nav-link-title">
+              <span>Airbnb</span>
+            </div>
+            <div class="footer-nav-link-item">
+              <a href="news.html">
+                <span>Newsroom</span>
+             </a>
+              <span>New features</span>
+              <span>Careers</span>
+              <span>Investors</span>
+              <span>Airbnb Luxe</span>
+            </div>
           </div>
         </div>
       </div>
       <hr />
-      <div class="copyright-section">
-        <div class="copyright">
-          © 2023 Airbnb, Inc. · Privacy · Terms · Sitemap · Company details
+
+      <div class="row">
+        <div class="col-md-6 text-center">
+          <div class="copyright">
+            © 2023 Airbnb, Inc. · Privacy · Terms · Sitemap · Company details
+          </div>
         </div>
-        <div class="languange-currency">
-          <div>English (IN)</div>
-          <div>₹ INR</div>
-          <img src="/images/facebook.png" alt="" />
-          <img src="/images/twitter.png" alt="" />
-          <img src="/images/instagram.png" alt="" />
+        <div class="col-md-6 text-center">
+          <div class="language-currency">
+            <div>English (IN)</div>
+            <div>₹ INR</div>
+            <img src="/images/facebook.png" alt="" />
+            <img src="/images/twitter.png" alt="" />
+            <img src="/images/instagram.png" alt="" />
+          </div>
         </div>
       </div>
     </div>
-    <script src="/js/homepage.js"></script>
+
+    <div id="wishlist-popup" class="popup">
+      Added to Wishlist!
+    </div>
+
+    <div id="already-wishlist-popup" class="already-popup">
+      Already in the Wishlist!
+    </div>
+
+    <script src="js/homepage.js"></script>
+    <script src="js/search-bar.js"></script>
+    <script src="js/reload.js"></script>
+    <script src="js/preload.js"></script>
+    <script src="js/carousel.js"></script>
   </body>
 </html>
+

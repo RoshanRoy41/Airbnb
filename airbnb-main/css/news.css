@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
+*{
+    box-sizing: border-box;
+}
+body{
+    font-family: 'Poppins', sans-serif !important;
+    font-size: 16px;
+    margin:0;
+    background: #ffffff;
+}
+
+#newsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-top: 30px;
+    margin: auto;
+  
+}
+
+/* main card */
+.main-card {
+    display: flex;
+    margin-bottom: 25px;
+
+}
+
+.main-card a {
+    display: flex;
+    width: 100%;
+    text-decoration: none;
+    color: inherit;
+}
+
+.main-card img {
+    min-width: 300px; /* Adjust the width as needed */
+    max-width: 60%; /* Adjust the width as needed */
+    box-sizing: border-box; /* Add this line to include padding and border in the width */
+    border-radius: 10px;
+    height: auto;
+}
+
+.main-card-content {
+    flex: 1;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+.main-card-content h2 {
+    font-size: 24px; /* Adjust the font size as needed */
+    margin: 0;
+    margin-bottom: 10px;
+    color: black;
+}
+
+.main-card h2 :hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.main-card .publishbyDate {
+    display: flex;
+    align-items: center;
+    color: #a5a1a1;
+}
+
+.main-card .publishbyDate p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.main-card .publishbyDate span {
+    padding: 0 10px;
+}
+
+.main-card .desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin: 0;
+}
+
+
+
+/***css card***/
+.news-card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+}
+
+.card {
+    flex: 1 0 calc(33.33% - 25px); /* Adjust the percentage based on your design */
+    max-width: 400px;
+    box-sizing: border-box; /* Add this line to include padding and border in the width */
+    border-radius: 10px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.card img {
+    flex: 1;
+    min-height: 210px;
+    max-height: 210px;
+    background-color: #f4f4f4;
+}
+
+
+.card div {
+    padding: 5px 10px;
+    margin: 0;
+}
+
+.card h4{
+    padding: 5px 10px;
+    margin: 0;
+    color: black;
+}
+
+.card h4:hover{
+    text-decoration: underline;
+}
+
+.publishbyDate {
+    display: flex;
+    align-items: center;
+    color: #807e7e;
+}
+
+.publishbyDate p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.publishbyDate span {
+    padding: 0 10px;
+}
+
+.desc {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    margin: 0;
+}
+
+.card a {
+    color: inherit;
+    text-decoration: none;
+}
+
+
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%; /* Full width on smaller screens */
+    }
+}
+
+@media all and (min-width:700px) {
+    main{
+        padding: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .card h4,
+.card div{
+    padding: 5px 15px;
+}
+}
+
+/* perloader */
+#preloader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(248, 246, 246) url('/images/finalloading.gif') no-repeat center;
+    background-size: 30%;
+    z-index: 1000;
+    opacity: 1; /* Set initial opacity to fully opaque */
+    transition: opacity 1s ease; /* Add a transition for the opacity property */
+}
+
+/* Add a class to trigger the fade effect */
+#preloader.fade {
+    opacity: 0;
+}
+
+/* navbar */
+.navbar-container {
+    margin-left: 3%;
+    margin-right: 3%;
+  }
+
+  .navbar {
+    width: 100%;
+    min-height: 80px;
+    border-bottom: 1px solid #d8d8d8;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center; 
+  
+   
+  }
+  
+  .navbar img {
+    height: 40px;
+    width: 130px;
+  }
+  
+  
+  .search {
+    justify-self: center;
+    width: 100%;
+  }
+  
+  .imgUnit {
+    border-radius: 15px;
+  }
+  
+  
+  .menu {
+    justify-self: end;
+  }
+  
+  .nav-menu {
+    display: flex;
+  }
+  
+  .nav-menu li {
+    padding-left: 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .mobile {
+    cursor: pointer;
+    display: none;
+  }
+  
+  

@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const latitude = locationParams.get("lat");
   const longitude = locationParams.get("long");
   const locationName = locationParams.get("place");
+  
   // Get the location information from the third section's <p> tag
   let locationElement = document.getElementById("location");
   locationElement.querySelector("p").innerText = locationName;
