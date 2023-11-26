@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/css/hostTraveller.css" />
   </head>
   <body>
-    <nav>
+    <!-- <nav>
       <div class="logo">
         <img src="/images/logo.png" alt="Airbnb Logo" />
       </div>
@@ -26,51 +26,65 @@
           <a href="#"><button class="one">Help centre</button></a>
         </div>
       </div>
-    </nav>
-    <hr />
-    <div class="outer-box">
-      <div class="box">
-        <h2>Log In</h2>
-        <hr />
-        <h1>Welcome to airbnb</h1>
-        <form class="login-form">
-          <label for="email"></label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-          />
-          <p id="email-error-message" class="error-message">
-            Please enter a valid email address.
-          </p>
+    </nav> -->
+    <!-- <hr /> -->
+    <div style="background-color: #f8999c; padding: 20px">
+      <div class="outer-box card" style="background-color: white; width: 45%">
+        <div class="box" style="width: 100%; align-content: center">
+          <h1 style="margin: 20px; text-align: center; font-size: 40px">
+            Welcome to airbnb
+          </h1>
+          <hr style="margin: 0px 15px 10px 15px" />
+          <h2 style="margin: 10px">Log In</h2>
+          <form
+            class="login-form"
+            style="margin: 0px 25px 0px 25px; align-items: center"
+          >
+            <label for="email"></label>
+            <input
+              class="input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+            <p id="email-error-message" class="error-message">
+              Please enter a valid email address.
+            </p>
+            <br />
+            <label for="password"></label>
+            <input
+              class="input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+            <p id="password-error-message" class="error-message">
+              Password must have at least 6 characters.
+            </p>
+          </form>
+          <button class="continue" onclick="validateForm()">Continue</button>
           <br />
-          <label for="password"></label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your password"
-            required
-          />
-          <p id="password-error-message" class="error-message">
-            Password must have at least 6 characters.
+          <p id="fp">
+            <a href="" style="text-decoration: none; color: black"
+              >Forgot Password?</a
+            >
           </p>
-        </form>
-        <button class="continue" onclick="validateForm()">Continue</button>
-        <br />
-        <p id="fp"><b>Forgot Password?</b></p>
-        <br />
-        <p id="or"><b>Or</b></p>
-        <div class="container">
-          <h2>Login with Social Media</h2>
-          <button class="social-button facebook">Login with Facebook</button>
-          <button class="social-button google">Login with Google</button>
-          <button class="social-button apple">Login with Apple</button>
+          <!-- <br /> -->
+          <p id="or" style="margin-bottom: 0px"><b>Or</b></p>
+          <div class="container">
+            <h2>Login with Social Media</h2>
+            <button class="social-button facebook">Login with Facebook</button>
+            <button class="social-button google">Login with Google</button>
+            <button class="social-button apple">Login with Apple</button>
+          </div>
         </div>
       </div>
     </div>
+
     <br />
     <hr />
     <div class="fetch">

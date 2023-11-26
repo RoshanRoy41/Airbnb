@@ -20,6 +20,9 @@ hr {
   margin-left: 5%;
   margin-right: 5%;
 }
+.review-container hr {
+  margin: 5% 0 5% 0;
+}
 .about-user-container {
   display: flex;
   flex-direction: column;
@@ -29,7 +32,7 @@ hr {
 .calender-container-main hr {
   width: 75%;
   height: 1px;
-  margin-left: 85px;
+  margin-left: 19%;
 }
 
 #columns {
