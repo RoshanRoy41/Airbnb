@@ -39,6 +39,8 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Location not found in the mapping.");
   }
 });
+
+
 // document
 //   .querySelector("thirdSection")
 //   .addEventListener("ChkBtn", function (event) {
