@@ -160,7 +160,8 @@ document.addEventListener("scroll", function () {
   // Check if the scroll position is above the hr tag
   if (window.scrollY < hrPosition) {
     bookingContainer.style.position = "sticky";
-    bookingContainer.style.top = "20px"; // Adjust this value as needed
+    bookingContainer.style.top = "20px";
+    bookingContainer.style.zIndex = "5";
   } else {
     bookingContainer.style.position = "static";
   }
