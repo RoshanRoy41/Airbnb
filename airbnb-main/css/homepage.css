@@ -52,6 +52,7 @@ html {
   width: 130px;
 }
 
+/* Wishlist Heading */
 .wishlist-heading {
   justify-self: center;
   width: 100%;
@@ -63,11 +64,12 @@ html {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 300px;
+  max-width: 200px;
   margin: auto;
 
 }
 
+/* Search bar */
 .search {
   justify-self: center;
   width: 100%;
@@ -145,7 +147,7 @@ html {
 
 
 
-/* sort  bar */
+/* Sort  bar */
 .sort-bar {
   display: flex;
   justify-content: space-between;
@@ -161,7 +163,7 @@ html {
     /* text-decoration: underline; */
     text-underline-offset: 0.5rem;
     text-decoration-color: rgb(181, 181, 181);
-    cursor: pointer; /* Add this line */
+    cursor: pointer; 
   }
   
   .sort-bar i {
@@ -172,8 +174,8 @@ html {
     font-size: 12px;
   }
 
-  /*Next and Previous*/
 
+  /*Next and Previous*/
   .carousel-control-next {
 
     margin-top: 15px;
@@ -198,6 +200,7 @@ html {
 
   .carousel-control-prev {
     
+    margin-top: 15px;
     width: 1.8rem; /* Adjust the width as needed */
     height: 1.8rem; /* Adjust the height as needed */
     background-color: #333; /* Set the background color */
@@ -276,7 +279,7 @@ html {
 }
 
 
- /*wishlist*/
+ /*Wishlist icon*/
  .card .wishlist-icon {
     display: flex;
     align-items: center;
@@ -339,7 +342,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px; /* Adjust the height as needed */
+  height: 100px; 
   width: 100%;
   background-color: #f8f8f8;
   border: 1px solid #e0e0e0;
@@ -494,5 +497,36 @@ html {
 #preloader.fade {
     opacity: 0;
 }
+
+/* Add to wishlist pop up */
+#wishlist-popup {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #e6e0e1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 10px;
+}
+
+/* Already in wishlist pop-up */
+.already-popup{
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  background-color: #fff;
+  border: 2px solid #e6e0e1;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  border-radius: 10px;
+}
+
 
 

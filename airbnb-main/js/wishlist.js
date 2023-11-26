@@ -1,4 +1,5 @@
 const wishlistContainer = document.getElementById('imageCard');
+const wishlistPopup = document.getElementById('wishlist-popup');
 
 function getWishlist() {
   const wishlistString = localStorage.getItem('wishlist');
@@ -20,12 +21,24 @@ function displayWishlist() {
   }
 }
 
+function showWishlistPopup() {
+  wishlistPopup.style.display = 'block';
+
+  // Hide the popup after a certain duration (e.g., 3 seconds)
+  setTimeout(() => {
+    wishlistPopup.style.display = 'none';
+  }, 2500);
+}
+
+
 function saveWishlist(wishlist) {
   localStorage.setItem('wishlist', JSON.stringify(wishlist));
   }
 
 function removeFromWishlist(item) {
+  showWishlistPopup();
   console.log("Hi");
+  
   const wishlist = getWishlist();
   console.log(wishlist);
   const updatedWishlist = wishlist.filter((wishlistItem) => wishlistItem.id !== item.id);

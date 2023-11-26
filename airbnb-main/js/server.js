@@ -26,33 +26,28 @@ const stripeClient = stripe(stripeApiKey);
 app.use(express.json());
 app.use(cors());
 
-const storeItems = new Map([
-  [1, { priceInCents: 10000, name: "Learn React Today" }],
-  [2, { priceInCents: 20000, name: "Learn CSS Today" }],
-]);
+
 
 app.post("/create-checkout-session", async (req, res) => {
   try {
     console.log("Request body:", req.body);
-
     const session = await stripeClient.checkout.sessions.create({
       payment_method_types: ["card"],
       mode: "payment",
-      line_items: req.body.items.map((item) => {
-        const storeItem = storeItems.get(item.id);
+      line_items: req.body.dates.map((date) => {
         return {
           price_data: {
             currency: "inr",
             product_data: {
-              name: storeItem.name,
+              name: `${date.checkinDate}  to  ${date.checkoutDate}`,
             },
-            unit_amount: storeItem.priceInCents,
+            unit_amount: 500, // Set to 0 to indicate no specific price
           },
-          quantity: item.quantity,
+          quantity:1 ,
         };
       }),
       success_url: "http://127.0.0.1:5501/confirmation_page.html",
-    cancel_url: "http://127.0.0.1:5501/client/cancel.html",
+      cancel_url: "http://127.0.0.1:5501/client/cancel.html",
     });
 
     console.log("Session created:", session);

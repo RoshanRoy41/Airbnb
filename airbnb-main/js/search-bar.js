@@ -1,4 +1,4 @@
-const searchUrl = 'https://mocki.io/v1/ab5e68c0-af4e-4d69-afdf-cf058b6f8f83';
+const searchUrl = 'https://mocki.io/v1/a333851f-8d2f-473c-bd8e-7c3b1a39e8c8';
 
 document.addEventListener('DOMContentLoaded', () => {
     const searchBar = document.getElementById('searchInput');
@@ -56,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const createCardData = (userData) => {
         const div = document.createElement("div");
         div.classList.add("card", "col-lg-3", "col-md-4", "col-sm-6","col-xs-6","border-0");
+
         const img = document.createElement('img');
         const div1 = document.createElement('div');
         div1.classList.add('wishlist-icon');
@@ -76,20 +77,19 @@ document.addEventListener('DOMContentLoaded', () => {
         div3.classList.add("card-title");
         const h4 = document.createElement("h4");
         const p = document.createElement("p");
-        h4.textContent=userData.location;
-        let num =(Math.random()*4+1).toFixed(1)+ " <i class='fa-solid fa-star'></i>";
+        h4.textContent=userData.name;
+        let num =userData.rating+ " <i class='fa-solid fa-star'></i>";
         p.innerHTML = num;
 
         const p1 = document.createElement("p");
         const span = document.createElement("span");
         span.classList.add("grey");
-        span.innerHTML="Hosted by "+  userData.author;
+        span.innerHTML="Hosted by "+  userData.author_name;
 
-        let distance = (Math.random()*300+1).toFixed(2);
         const p3 = document.createElement("p");
         const span1 = document.createElement("span");
         span1.classList.add("grey");
-        span1.innerHTML=distance+" km to National Park";
+        span1.innerHTML=userData.location;
 
     
         const p2 = document.createElement("p");
@@ -138,10 +138,10 @@ function saveWishlist(wishlist) {
     const isItemInWishlist = wishlist.some(item => item.id === userData.id);
   
     if (!isItemInWishlist) {
-      wishlist.push(userData);
+        wishlist.push(userData);
+        saveWishlist(wishlist);
     } else {
-      const updatedWishlist = wishlist.filter(item => item.id !== userData.id);
-      saveWishlist(updatedWishlist);
+      
     }
   
     // Update the UI or perform any other actions related to the wishlist

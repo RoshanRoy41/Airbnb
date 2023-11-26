@@ -19,9 +19,18 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/homepage.css" />
   </head>
   <body>
+    
+      <!-- Pop up -->
+     
+
     <div id="preloader">
     </div>
 
@@ -71,28 +80,49 @@
       <div
         id="sortBarCarousel"
         class="sort-bar carousel slide"
-        data-ride="carousel"
-      >
+        data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
             <div class="d-md-none">
               <!-- Display flex layout only on small and medium screens -->
-              <div class="d-flex justify-content-around align-items-center" id="carouselContent">
-                <div class="d-flex flex-column align-items-center">
+              <div class="d-flex justify-content-around align-items-center" id="carouselContent1">
+                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
                   <i class="fa-solid fa-house-chimney"></i>
                   <p>House</p>
-                </div>
-                <div>
-                  <i class="fa-solid fa-snowflake" class="d-flex flex-column align-items-center"></i>
+                </div >
+                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                  <i class="fa-solid fa-snowflake" ></i>
                   <p>Arctic</p>
                 </div>
-                <div>
-                  <i class="fa-solid fa-tree" class="d-flex flex-column align-items-center"></i>
+                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                  <i class="fa-solid fa-tree" ></i>
                   <p>Trees</p>
                 </div>
-                <div>
-                  <i class="fa-solid fa-building" class="d-flex flex-column align-items-center"></i>
+                <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                  <i class="fa-solid fa-building"></i>
                   <p>City</p>
+                </div>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <div class="d-md-none">
+                <div class="d-flex justify-content-around align-items-center" id="carouselContent2">
+                  <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                    <i class="fa-solid fa-campground"></i>
+                    <p>Camping</p>
+                  </div>
+                  <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                    <i class="fa-solid fa-umbrella-beach"></i>
+                    <p>Beach</p>
+                  </div>
+                  <div onclick="reloadPage()" class="d-flex flex-column align-items-center">
+                    <i class="fa-solid fa-rocket"></i>
+                    <p >OMG</p>
+                  </div>
+                  <div onclick="reloadPage()"class="d-flex flex-column align-items-center">
+                    <i class="fa-solid fa-volleyball"></i>
+                    <p>Games</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -159,9 +189,9 @@
       <div id="listings" class="listings container">
         <div class="row" id="imageCard">
           <!-- Rental Cards will be dynamically added here using JavaScript -->
+        
         </div>
       </div>
-
     <!-- Footer -->  
     </div>
     <div class="container-fluid footer">
@@ -233,17 +263,20 @@
         </div>
       </div>
     </div>
+
+    <div id="wishlist-popup" class="popup">
+      Added to Wishlist!
+    </div>
+
+    <div id="already-wishlist-popup" class="already-popup">
+      Already in the Wishlist!
+    </div>
+
     <script src="js/homepage.js"></script>
     <script src="js/search-bar.js"></script>
     <script src="js/reload.js"></script>
     <script src="js/preload.js"></script>
-    <!-- Bootstrap JavaScript and Popper.js -->
-    <!-- Include jQuery library -->
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <script src="js/carousel.js"></script>
   </body>
 </html>
 
