@@ -110,14 +110,14 @@
 }
 .star-rating {
   height: 25px;
-<<<<<<< HEAD
   margin-bottom: 0px;
-=======
-  margin-bottom:0px;
->>>>>>> fbc1485e67e92ee10fcbe9d16f2f6835429a3f67
   margin-right: 8px;
   border-radius: 0px;
   align-self: center;
+}
+a {
+  color: black !important;
+  text-decoration: none !important;
 }
 .p {
   font-family: Poppins-thin;
@@ -209,7 +209,7 @@
   margin-top: 20px;
   color: rgb(168, 168, 168);
   margin-left: 15px;
-  width: 90%;
+  width: 105%;
 }
 .details-about-unit-host-flex-text h3 {
   display: inline;
@@ -247,7 +247,7 @@
   margin-bottom: 0px;
 }
 .oneReview p {
-  font-weight: 800;
+  font-weight: 300;
   font-size: 14px;
   margin-left: 10px;
   margin-bottom: 0px;

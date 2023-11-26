@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Wishlist</title>
-  <link
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wishlist</title>
+    <link
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
       rel="stylesheet"
     />
@@ -13,62 +13,70 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
     />
-  <link rel="stylesheet" href="/css/homepage.css" />
-  <link rel="stylesheet" href="/css/preloader.css" />
-</head>
-<body>
-  <div id="preloader">
-  </div>
-    <div class = "container">
-        <!-- Nav Bar -->
-        <nav class="navbar navbar-expand-lg navbar-light">
-            <a class="navbar-brand" href="homepage.html">
-              <img src="/images/logo2.png" alt="Logo">
-            </a>
-  
-           <!-- Wishlist Heading -->
-            <div class="wishlist-heading">
-              <h3 class="text-center">My WishList</h3>
-            </div>
-      
-            <!-- Mobile Menu Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <i class="fas fa-bars"></i>
-            </button>
-      
-            <!-- Navbar Items -->
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                  <a class="nav-link" onclick="closeMenu()" href="#listings">Airbnb your home</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link" onclick="closeMenu()" href="#popular">Popular</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+    <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/preloader.css" />
+  </head>
+  <body>
+    <div id="preloader"></div>
+    <div class="container">
+      <!-- Nav Bar -->
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="homepage.html">
+          <img src="/images/logo2.png" alt="Logo" />
+        </a>
 
-        <div id="listings" class="listings container">
-            <div class="row" id="imageCard">
-              <!-- Rental Cards will be dynamically added here using JavaScript -->
-            </div>
-          </div>
+        <!-- Wishlist Heading -->
+        <div class="wishlist-heading">
+          <h3 class="text-center">My WishList</h3>
+        </div>
+
+        <!-- Mobile Menu Button -->
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <!-- Navbar Items -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" onclick="closeMenu()" href="#listings"
+                >Airbnb your home</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" onclick="closeMenu()" href="#popular"
+                >Popular</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+
+      <div id="listings" class="listings container">
+        <div class="row" id="imageCard">
+          <!-- Rental Cards will be dynamically added here using JavaScript -->
+        </div>
+      </div>
     </div>
-    
-    <div id="wishlist-popup" class="popup">
-      Item removed from Wishlist!
-    </div>
 
-  <script src="js/wishlist.js"></script>
-  <script src="js/preload.js"></script>
-   <!-- Include jQuery library -->
-   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <div id="wishlist-popup" class="popup">Item removed from Wishlist!</div>
 
-</body>
+    <script src="js/wishlist.js"></script>
+
+    <script src="js/preload.js"></script>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </body>
 </html>

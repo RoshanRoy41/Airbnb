@@ -15,7 +15,7 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
   padding: 20px;
-  z-index: 99; /* Set a higher z-index to make it appear over the button */
+  z-index: 999; /* Set a higher z-index to make it appear over the button */
   align-items: center;
 }
 :root {
@@ -281,4 +281,52 @@ span.material-symbols-rounded {
   span.material-symbols-rounded {
     font-size: 1.25rem !important;
   }
+}
+.menu-card {
+  width: 300px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+  margin: 20px;
+  display: none;
+  position: fixed;
+  bottom: 60px;
+  right: 20px;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  padding: 20px;
+  z-index: 999;
+  align-items: center;
+}
+
+.card img {
+  width: 100%;
+  height: auto;
+}
+
+.card-content {
+  padding: 16px;
+  align-items: center;
+}
+
+.card-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.card-description {
+  font-size: 1em;
+  color: #555;
+  padding: 5px;
+  cursor: pointer;
+}
+
+#numberCard {
+  display: none;
+}
+.whatsapp-icon {
+  width: 30px; /* Adjust the width to your preference */
+  height: auto; /* Maintain aspect ratio */
 }

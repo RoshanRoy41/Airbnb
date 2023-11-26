@@ -1,14 +1,14 @@
-const wishlistContainer = document.getElementById('imageCard');
-const wishlistPopup = document.getElementById('wishlist-popup');
+const wishlistContainer = document.getElementById("imageCard");
+const wishlistPopup = document.getElementById("wishlist-popup");
 
 function getWishlist() {
-  const wishlistString = localStorage.getItem('wishlist');
+  const wishlistString = localStorage.getItem("wishlist");
   return wishlistString ? JSON.parse(wishlistString) : [];
 }
 
 // Function to display wishlist items
 function displayWishlist() {
-  wishlistContainer.innerHTML = ''; // Clear existing content
+  wishlistContainer.innerHTML = ""; // Clear existing content
   const wishlist = getWishlist();
   console.log(wishlist);
   if (wishlist.length > 0) {
@@ -17,31 +17,32 @@ function displayWishlist() {
       wishlistContainer.appendChild(wishlistItem);
     });
   } else {
-    wishlistContainer.innerHTML = '<p>Your wishlist is empty.</p>';
+    wishlistContainer.innerHTML = "<p>Your wishlist is empty.</p>";
   }
 }
 
 function showWishlistPopup() {
-  wishlistPopup.style.display = 'block';
+  wishlistPopup.style.display = "block";
 
   // Hide the popup after a certain duration (e.g., 3 seconds)
   setTimeout(() => {
-    wishlistPopup.style.display = 'none';
+    wishlistPopup.style.display = "none";
   }, 2500);
 }
 
-
 function saveWishlist(wishlist) {
-  localStorage.setItem('wishlist', JSON.stringify(wishlist));
-  }
+  localStorage.setItem("wishlist", JSON.stringify(wishlist));
+}
 
 function removeFromWishlist(item) {
   showWishlistPopup();
   console.log("Hi");
-  
+
   const wishlist = getWishlist();
   console.log(wishlist);
-  const updatedWishlist = wishlist.filter((wishlistItem) => wishlistItem.id !== item.id);
+  const updatedWishlist = wishlist.filter(
+    (wishlistItem) => wishlistItem.id !== item.id
+  );
   saveWishlist(updatedWishlist);
   const removedElement = document.getElementById(`wishlistItem-${item.id}`);
   if (removedElement) {
@@ -52,61 +53,58 @@ function removeFromWishlist(item) {
 
 // Function to create HTML for a wishlist item
 function createWishlistItem(item) {
-  
-  const div = document.createElement('div');
+  const div = document.createElement("div");
   div.classList.add(
-      'card',
-      'col-lg-3',
-      'col-md-4',
-      'col-sm-6',
-      'col-xs-6',
-      'border-0',
-
+    "card",
+    "col-lg-3",
+    "col-md-4",
+    "col-sm-6",
+    "col-xs-6",
+    "border-0"
   );
-  div.id = `wishlistItem-${item.id}`; 
-  const img = document.createElement('img');
-  const div1 = document.createElement('div');
-  div1.classList.add('wishlist-icon');
+  div.id = `wishlistItem-${item.id}`;
+  const img = document.createElement("img");
+  const div1 = document.createElement("div");
+  div1.classList.add("wishlist-icon");
 
   // Create the heart icon
-  const removeIcon = document.createElement('i');
-  removeIcon.classList.add('fa','fa-times');
-  removeIcon.addEventListener('click', () => removeFromWishlist(item));
-
+  const removeIcon = document.createElement("i");
+  removeIcon.classList.add("fa", "fa-times");
+  removeIcon.addEventListener("click", () => removeFromWishlist(item));
 
   // Append the heart icon to div1
   div1.appendChild(removeIcon);
 
   img.src = item.download_url;
-  const div2 = document.createElement('div');
+  const div2 = document.createElement("div");
 
-  const div3 = document.createElement('div');
-  div3.classList.add('card-title');
-  const h4 = document.createElement('h4');
-  const p = document.createElement('p');
-  h4.textContent = item.location;
-  let num = (Math.random() * 4 + 1).toFixed(1) + " <i class='fa-solid fa-star'></i>";
+  const div3 = document.createElement("div");
+  div3.classList.add("card-title");
+  const h4 = document.createElement("h4");
+  const p = document.createElement("p");
+  h4.textContent = item.name;
+  let num = String(item.rating) + " <i class='fa-solid fa-star'></i>";
   p.innerHTML = num;
 
-  const p1 = document.createElement('p');
-  const span = document.createElement('span');
-  span.classList.add('grey');
-  span.innerHTML = 'Hosted by ' + item.author;
+  const p1 = document.createElement("p");
+  const span = document.createElement("span");
+  span.classList.add("grey");
+  span.innerHTML = "Hosted by " + item.author_name;
 
   let distance = (Math.random() * 300 + 1).toFixed(2);
-  const p3 = document.createElement('p');
-  const span1 = document.createElement('span');
-  span1.classList.add('grey');
-  span1.innerHTML = distance + ' km to National Park';
+  const p3 = document.createElement("p");
+  const span1 = document.createElement("span");
+  span1.classList.add("grey");
+  span1.innerHTML = item.location;
 
-  const p2 = document.createElement('p');
+  const p2 = document.createElement("p");
   let num1 = item.width;
-  p2.innerHTML = '₹' + num1 + ' night';
+  p2.innerHTML = "₹" + num1 + " night";
 
   div.appendChild(img);
-  img.addEventListener('click', () => {
+  img.addEventListener("click", () => {
     openNewPage(item);
-    console.log('hello event');
+    console.log("hello event");
     console.log(item.id);
   });
   div.appendChild(div1);
@@ -124,10 +122,10 @@ function createWishlistItem(item) {
   return div;
 }
 
+const openNewPage = (userData) => {
+  window.location.href = `unitcard.html?id=${userData.id}&price=${userData.width}&lat=${userData.latitude}&long=${userData.longitude}&place=${userData.location}`;
+};
 
-
-
-document.addEventListener('DOMContentLoaded', () => {
-
+document.addEventListener("DOMContentLoaded", () => {
   displayWishlist(); // Display wishlist on page load
 });

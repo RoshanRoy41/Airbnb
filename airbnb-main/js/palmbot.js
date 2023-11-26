@@ -1,7 +1,11 @@
 function toggleChat() {
-  var chatContainer = document.querySelector(".main-container");
-  chatContainer.style.display =
-    chatContainer.style.display === "none" ? "block" : "none";
+  document.querySelector(".main-container").style.display =
+    document.querySelector(".main-container").style.display === "none"
+      ? "block"
+      : "none";
+  document.getElementById("numberCard").style.display = "none";
+
+  document.getElementById("mainCard").style.display = "none";
 }
 const chatInput = document.querySelector(".chat-input");
 const sendButton = document.querySelector(".send-btn");
@@ -114,7 +118,7 @@ const copyResponse = (copyBtn) => {
 const showTypingAnimation = () => {
   const html = `<div class="chat-content">
                     <div class="chat-details">
-                        <img src="./img/robot.png" alt="chatbot-img">
+                        <img src="./images/robot.png" alt="chatbot-img">
                         <div class="typing-animation">
                             <div class="typing-dot" style="--delay: 0.2s"></div>
                             <div class="typing-dot" style="--delay: 0.3s"></div>
@@ -138,7 +142,7 @@ const handleOutgoingChat = () => {
 
   const html = `<div class="chat-content">
                     <div class="chat-details">
-                        <img src="./img/user.png" alt="user-img">
+                        <img src="./images/user.png" alt="user-img">
                         <p>${UserText}</p>
                     </div>
                 </div>`;
@@ -182,3 +186,21 @@ chatInput.addEventListener("keydown", (e) => {
 
 loadDataFromLocalStorage();
 sendButton.addEventListener("click", handleOutgoingChat);
+function showNumber() {
+  document.getElementById("numberCard").style.display =
+    document.getElementById("numberCard").style.display === "none"
+      ? "block"
+      : "none";
+  document.querySelector(".main-container").style.display = "none";
+
+  document.getElementById("mainCard").style.display = "none";
+}
+function showMenu() {
+  document.getElementById("mainCard").style.display =
+    document.getElementById("mainCard").style.display === "none"
+      ? "block"
+      : "none";
+  document.querySelector(".main-container").style.display = "none";
+
+  document.getElementById("numberCard").style.display = "none";
+}

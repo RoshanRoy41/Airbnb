@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: 'Poppins', sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 li {
@@ -42,9 +42,7 @@ html {
   border-bottom: 1px solid #eeeeee;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  align-items: center; 
-
- 
+  align-items: center;
 }
 
 .navbar img {
@@ -56,17 +54,15 @@ html {
 .wishlist-heading {
   justify-self: center;
   width: 100%;
-  
 }
 
-.wishlist-heading h3{
+.wishlist-heading h3 {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 200px;
   margin: auto;
-
 }
 
 /* Search bar */
@@ -105,15 +101,14 @@ html {
 .search i {
   font-size: 1rem;
   color: white;
-  
 }
- .search map{
-        display: none;
-        flex: 1;
-        height: 300px;
-        background-color: #f5f5f5;
-        border: 1px solid #ccc;
-        border-radius: 4px;
+.search map {
+  display: none;
+  flex: 1;
+  height: 300px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .search button {
@@ -123,7 +118,6 @@ html {
   height: 35px;
   border-radius: 100%;
   margin-left: 20px;
-  
 }
 
 .menu {
@@ -144,9 +138,6 @@ html {
   display: none;
 }
 
-
-
-
 /* Sort  bar */
 .sort-bar {
   display: flex;
@@ -155,87 +146,77 @@ html {
   color: #5e5e5e;
 }
 
-  .sort-bar .d-flex div:hover,
-.sort-bar .sort-bar-element div:hover{
-    color: black;
-    background-color: rgb(255, 255, 255);
-    border-bottom: 2px solid; 
-    /* text-decoration: underline; */
-    text-underline-offset: 0.5rem;
-    text-decoration-color: rgb(181, 181, 181);
-    cursor: pointer; 
-  }
-  
-  .sort-bar i {
-    font-size: 1.2rem;
-  }
-  
-  .sort-bar p {
-    font-size: 12px;
-  }
+.sort-bar .d-flex div:hover,
+.sort-bar .sort-bar-element div:hover {
+  color: black;
+  background-color: rgb(255, 255, 255);
+  border-bottom: 2px solid;
+  /* text-decoration: underline; */
+  text-underline-offset: 0.5rem;
+  text-decoration-color: rgb(181, 181, 181);
+  cursor: pointer;
+}
 
+.sort-bar i {
+  font-size: 1.2rem;
+}
 
-  /*Next and Previous*/
-  .carousel-control-next {
+.sort-bar p {
+  font-size: 12px;
+}
 
-    margin-top: 15px;
-    width: 1.8rem; /* Adjust the width as needed */
-    height: 1.8rem; /* Adjust the height as needed */
-    background-color: #333; /* Set the background color */
-    border-radius: 50%; /* Make it a circle */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.8; /* Adjust the opacity as needed */
-  }
-  
-  .carousel-control-next-icon {
-    color: white; 
-    margin: 7px;
-    width: 1rem; /* Adjust the width as needed */
-    height: 1rem;
-  }
-  
+/*Next and Previous*/
+.carousel-control-next {
+  margin-top: 15px;
+  width: 1.8rem; /* Adjust the width as needed */
+  height: 1.8rem; /* Adjust the height as needed */
+  background-color: #333; /* Set the background color */
+  border-radius: 50%; /* Make it a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8; /* Adjust the opacity as needed */
+}
 
+.carousel-control-next-icon {
+  color: white;
+  margin: 7px;
+  width: 1rem; /* Adjust the width as needed */
+  height: 1rem;
+}
 
-  .carousel-control-prev {
-    
-    margin-top: 15px;
-    width: 1.8rem; /* Adjust the width as needed */
-    height: 1.8rem; /* Adjust the height as needed */
-    background-color: #333; /* Set the background color */
-    border-radius: 50%; /* Make it a circle */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0.8; /* Adjust the opacity as needed */
-  }
-  
-  .carousel-control-prev-icon {
-    color: white; 
-    margin: 7px;
-    width: 1rem; /* Adjust the width as needed */
-    height: 1rem;
-  }
-  
- 
-  
+.carousel-control-prev {
+  margin-top: 15px;
+  width: 1.8rem; /* Adjust the width as needed */
+  height: 1.8rem; /* Adjust the height as needed */
+  background-color: #333; /* Set the background color */
+  border-radius: 50%; /* Make it a circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.8; /* Adjust the opacity as needed */
+}
 
- 
-  /*Rental card*/
+.carousel-control-prev-icon {
+  color: white;
+  margin: 7px;
+  width: 1rem; /* Adjust the width as needed */
+  height: 1rem;
+}
 
-  .listings {
-    margin: 1rem 0;
-    gap: 1.6rem;
+/*Rental card*/
+
+.listings {
+  margin: 1rem 0;
+  gap: 1.6rem;
 }
 
 .listings .card {
-    max-width: 305px;
-    width: 100%;
-    font-size: .9rem;
-    position: relative;
-    cursor: pointer;
-
+  max-width: 305px;
+  width: 100%;
+  font-size: 0.9rem;
+  position: relative;
+  cursor: pointer;
 }
 
 /* .card:hover{
@@ -257,7 +238,7 @@ html {
   transform: scale(1.04);
 }
 
-.listings .card h4{
+.listings .card h4 {
   margin-top: 7px;
   margin-bottom: 0px;
   font-size: 18px !important;
@@ -265,12 +246,10 @@ html {
 
 .listings .card-title p {
   margin-top: 6px;
-
 }
 
 .listings .card p {
   margin-bottom: 5px;
-
 }
 
 .listings .card img {
@@ -278,24 +257,24 @@ html {
   margin-top: 15px;
 }
 
-
- /*Wishlist icon*/
- .card .wishlist-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    position: absolute;
-     top: 10px;
-     right: 10px;
-     
-
+/*Wishlist icon*/
+.card .wishlist-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.card .wishlist-icon.clicked {
+  color: #e52645 !important; /* Color when clicked */
 }
 
 .wishlist-icon i {
@@ -342,7 +321,7 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100px; 
+  height: 100px;
   width: 100%;
   background-color: #f8f8f8;
   border: 1px solid #e0e0e0;
@@ -351,151 +330,147 @@ html {
   font-size: 18px;
   color: #414040;
   text-align: center;
-
 }
-
-
 
 /*footer*/
 .future-getaways {
-    margin-left: 80px;
-    margin-right: 80px;
-  }
-  
-  .bottom-nav-link div {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 40px;
-  }
-  
-  .future-getaways-title {
-    font-size: 30px;
-    font-weight: 500;
-    margin-bottom: 10px;
-  }
-  
-  .bottom-nav-link div button {
-    cursor: pointer;
-    border: none;
-    background-color: white;
-    height: 40px;
-  }
-  
-  .bottom-nav-link div button:hover {
-    background-color: rgb(241, 239, 239);
-    border-radius: 5px;
-  }
-  
-  .loctaions-nav {
-    display: flex;
-    justify-content: space-around;
-  }
-  
-  .location-nav-link {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .location-nav-link-item {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .location-city {
-    margin-bottom: 20px;
-    color: gray;
-  }
-  
-  .location-nav-link-item span {
-    cursor: pointer;
-  }
-  
-  .show-more {
-    text-decoration: underline;
-  }
-  
-  .footer {
-    min-height: 450px;
-    background-color: rgb(247, 244, 244);
-    
-  }
-  .footer-item {
-    display: flex;
-    margin-top: 50px;
-    margin-left: 90px;
-    margin-right: 0px;
-  }
-  
-  .location-nav-link {
-    margin-top: 50px;
-  }
-  
-  .location-nav-link-title {
-    font-size: 16px;
-    font-weight: 600;
-  }
-  
-  .footer-nav-link-item {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .footer-nav-link-item span {
-    margin-top: 20px;
-    font-size: 0.875rem;
-  }
-  
-  .footer-nav-link-item span:hover {
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  
-  hr {
-    margin: 50px;
-  }
-  
-  .copyright-section {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 50px;
-    padding-bottom: 20px;
-  }
-  
-  .languange-currency {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .languange-currency div {
-    margin-right: 45px;
-  }
-  
-  .languange-currency img {
-    width: 20px;
-    margin-right: 20px;
-  }
+  margin-left: 80px;
+  margin-right: 80px;
+}
 
-  #preloader {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgb(248, 246, 246) url('/images/newgif.gif') no-repeat center;
-    background-size: 30%;
-    z-index: 1000;
-    opacity: 1; /* Set initial opacity to fully opaque */
-    transition: opacity 1s ease; /* Add a transition for the opacity property */
+.bottom-nav-link div {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 40px;
+}
+
+.future-getaways-title {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+
+.bottom-nav-link div button {
+  cursor: pointer;
+  border: none;
+  background-color: white;
+  height: 40px;
+}
+
+.bottom-nav-link div button:hover {
+  background-color: rgb(241, 239, 239);
+  border-radius: 5px;
+}
+
+.loctaions-nav {
+  display: flex;
+  justify-content: space-around;
+}
+
+.location-nav-link {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.location-nav-link-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.location-city {
+  margin-bottom: 20px;
+  color: gray;
+}
+
+.location-nav-link-item span {
+  cursor: pointer;
+}
+
+.show-more {
+  text-decoration: underline;
+}
+
+.footer {
+  min-height: 450px;
+  background-color: rgb(247, 244, 244);
+}
+.footer-item {
+  display: flex;
+  margin-top: 50px;
+  margin-left: 90px;
+  margin-right: 0px;
+}
+
+.location-nav-link {
+  margin-top: 50px;
+}
+
+.location-nav-link-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.footer-nav-link-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer-nav-link-item span {
+  margin-top: 20px;
+  font-size: 0.875rem;
+}
+
+.footer-nav-link-item span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+hr {
+  margin: 50px;
+}
+
+.copyright-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 50px;
+  padding-bottom: 20px;
+}
+
+.languange-currency {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.languange-currency div {
+  margin-right: 45px;
+}
+
+.languange-currency img {
+  width: 20px;
+  margin-right: 20px;
+}
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgb(248, 246, 246) url("/images/newgif.gif") no-repeat center;
+  background-size: 30%;
+  z-index: 1000;
+  opacity: 1; /* Set initial opacity to fully opaque */
+  transition: opacity 1s ease; /* Add a transition for the opacity property */
 }
 
 /* Add a class to trigger the fade effect */
 #preloader.fade {
-    opacity: 0;
+  opacity: 0;
 }
 
 /* Add to wishlist pop up */
@@ -514,7 +489,7 @@ html {
 }
 
 /* Already in wishlist pop-up */
-.already-popup{
+.already-popup {
   display: none;
   position: fixed;
   top: 50%;
@@ -527,6 +502,17 @@ html {
   z-index: 1000;
   border-radius: 10px;
 }
+.languange-currency {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
+.languange-currency div {
+  margin-right: 45px;
+}
 
-
+.languange-currency img {
+  width: 20px;
+  margin-right: 20px;
+}

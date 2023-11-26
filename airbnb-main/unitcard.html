@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>AirBnb Booking</title>
+    <link rel="icon" href="./images/airbnb.png" type="image/x-icon" />
     <link
       href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/themes/smoothness/jquery-ui.min.css"
       rel="stylesheet"
@@ -13,6 +14,7 @@
     <link rel="stylesheet" href="/css/unitcard.css" />
     <link rel="stylesheet" href="/css/Unit.css" />
     <link rel="stylesheet" href="/css/homepage.css" />
+    <script src="https://js.stripe.com/v3/" defer></script>
 
     <link
       rel="stylesheet"
@@ -46,30 +48,13 @@
     <script src="/js/about-user.js"></script>
   </head>
   <body>
-    <div id="preloader"></div>
+    <!-- <div id="preloader"></div> -->
     <div class="navbar-container">
       <div class="navbar">
         <div>
-          <img src="/images/logo2.png" style="border-radius: 4px" />
-        </div>
-        <div class="search" id="searchButton">
-          <form>
-            <div class="input-container">
-              <input
-                type="text"
-                id="searchInput"
-                placeholder="Search Properties"
-              />
-            </div>
-            <div>
-              <button class="search-button">
-                <i class="fa-solid fa-magnifying-glass"></i>
-              </button>
-              <button class="close-button">
-                <i class="fa fa-times" aria-hidden="true"></i>
-              </button>
-            </div>
-          </form>
+          <a href="homepage.html"
+            ><img src="/images/logo2.png" style="border-radius: 4px"
+          /></a>
         </div>
 
         <div class="menu">
@@ -218,7 +203,7 @@
             <div id="aboutOwnerContainer"></div>
           </div>
 
-          <div class="calender-container-main">
+          <div class="calender-container-main col">
             <hr />
             <div class="calendar-container">
               <h3 class="nights-title">0 nights in Great London</h3>
@@ -281,7 +266,7 @@
           </div>
         </div>
       </div>
-      <div class="map-container">
+      <div class="map-container col">
         <hr id="bookingContainerStop" />
 
         <section>
@@ -322,6 +307,24 @@
         <div id="places-container"></div>
       </div>
     </div>
+    <div
+      class="menu-card"
+      id="mainCard"
+      style="display: none; align-items: center"
+    >
+      <div class="card-content">
+        <div class="card-title">You can either</div>
+        <div style="display: flex">
+          <button class="card-description" onclick="showNumber()">
+            Call an expert
+          </button>
+          <p style="margin: 10px 15px 10px 15px">or</p>
+          <button class="card-description" onclick="toggleChat()">
+            Chat with bot
+          </button>
+        </div>
+      </div>
+    </div>
     <div class="main-container" style="display: none; align-items: center">
       <div class="chat-container" id="chatContainer">
         <!-- Your chat HTML content goes here -->
@@ -346,7 +349,28 @@
         </div>
       </div>
     </div>
-    <button class="chat-icon material-symbols-rounded" onclick="toggleChat()">
+
+    <div class="menu-card" id="numberCard">
+      <div class="card-content">
+        <div class="card-title">Call at this Number</div>
+        <div class="card-description" style="text-align: center">
+          <p>
+            You can call us at: <a href="tel:+919037773165">+91 90377 73165</a>
+          </p>
+          <p>
+            Or you can WhatsApp us at:
+            <a href="https://wa.me/918073436214" target="_blank"
+              >Click here
+              <img
+                class="whatsapp-icon"
+                src="/images/whatsapp.png"
+                alt="WhatsApp Icon"
+            /></a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <button class="chat-icon material-symbols-rounded" onclick="showMenu()">
       chat
     </button>
     <div class="footer">
@@ -408,7 +432,7 @@
     <script src="/js/Unit.js"></script>
     <script src="js/palmbot.js" defer></script>
     <script src="/js/preload.js"></script>
-    <script src="https://js.stripe.com/v3/" defer></script>
+
     <!-- <script src="js/server.js" defer></script> -->
     <!-- <script src="js/client.js" defer></script> -->
   </body>

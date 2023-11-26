@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const latitude = locationParams.get("lat");
   const longitude = locationParams.get("long");
   const locationName = locationParams.get("place");
-  
+
   // Get the location information from the third section's <p> tag
   let locationElement = document.getElementById("location");
   locationElement.querySelector("p").innerText = locationName;
@@ -22,14 +22,14 @@ document.addEventListener("DOMContentLoaded", function () {
     let locationCoordinates = locationMappings[locationText];
 
     // Initialize the map with the specified coordinates
-    let map = L.map("map").setView(
+    let map = L.map("map", { attributionControl: false }).setView(
       [locationCoordinates.lat, locationCoordinates.lng],
       13
     );
 
-    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
-      attribution: "© OpenStreetMap contributors",
-    }).addTo(map);
+    L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {}).addTo(
+      map
+    );
 
     // Add a marker for the specified location
     L.marker([locationCoordinates.lat, locationCoordinates.lng])
@@ -40,7 +40,6 @@ document.addEventListener("DOMContentLoaded", function () {
     console.error("Location not found in the mapping.");
   }
 });
-
 
 // document
 //   .querySelector("thirdSection")
