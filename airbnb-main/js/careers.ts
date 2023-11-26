@@ -57,14 +57,20 @@ async function fetchData() {
 
       randomId[i] = Math.floor(Math.random() * course.length);
       const courseElement = document.createElement("div");
-      courseElement.className = "courseElement col-xl-3 col-lg-3 m-3";
-
+      courseElement.className = "courseElement col-xl-3 col-lg-3 m-3 card";
+      const div1 =document.createElement("div");
+      div1.className="first-content";
       const jobTitle = document.createElement("h2");
       jobTitle.textContent = `${course[randomId[i]].Jobs}`;
+      const jobTitle2 = document.createElement("h2");
+      jobTitle2.textContent = `${course[randomId[i]].Jobs}`;
+      jobTitle2.className = "small-title";
+      const div2 =document.createElement("div");
+      div2.className="second-content";
       const jobDesc = document.createElement("p");
       jobDesc.textContent = `${course[randomId[i]].Description}`;
-      const jobText = document.createElement("div");
-      jobText.className = "jobText";
+      // const jobText = document.createElement("div");
+      // jobText.className = "jobText";
       const applyNow = document.createElement("button");
       if (applyNow) {
         applyNow.className =
@@ -80,10 +86,12 @@ async function fetchData() {
       }
 
       applyNow.textContent = "Apply Now";
-      jobText.appendChild(jobTitle);
-      jobText.appendChild(jobDesc);
-      courseElement.appendChild(jobText);
-      courseElement.appendChild(applyNow);
+      div1.appendChild(jobTitle);
+      div2.appendChild(jobTitle2);
+      div2.appendChild(jobDesc);
+      div2.appendChild(applyNow);
+      courseElement.appendChild(div1);
+      courseElement.appendChild(div2);
 
       row.appendChild(courseElement);
 
