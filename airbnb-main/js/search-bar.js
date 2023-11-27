@@ -1,4 +1,4 @@
-const searchUrl = "https://mocki.io/v1/a333851f-8d2f-473c-bd8e-7c3b1a39e8c8";
+const searchUrl = "http://localhost:3001/api";
 const wishlistPopup = document.getElementById("wishlist-popup");
 
 const AlreadyWishlistPopup = document.getElementById("already-wishlist-popup");

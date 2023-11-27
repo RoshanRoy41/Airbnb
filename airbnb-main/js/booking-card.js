@@ -140,9 +140,7 @@ document.addEventListener("DOMContentLoaded", function () {
         const urlParams = new URLSearchParams(window.location.search);
         let stayingPlace = urlParams.get("place");
         const unitId = urlParams.get("id");
-        let dataURL = fetch(
-          "https://mocki.io/v1/a333851f-8d2f-473c-bd8e-7c3b1a39e8c8"
-        );
+        let dataURL = fetch("http://localhost:3001/api");
         let dataArray = [];
         let hotelName;
         dataURL

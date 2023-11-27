@@ -7,94 +7,76 @@
     <link rel="stylesheet" type="text/css" href="css/contact.css" />
   </head>
   <body>
-    <header>
-      <div class="logo">
-        <img src="images/logo.png" alt="Airbnb Logo" />
-      </div>
-      <div class="button">
-        <div class="im">
-          <a>
-            <img src="images/three line.png" alt="Button Image" />
-            <img src="images/account-icon2.png" alt="Button Image" />
-          </a>
+    <div style="background-image: url(); align-content: center">
+      <div class="outer-box card">
+        <div class="box">
+          <h2>Contact Us</h2>
+          <form class="contact-form" name="contact-form">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="input"
+              placeholder="Enter your name"
+              required
+            />
+
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="input"
+              placeholder="Enter your email"
+              required
+            />
+            <p id="email-error-message" class="error-message">
+              Please enter a valid email address.
+            </p>
+
+            <textarea
+              class="message"
+              id="message"
+              name="message"
+              class="input"
+              style="border-color: gray"
+              placeholder="Enter your message"
+              rows="4"
+              required
+            ></textarea>
+
+            <button
+              type="submit"
+              class="continue"
+              class="input"
+              onclick="validateContactForm()"
+            >
+              Submit
+            </button>
+            <div class="container" style="margin-left: 8px">
+              <h2>Follow Us On Social Media</h2>
+              <button
+                class="social-button facebook"
+                onclick="window.location.href='https://www.facebook.com/airbnb/'"
+              >
+                Facebook
+              </button>
+              <button
+                type="button"
+                class="social-button twitter"
+                onclick="window.location.href='https://twitter.com/airbnb?lang=en'"
+              >
+                Twitter
+              </button>
+              <button
+                type="button"
+                class="social-button instagram"
+                onclick="window.location.href='https://www.instagram.com/airbnb/?hl=en'"
+              >
+                Instagram
+              </button>
+            </div>
+          </form>
         </div>
-        <div class="dropdown-content" id="image-button-dropdown">
-          <a href="#"><button class="one">Sign Up</button></a>
-          <br />
-          <a href="#"><button class="one">Log In</button></a>
-          <br />
-          <a href="#"><button class="one">Help centre</button></a>
-        </div>
-      </div>
-    </header>
-    <hr />
-    <div class="outer-box">
-      <div class="box">
-        <h2>Contact Us</h2>
-        <hr />
-        <form class="contact-form" name="contact-form">
-          <label for="name"></label>
-          <input
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Enter your name"
-            required
-          />
-
-          <label for="email"></label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-          />
-          <p id="email-error-message" class="error-message">
-            Please enter a valid email address.
-          </p>
-
-          <label for="message"></label>
-          <textarea
-            class="message"
-            id="message"
-            name="message"
-            placeholder="Enter your message"
-            rows="4"
-            required
-          ></textarea>
-
-          <button
-            type="submit"
-            class="continue"
-            onclick="validateContactForm()"
-          >
-            Submit
-          </button>
-          <div class="container">
-            <h2>Follow Us On Social Media</h2>
-            <button
-              class="social-button facebook"
-              onclick="window.location.href='https://www.facebook.com/airbnb/'"
-            >
-              Facebook
-            </button>
-            <button
-              type="button"
-              class="social-button twitter"
-              onclick="window.location.href='https://twitter.com/airbnb?lang=en'"
-            >
-              Twitter
-            </button>
-            <button
-              type="button"
-              class="social-button instagram"
-              onclick="window.location.href='https://www.instagram.com/airbnb/?hl=en'"
-            >
-              Instagram
-            </button>
-          </div>
-        </form>
       </div>
     </div>
     <div class="footer">
@@ -147,9 +129,9 @@
         <div class="languange-currency">
           <div>English (IN)</div>
           <div>₹ INR</div>
-          <img src="images/images/facebook.png" alt="" />
-          <img src="images/images/twitter.png" alt="" />
-          <img src="images/images/instagram.png" alt="" />
+          <img src="images/facebook.png" alt="" />
+          <img src="images/twitter.png" alt="" />
+          <img src="images/instagram.png" alt="" />
         </div>
       </div>
     </div>
