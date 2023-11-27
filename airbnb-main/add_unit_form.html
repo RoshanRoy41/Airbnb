@@ -21,11 +21,29 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         border-radius: 8px;
         padding: 20px;
-        width: 300px;
+        width: 380px;
         max-width: 100%;
         margin: auto;
       }
 
+      .input {
+        border: 2px solid transparent;
+        width: 300px;
+        height: 2.5em;
+        padding-left: 0.8em;
+        outline: none;
+        overflow: hidden;
+        background-color: #f3f3f3;
+        border-radius: 10px;
+        transition: all 0.5s;
+      }
+
+      .input:hover,
+      .input:focus {
+        border: 2px solid #ff5a5f;
+        box-shadow: 0px 0px 0px 7px #ffb8ba;
+        background-color: white;
+      }
       h1 {
         color: #333333;
         text-align: center;
@@ -55,7 +73,23 @@
         cursor: pointer;
         font-size: 16px;
       }
-
+      .card {
+        box-sizing: border-box;
+        background: rgba(255, 255, 255, 0.58);
+        border: 1px solid white;
+        box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+        backdrop-filter: blur(6px);
+        border-radius: 17px;
+        text-align: center;
+        /* cursor: pointer; */
+        transition: all 0.5s;
+        /* display: flex; */
+        align-items: center;
+        justify-content: center;
+        /* user-select: none; */
+        font-weight: bolder;
+        color: black;
+      }
       button:hover {
         background-color: #e00005;
       }
@@ -63,27 +97,68 @@
   </head>
   <body>
     <div class="card">
-      <h1>API Data Entry Form</h1>
+      <h1>Add Unit Form</h1>
 
       <form id="apiForm" enctype="multipart/form-data">
         <label for="location">Location:</label>
-        <input type="text" id="location" name="location" required />
+        <input
+          type="text"
+          id="location"
+          name="location"
+          class="input"
+          required
+        />
 
         <!-- Add file input elements for each image -->
         <label for="image1">Image 1:</label>
-        <input type="file" id="image1" name="image" accept="image/*" required />
+        <input
+          type="file"
+          id="image1"
+          name="image"
+          class="input"
+          accept="image/*"
+          required
+        />
 
         <label for="image2">Image 2:</label>
-        <input type="file" id="image2" name="image" accept="image/*" required />
+        <input
+          type="file"
+          id="image2"
+          name="image"
+          class="input"
+          accept="image/*"
+          required
+        />
 
         <label for="image3">Image 3:</label>
-        <input type="file" id="image3" name="image" accept="image/*" required />
+        <input
+          type="file"
+          id="image3"
+          name="image"
+          class="input"
+          accept="image/*"
+          required
+        />
 
         <label for="image4">Image 4:</label>
-        <input type="file" id="image4" name="image" accept="image/*" required />
+        <input
+          type="file"
+          id="image4"
+          name="image"
+          class="input"
+          accept="image/*"
+          required
+        />
 
         <label for="image5">Image 5:</label>
-        <input type="file" id="image5" name="image" accept="image/*" required />
+        <input
+          type="file"
+          id="image5"
+          name="image"
+          class="input"
+          accept="image/*"
+          required
+        />
 
         <!-- Add latitude and longitude fields -->
         <label for="latitude">Latitude:</label>
@@ -91,6 +166,7 @@
           type="text"
           id="latitude"
           name="latitude"
+          class="input"
           pattern="-?\d+(\.\d+)?"
           title="Please enter a valid number"
           required
@@ -101,34 +177,48 @@
           type="text"
           id="longitude"
           name="longitude"
+          class="input"
           pattern="-?\d+(\.\d+)?"
           title="Please enter a valid number"
           required
         />
         <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required />
+        <input type="text" id="name" name="name" class="input" required />
 
         <label for="author_name">Author Name:</label>
-        <input type="text" id="author_name" name="author_name" required />
+        <input
+          type="text"
+          id="author_name"
+          name="author_name"
+          class="input"
+          required
+        />
 
         <label for="rating">Rating:</label>
         <input
-          type="text"
+          type="number"
           id="rating"
           name="rating"
           pattern="\d+"
+          class="input"
           title="Please enter a valid integer"
           required
         />
 
         <label for="description">Description:</label>
-        <textarea id="description" name="description" required></textarea>
+        <textarea
+          id="description"
+          name="description"
+          class="input"
+          required
+        ></textarea>
 
         <label for="guests">Number of Guests:</label>
         <input
-          type="text"
+          type="number"
           id="guests"
           name="guests"
+          class="input"
           pattern="\d+"
           title="Please enter a valid integer"
           required
@@ -136,9 +226,10 @@
 
         <label for="bedrooms">Number of Bedrooms:</label>
         <input
-          type="text"
+          type="number"
           id="bedrooms"
           name="bedrooms"
+          class="input"
           pattern="\d+"
           title="Please enter a valid integer"
           required
@@ -146,8 +237,9 @@
 
         <label for="beds">Number of Beds:</label>
         <input
-          type="text"
+          type="number"
           id="beds"
+          class="input"
           name="beds"
           pattern="\d+"
           title="Please enter a valid integer"
@@ -156,19 +248,21 @@
 
         <label for="bathrooms">Number of Bathrooms:</label>
         <input
-          type="text"
+          type="number"
           id="bathrooms"
           name="bathrooms"
+          class="input"
           pattern="\d+"
           title="Please enter a valid integer"
           required
         />
 
-        <label for="width">Width:</label>
+        <label for="width">Price:</label>
         <input
           type="text"
           id="width"
           name="width"
+          class="input"
           pattern="\d+"
           title="Please enter a valid integer"
           required
@@ -181,7 +275,27 @@
     <script>
       async function postData() {
         const form = document.getElementById("apiForm");
+
+        // Extract values from the form
+        const rating = parseFloat(document.getElementById("rating").value);
+        const bedroom = parseInt(document.getElementById("beds").value, 10);
+        const guest = parseInt(document.getElementById("guests").value, 10);
+        const latitude = parseFloat(document.getElementById("latitude").value);
+        const longitude = parseFloat(
+          document.getElementById("longitude").value
+        );
+        const width = parseFloat(document.getElementById("width").value);
+
+        // Create a FormData object
         const formData = new FormData(form);
+
+        // Set the specific fields with the converted values
+        formData.set("rating", rating);
+        formData.set("bedroom", bedroom);
+        formData.set("guest", guest);
+        formData.set("latitude", latitude);
+        formData.set("longitude", longitude);
+        formData.set("width", width);
 
         // POST request using Fetch API
         const response = await fetch("http://localhost:3001/api", {
@@ -191,8 +305,13 @@
 
         if (response.ok) {
           alert("Data submitted successfully!");
+
           // Clear the form after successful submission
           form.reset();
+          setTimeout(function () {
+            // Redirect to another page
+            window.location.href = "homepage.html";
+          }, 5000);
         } else {
           alert("Error submitting data.");
         }

@@ -62,4 +62,5 @@ function signOut() {
 const signOutButton = document.querySelector("#signOutClick");
 if (signOutButton) {
   signOutButton.addEventListener("click", signOut);
+  localStorage.clear();
 }

@@ -1,8 +1,8 @@
-let dataURL = fetch("https://mocki.io/v1/a333851f-8d2f-473c-bd8e-7c3b1a39e8c8");
+let dataURL = fetch("http://localhost:3001/api");
 let dataset = [];
 const urlParams = new URLSearchParams(window.location.search);
 const unitId = urlParams.get("id");
-let rand = unitId;
+let rand = Number(unitId);
 let reviewNum = Math.floor(Math.random() * 1000);
 dataURL
   .then((response) => response.json())
@@ -13,11 +13,10 @@ dataURL
 
     console.log(dataset[rand].rating);
     document.getElementById("rating").textContent =
-      dataset[rand].rating.toFixed(2);
+      "   " + dataset[rand].rating;
     document.getElementById("rating two").textContent =
-      "   " + dataset[rand].rating.toFixed(2);
-    document.getElementById("star").textContent =
-      "   " + dataset[rand].rating.toFixed(2);
+      "   " + dataset[rand].rating;
+    document.getElementById("star").textContent = "   " + dataset[rand].rating;
     document.getElementById("maxguests").textContent =
       "   " + dataset[rand].guests + " Guests | ";
     document.getElementById("noOfBeds").textContent =
