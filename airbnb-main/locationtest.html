@@ -16,6 +16,12 @@
       placeholder="Type location and press Enter"
     />
 
+    <!-- Latitude and Longitude fields -->
+    <label for="latitude">Latitude:</label>
+    <input type="text" id="latitude" readonly />
+    <label for="longitude">Longitude:</label>
+    <input type="text" id="longitude" readonly />
+
     <!-- Map container -->
     <div id="map" style="height: 400px"></div>
 
@@ -28,6 +34,8 @@
         attribution: "© OpenStreetMap contributors",
       }).addTo(map);
 
+      var marker;
+
       // Function to geocode location and update map
       function geocodeLocation(location) {
         // Use OpenTripMap API to convert location to coordinates
@@ -37,8 +45,20 @@
           .then((response) => response.json())
           .then((data) => {
             if (data.lon && data.lat) {
+              // Clear previous pinpoint
+              if (marker) {
+                map.removeLayer(marker);
+              }
+
               // Set map center to the geocoded coordinates
               map.setView([data.lat, data.lon], 10);
+
+              // Update input and fields with information
+              document.getElementById("latitude").value = data.lat;
+              document.getElementById("longitude").value = data.lon;
+
+              // Add a pinpoint to the map
+              marker = L.marker([data.lat, data.lon]).addTo(map);
             } else {
               alert("Location not found");
             }
@@ -62,10 +82,23 @@
 
       // Add event listener for map click
       map.on("click", function (e) {
-        // When the map is clicked, update the input box with coordinates
+        // When the map is clicked, update the input box and fields with coordinates
+        var latitude = e.latlng.lat;
+        var longitude = e.latlng.lng;
+
         document.getElementById(
           "locationInput"
-        ).value = `Lat: ${e.latlng.lat}, Lon: ${e.latlng.lng}`;
+        ).value = `Lat: ${latitude}, Lon: ${longitude}`;
+        document.getElementById("latitude").value = latitude;
+        document.getElementById("longitude").value = longitude;
+
+        // Clear previous pinpoint
+        if (marker) {
+          map.removeLayer(marker);
+        }
+
+        // Add a pinpoint to the map
+        marker = L.marker([latitude, longitude]).addTo(map);
       });
     </script>
   </body>

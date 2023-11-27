@@ -3,11 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Welcome Host</title>
     <link rel="stylesheet" type="text/css" href="/css/hostTraveller.css" />
   </head>
   <body>
-    <nav>
+    <!-- <nav>
       <div class="logo">
         <img src="/images/logo.png" alt="Airbnb Logo" />
       </div>
@@ -26,56 +26,99 @@
           <a href="#"><button class="one">Help centre</button></a>
         </div>
       </div>
-    </nav>
-    <hr />
-    <div class="outer-box">
-      <div class="box">
-        <h2>Log In</h2>
-        <hr />
-        <h1>Welcome to airbnb</h1>
-        <form class="login-form">
-          <label for="email"></label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Enter your email"
-            required
-          />
+    </nav> -->
+    <!-- <hr /> -->
+    <div
+      style="
+        background-image: url(images/careers/pinkForest.png);
+        padding: 20px;
+      "
+    >
+      <div class="outer-box card" style="background-color: white; width: 45%">
+        <div class="box" style="width: 100%; align-content: center">
+          <h1 style="margin: 20px; text-align: center; font-size: 40px">
+            Welcome to airbnb
+          </h1>
+          <!-- <hr style="margin: 0px 15px 10px 15px" />
+          <h2 style="margin: 10px">Log In</h2> -->
+          <form
+            class="login-form"
+            style="margin: 0px 25px 0px 25px; align-items: center"
+          >
+            <label for="email"></label>
+            <input
+              class="input"
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Enter your email"
+              required
+            />
+            <p id="email-error-message" class="error-message">
+              Please enter a valid email address.
+            </p>
+            <br />
+            <label for="password"></label>
+            <input
+              class="input"
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Enter your password"
+              required
+            />
+            <p id="password-error-message" class="error-message">
+              Password must have at least 6 characters.
+            </p>
+          </form>
+          <button class="continue" id="signInButton">LOG IN</button>
           <br />
-          <label for="password"></label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your password"
-            required
-          />
-        </form>
-        <button class="continue" id="signInButton">Continue</button>
-        <br />
-        <p id="forgotPasswordButton"><b>Forgot Password?</b></p>
-        <br />
-        <p id="or"><b>Or</b></p>
-        <div class="container">
-          <h2>Login with Social Media</h2>
-          <button
-            class="social-button google google-button"
-            id="google-login-btn"
-          >
-            Login with Google
-          </button>
-          <button
-            class="social-button github github-button"
-            id="github-login-btn"
-          >
-            Login with Github
-          </button>
+          <p id="forgotPasswordButton">
+            <a
+              href=""
+              style="
+                text-decoration: none;
+                color: black;
+
+                font-weight: 200;
+              "
+              >Forgot Password?</a
+            >
+          </p>
+          <br />
+          <p>
+            <a
+              href="signUp.html"
+              style="
+                text-decoration: none;
+                color: black;
+
+                font-weight: 500;
+              "
+              >Sign Up?</a
+            >
+          </p>
+          <!-- <br /> -->
+          <!-- <p id="or" style="margin-bottom: 0px"><b>Or</b></p> -->
+          <div class="container">
+            <h2 style="font-size: 20px">Login with Social Media</h2>
+            <button
+              class="social-button google google-button"
+              id="google-login-btn"
+            >
+              Login with Google
+            </button>
+            <button
+              class="social-button github github-button"
+              id="github-login-btn"
+            >
+              Login with Github
+            </button>
+          </div>
         </div>
       </div>
     </div>
-    <br />
-    <hr />
+
     <div class="fetch">
       <div class="fetch2">
         <h2>Inspiration for future getaways</h2>
@@ -133,14 +176,11 @@
         <div class="languange-currency">
           <div>English (IN)</div>
           <div>₹ INR</div>
-          <img src="images/facebook.png" alt="" />
-          <img src="images/twitter.png" alt="" />
-          <img src="images/instagram.png" alt="" />
         </div>
       </div>
     </div>
   </body>
   <script src="/js/hostTraveller.js"></script>
   <script src="/js/host.js"></script>
-  <script src="js/login.js" defer type="module"></script>
+  <script defer type="module" src="js/login.js"></script>
 </html>

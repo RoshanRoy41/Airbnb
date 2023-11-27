@@ -6,6 +6,161 @@
   font-family: Poppins-light;
   src: url("/poppins_font/Poppins-Light.ttf") format("truetype");
 }
+
+li {
+  list-style-type: none;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.navbar-container {
+  margin-left: 3%;
+  margin-right: 3%;
+}
+.navbar {
+  width: 100%;
+  min-height: 80px;
+  border-bottom: 1px solid #eeeeee;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center; 
+
+ 
+}
+
+.navbar img {
+  height: 40px;
+  width: 130px;
+}
+
+/* Wishlist Heading */
+.wishlist-heading {
+  justify-self: center;
+  width: 100%;
+  
+}
+
+.wishlist-heading h3{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
+
+}
+
+/* Search bar */
+.search {
+  justify-self: center;
+  width: 100%;
+}
+
+.imgUnit {
+  border-radius: 15px;
+}
+
+.search form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 300px;
+  margin: auto;
+  width: 100%;
+  padding: 8px 12px;
+  border-radius: 40px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+  border: lightgrey 1px solid;
+}
+
+.search input {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+}
+
+.search input:focus {
+  outline: none;
+}
+
+.search i {
+  font-size: 1rem;
+  color: white;
+  
+}
+ .search map{
+        display: none;
+        flex: 1;
+        height: 300px;
+        background-color: #f5f5f5;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+}
+
+.search button {
+  border: none;
+  background-color: #ff385c;
+  width: 35px;
+  height: 35px;
+  border-radius: 100%;
+  margin-left: 20px;
+  
+}
+
+.menu {
+  justify-self: end;
+}
+
+.nav-menu {
+  display: flex;
+}
+
+.nav-menu li {
+  padding-left: 1rem;
+  font-size: 0.8rem;
+}
+
+.mobile {
+  cursor: pointer;
+  display: none;
+}
+
+#wish-nav, #listings-nav{
+  padding-top: 15px;
+}
+
+/* Styles for the user logo and dropdown */
+.navbar-nav li.dropdown {
+  position: relative;
+}
+
+.navbar-nav li.dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left:  -45px;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  text-align: left;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+.navbar-nav li.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.navbar-nav li.dropdown img{
+  height: 40px;
+  width: 40px;
+}
+
+
+
 #map {
   height: 400px;
   width: 100%;
@@ -20,6 +175,9 @@ hr {
   margin-left: 5%;
   margin-right: 5%;
 }
+.review-container hr {
+  margin: 5% 0 5% 0;
+}
 .about-user-container {
   display: flex;
   flex-direction: column;
@@ -29,7 +187,7 @@ hr {
 .calender-container-main hr {
   width: 75%;
   height: 1px;
-  margin-left: 85px;
+  margin-left: 19%;
 }
 
 #columns {

@@ -25,6 +25,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/homepage.css" />
+    <link rel="stylesheet" href="/css/palmbot.css" />
     <script type="module" src="js/updateDetails.js"></script>
   </head>
   <body>
@@ -78,7 +79,11 @@
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
-              <a class="nav-link" onclick="closeMenu()" href="#listings"
+              <a
+                class="nav-link"
+                id="listings-nav"
+                onclick="closeMenu()"
+                href="#listings"
                 >Airbnb your home</a
               >
             </li>
@@ -89,11 +94,6 @@
                 onclick="closeMenu()"
                 href="wishlist.html"
                 >Favorites</a
-              >
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" onclick="closeMenu()" href="#popular"
-                >Popular</a
               >
             </li>
             <li class="nav-item dropdown">
@@ -109,6 +109,7 @@
                   src="images/account-icon2.png"
                   id="userProfilePicture"
                   alt="User Logo"
+                  style="border-radius: 50%"
                 />
               </a>
               <div
@@ -131,51 +132,144 @@
       </nav>
 
       <!-- Sort Bar -->
-      <div class="container">
-        <div
-          id="sortBarCarousel"
-          class="sort-bar carousel slide"
-          data-ride="carousel"
-        >
-          <div class="carousel-inner">
-            <div class="carousel-item active">
-              <!-- Display all elements on large screens -->
+      <div
+        id="sortBarCarousel"
+        class="sort-bar carousel slide"
+        data-ride="carousel"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="d-md-none">
+              <!-- Display flex layout only on small and medium screens -->
               <div
-                class="sort-bar-element d-none d-lg-flex justify-content-around align-items-center"
+                class="d-flex justify-content-around align-items-center"
+                id="carouselContent"
               >
-                <!-- Each element with responsive classes -->
-                <div class="d-flex flex-column align-items-center">
+                <div
+                  onclick="reloadPage()"
+                  class="d-flex flex-column align-items-center"
+                >
                   <i class="fa-solid fa-house-chimney"></i>
                   <p>House</p>
                 </div>
-                <div class="d-flex flex-column align-items-center">
+                <div
+                  onclick="reloadPage()"
+                  class="d-flex flex-column align-items-center"
+                >
                   <i class="fa-solid fa-snowflake"></i>
                   <p>Arctic</p>
                 </div>
-                <div class="d-flex flex-column align-items-center">
+                <div
+                  onclick="reloadPage()"
+                  class="d-flex flex-column align-items-center"
+                >
                   <i class="fa-solid fa-tree"></i>
-                  <p>Forest</p>
+                  <p>Trees</p>
                 </div>
-                <div class="d-flex flex-column align-items-center">
+                <div
+                  onclick="reloadPage()"
+                  class="d-flex flex-column align-items-center"
+                >
                   <i class="fa-solid fa-building"></i>
                   <p>City</p>
                 </div>
-                <div class="d-flex flex-column align-items-center">
+              </div>
+            </div>
+            <div class="d-md-none">
+              <!-- Display flex layout only on small and medium screens -->
+              <div
+                class="d-flex justify-content-around align-items-center"
+                id="carouselContent2"
+              >
+                <div
+                  onclick="reloadPage()"
+                  class="d-flex flex-column align-items-center"
+                >
                   <i class="fa-solid fa-campground"></i>
                   <p>Camping</p>
                 </div>
-                <div class="d-flex flex-column align-items-center">
+                <div
+                  onclick="reloadPage()"
+                  class="d-flex flex-column align-items-center"
+                >
                   <i class="fa-solid fa-umbrella-beach"></i>
                   <p>Beach</p>
                 </div>
-                <div class="d-flex flex-column align-items-center">
+                <div
+                  onclick="reloadPage()"
+                  class="d-flex flex-column align-items-center"
+                >
                   <i class="fa-solid fa-rocket"></i>
                   <p>OMG</p>
                 </div>
-                <div class="d-flex flex-column align-items-center">
+                <div
+                  onclick="reloadPage()"
+                  class="d-flex flex-column align-items-center"
+                >
                   <i class="fa-solid fa-volleyball"></i>
                   <p>Games</p>
                 </div>
+              </div>
+            </div>
+            <!-- Display all elements on large screens -->
+            <div
+              class="sort-bar-element d-none d-md-flex justify-content-around align-items-center"
+            >
+              <div
+                onclick="reloadPage()"
+                class="d-flex flex-column align-items-center"
+              >
+                <i class="fa-solid fa-house-chimney"></i>
+                <p>House</p>
+              </div>
+              <div
+                onclick="reloadPage()"
+                class="d-flex flex-column align-items-center"
+              >
+                <i class="fa-solid fa-snowflake"></i>
+                <p>Arctic</p>
+              </div>
+              <div
+                onclick="reloadPage()"
+                class="d-flex flex-column align-items-center"
+              >
+                <i class="fa-solid fa-tree"></i>
+                <p>Forest</p>
+              </div>
+              <div
+                onclick="reloadPage()"
+                class="d-flex flex-column align-items-center"
+              >
+                <i class="fa-solid fa-building"></i>
+                <p>City</p>
+              </div>
+              <div
+                onclick="reloadPage()"
+                class="d-flex flex-column align-items-center"
+              >
+                <i class="fa-solid fa-campground"></i>
+                <p>Camping</p>
+              </div>
+              <div
+                onclick="reloadPage()"
+                class="d-flex flex-column align-items-center"
+              >
+                <i class="fa-solid fa-umbrella-beach"></i>
+                <p>Beach</p>
+              </div>
+              <div
+                onclick="reloadPage()"
+                class="d-flex flex-column align-items-center"
+              >
+                <i class="fa-solid fa-rocket"></i>
+                <p>OMG</p>
+              </div>
+              <div
+                onclick="reloadPage()"
+                class="d-flex flex-column align-items-center"
+              >
+                <i class="fa-solid fa-volleyball"></i>
+                <p>Games</p>
               </div>
             </div>
           </div>
@@ -190,6 +284,72 @@
       </div>
       <!-- Footer -->
     </div>
+    <div
+      class="menu-card"
+      id="mainCard"
+      style="display: none; align-items: center"
+    >
+      <div class="card-content">
+        <div class="card-title">You can either</div>
+        <div style="display: flex">
+          <button class="card-description" onclick="showNumber()">
+            Call an expert
+          </button>
+          <p style="margin: 10px 15px 10px 15px">or</p>
+          <button class="card-description" onclick="toggleChat()">
+            Chat with bot
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="main-container" style="display: none; align-items: center">
+      <div class="chat-container" id="chatContainer">
+        <!-- Your chat HTML content goes here -->
+        <!-- For testing, a simple message is added -->
+        <div>Hello! Welcome to the chat.</div>
+      </div>
+
+      <div class="typing-container">
+        <div class="typing-content">
+          <div class="typing-textarea">
+            <textarea
+              class="chat-input"
+              style="min-height: 55px"
+              placeholder="Enter Your Prompt Here!"
+            ></textarea>
+            <span class="send-btn material-symbols-rounded">send</span>
+          </div>
+          <div class="typing-setting" style="display: none">
+            <span class="theme-btn material-symbols-rounded">light_mode</span>
+            <span class="delete-btn material-symbols-rounded">delete</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card" id="numberCard">
+      <div class="card-content">
+        <div class="card-title">Call at this Number</div>
+        <div class="card-description" style="text-align: center">
+          <p>
+            You can call us at: <a href="tel:+919037773165">+91 90377 73165</a>
+          </p>
+          <p>
+            Or you can WhatsApp us at:
+            <a href="https://wa.me/918073436214" target="_blank"
+              >Click here
+              <img
+                class="whatsapp-icon"
+                src="/images/whatsapp.png"
+                alt="WhatsApp Icon"
+            /></a>
+          </p>
+        </div>
+      </div>
+    </div>
+    <button class="chat-icon material-symbols-rounded" onclick="showMenu()">
+      chat
+    </button>
     <div class="container-fluid footer">
       <div class="row footer-item">
         <div class="col-md-4 col-sm-6">
@@ -233,7 +393,13 @@
                 <span>Newsroom</span>
               </a>
               <span>New features</span>
-              <span>Careers</span>
+              <span
+                ><a
+                  href="careers.html"
+                  style="color: black; text-decoration: none"
+                  >Careers</a
+                ></span
+              >
               <span>Investors</span>
               <span>Airbnb Luxe</span>
             </div>
@@ -282,6 +448,6 @@
     <script src="js/search-bar.js"></script>
     <script src="js/reload.js"></script>
     <script src="js/preload.js"></script>
-    <script src="js/carousel.js"></script>
+    <script src="js/palmbot.js" defer></script>
   </body>
 </html>

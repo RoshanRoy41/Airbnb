@@ -54,8 +54,8 @@
 }
 
 .right {
-  flex: 2.5 1;
-  margin-left: 320px;
+  flex: 1;
+  /* margin-left: 320px; */
 }
 .lower-head-div p {
   margin: 0%;
@@ -176,7 +176,38 @@ a {
   margin-top: 20px;
   color: rgb(168, 168, 168);
   margin-left: 0px;
-  width: 105%;
+  width: 100%;
+}
+.card .wishlist-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  color: white;
+  font-size: 24px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.red-heart {
+  color: #ff5a5f;
+}
+
+.wishlist-icon i {
+  transition: transform 0.3s ease;
+}
+
+.wishlist-icon:hover {
+  color: #ff5a5f;
+}
+
+.wishlist-icon:hover i {
+  transform: scale(1.2);
 }
 .policy {
   font-family: Poppins-thin;
@@ -209,7 +240,7 @@ a {
   margin-top: 20px;
   color: rgb(168, 168, 168);
   margin-left: 15px;
-  width: 105%;
+  width: 103%;
 }
 .details-about-unit-host-flex-text h3 {
   display: inline;
@@ -251,4 +282,16 @@ a {
   font-size: 14px;
   margin-left: 10px;
   margin-bottom: 0px;
+}
+.flatpickr-calendar {
+  margin-left: 100px;
+}
+.calendar-container {
+  margin-left: 90px;
+}
+.booking-container {
+  border-radius: 30px;
+  background: #e0e0e0;
+  box-shadow: 15px 15px 30px #bebebe, -15px -15px 30px #ff5a5f;
+  font-family: Poppins-;
 }

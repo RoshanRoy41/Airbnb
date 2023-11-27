@@ -29,4 +29,8 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log("Some elements or parameters are missing.");
   }
   console.log("hi");
+  setTimeout(function () {
+    // Redirect to another page
+    window.location.href = "homepage.html";
+  }, 5000);
 });
