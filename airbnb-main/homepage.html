@@ -25,6 +25,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="/css/homepage.css" />
+    <script type="module" src="js/updateDetails.js"></script>
   </head>
   <body>
     <!-- Pop up -->
@@ -94,6 +95,36 @@
               <a class="nav-link" onclick="closeMenu()" href="#popular"
                 >Popular</a
               >
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link"
+                id="userDropdown"
+                role="button"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                <img
+                  src="images/account-icon2.png"
+                  id="userProfilePicture"
+                  alt="User Logo"
+                />
+              </a>
+              <div
+                class="dropdown-menu dropdown-menu-right"
+                aria-labelledby="userDropdown"
+              >
+                <a class="dropdown-item" href="#" id="userName">UserName</a>
+                <a class="dropdown-item" href="contact.html">Contact Us</a>
+                <a
+                  class="dropdown-item"
+                  href="#"
+                  onclick="signOut()"
+                  id="signOutClick"
+                  >Sign Out</a
+                >
+              </div>
             </li>
           </ul>
         </div>

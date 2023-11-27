@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/css/hostTraveller.css" />
+    <title>Contact Us</title>
+    <link rel="stylesheet" type="text/css" href="css/contact.css" />
   </head>
   <body>
-    <nav>
+    <header>
       <div class="logo">
-        <img src="/images/logo.png" alt="Airbnb Logo" />
+        <img src="images/logo.png" alt="Airbnb Logo" />
       </div>
       <div class="button">
         <div class="im">
-          <a href="#" id="image-button">
-            <img src="/images/three line.png" alt="Button Image" />
-            <img src="/images/account-icon2.png" alt="Button Image" />
+          <a>
+            <img src="images/three line.png" alt="Button Image" />
+            <img src="images/account-icon2.png" alt="Button Image" />
           </a>
         </div>
         <div class="dropdown-content" id="image-button-dropdown">
@@ -26,14 +26,22 @@
           <a href="#"><button class="one">Help centre</button></a>
         </div>
       </div>
-    </nav>
+    </header>
     <hr />
     <div class="outer-box">
       <div class="box">
-        <h2>Log In</h2>
+        <h2>Contact Us</h2>
         <hr />
-        <h1>Welcome to airbnb</h1>
-        <form class="login-form">
+        <form class="contact-form" name="contact-form">
+          <label for="name"></label>
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Enter your name"
+            required
+          />
+
           <label for="email"></label>
           <input
             type="email"
@@ -45,39 +53,48 @@
           <p id="email-error-message" class="error-message">
             Please enter a valid email address.
           </p>
-          <br />
-          <label for="password"></label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            placeholder="Enter your password"
+
+          <label for="message"></label>
+          <textarea
+            class="message"
+            id="message"
+            name="message"
+            placeholder="Enter your message"
+            rows="4"
             required
-          />
-          <p id="password-error-message" class="error-message">
-            Password must have at least 6 characters.
-          </p>
+          ></textarea>
+
+          <button
+            type="submit"
+            class="continue"
+            onclick="validateContactForm()"
+          >
+            Submit
+          </button>
+          <div class="container">
+            <h2>Follow Us On Social Media</h2>
+            <button
+              class="social-button facebook"
+              onclick="window.location.href='https://www.facebook.com/airbnb/'"
+            >
+              Facebook
+            </button>
+            <button
+              type="button"
+              class="social-button twitter"
+              onclick="window.location.href='https://twitter.com/airbnb?lang=en'"
+            >
+              Twitter
+            </button>
+            <button
+              type="button"
+              class="social-button instagram"
+              onclick="window.location.href='https://www.instagram.com/airbnb/?hl=en'"
+            >
+              Instagram
+            </button>
+          </div>
         </form>
-        <button class="continue" onclick="validateForm()">Continue</button>
-        <br />
-        <p id="fp"><b>Forgot Password?</b></p>
-        <br />
-        <p id="or"><b>Or</b></p>
-        <div class="container">
-          <h2>Login with Social Media</h2>
-          <button class="social-button facebook">Login with Facebook</button>
-          <button class="social-button google">Login with Google</button>
-          <button class="social-button apple">Login with Apple</button>
-        </div>
-      </div>
-    </div>
-    <br />
-    <hr />
-    <div class="fetch">
-      <div class="fetch2">
-        <h2>Inspiration for future getaways</h2>
-        <h4>Popular</h4>
-        <div id="container"></div>
       </div>
     </div>
     <div class="footer">
@@ -130,13 +147,12 @@
         <div class="languange-currency">
           <div>English (IN)</div>
           <div>₹ INR</div>
-          <img src="images/facebook.png" alt="" />
-          <img src="images/twitter.png" alt="" />
-          <img src="images/instagram.png" alt="" />
+          <img src="images/images/facebook.png" alt="" />
+          <img src="images/images/twitter.png" alt="" />
+          <img src="images/images/instagram.png" alt="" />
         </div>
       </div>
     </div>
+    <script src="js/contact.js"></script>
   </body>
-  <script src="/js/hostTraveller.js"></script>
-  <script src="/js/host.js"></script>
 </html>
