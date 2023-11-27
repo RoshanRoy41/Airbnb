@@ -48,28 +48,27 @@
   overflow: hidden;
 }
 
-.icon-btn {
-  font-size: 30px;
+.left .icon-btn{
+  font-size: 15px;
   width: 100%;
   height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   padding: 10px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  background-color: #f1f1f1;
   color: rgb(156, 156, 156);
   font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
 }
+.upload_image_row input:hover{
+  color: rgb(66, 66, 66);
+}
+
+.upload_image_row .left:hover{
+  border: none;
+}
 
 /* Style the icon */
-.icon-btn svg {
-  width: 50px; /* Adjust the width as needed */
-  height: 50px; /* Adjust the height as needed */
-  margin-right: 5px;
-  fill: #fff;
-}
 .left{
   width: 100%;
   height: 100%;
@@ -119,11 +118,21 @@
   width: 100%;
   height: 50px;
   border-radius: 5px;
-  border: none;
-  box-shadow: 2px 5px 10px 1px #b1afaf;
+  border: solid rgb(177, 177, 177) 1px;
+  /* box-shadow: 2px 5px 10px 1px #b1afaf; */
   padding-left: 10px;
 }
 
+.details_input input:hover{
+  border:none;
+  box-shadow: 2px 5px 10px 1px #b1afaf;
+  
+}
+
+.details_input input:toggle{
+  border:red;
+
+}
 .details_input_heading{
   padding-top: 50px;  
   font-size: 40px;
@@ -141,6 +150,9 @@
 .add_more svg{
   height:6vh;
 }
+.add_more svg:hover{
+  height:7vh;
+}
 
 .tag_location button {
 
@@ -149,14 +161,14 @@
   text-decoration: underline;
 }
 
-.map{
-  
+#map{
   width: 100%;
+  
+}
+#hidden{
+  display: none;
 }
 
-.map img{
-  width: 100%;
-}
 
 .amenities{
   width: 100%;
@@ -167,24 +179,35 @@
   width: 50%;
   height: 200px;
   border-radius: 5px;
-  border: none;
-  box-shadow: 2px 5px 10px 1px #b1afaf;
+  border: solid #b1afaf 1px;
+  
   padding-left: 10px;
 }
-
+.amenities input:hover{
+  
+  border: none;
+  box-shadow: 2px 5px 10px 1px #b1afaf;
+  
+}
 .pricing_option{
-  font-size: 20px;
+  font-size:17px;
 }
 .pricing_option_additional{
   text-align: end;
 }
 .pricing_option_additional select{
   text-align: center;
-  font-size:18px ;
+  font-size:16px ;
   width: 100%;
+  border-radius: 5px;
+  border: solid 1px #b1afaf;
+  
+}
+.pricing_option_additional select:hover{
   border: none;
   box-shadow: 2px 5px 10px 1px #b1afaf;
 }
+
 
 
 .pricing_option_additional_charge{
@@ -195,11 +218,16 @@
 
 .pricing_option_additional_charge input{
   width: 100%;
-  height: 76%;
+  height: 85%;
   padding-left: 10px;
+  border-radius: 5px;
+  border: solid 1px #b1afaf;
+}
+.pricing_option_additional_charge input:hover{
   border: none;
   box-shadow: 2px 5px 10px 1px #b1afaf;
 }
+
 .price_rent_title{
   font-size: 20px;
   font-weight: bold;
@@ -207,6 +235,10 @@
 .price_rent_input input{
   height: 75%;
   padding-left: 10px;
+  border-radius: 5px;
+  border: solid 1px #b1afaf;
+}
+.price_rent_input input:hover{
   border: none;
   box-shadow: 2px 5px 10px 1px #b1afaf;
 }
@@ -222,6 +254,16 @@
   border-radius: 5px;
   border: none;
   background-color: #ff385c;
+  color: #fff;
+}
+.submit input:hover{
+  width: 11%;
+  height: 43px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+  background-color: #ff385c;
+  
   color: #fff;
 }
 .lower-head {
@@ -329,3 +371,26 @@
   margin-left: 10px;
   margin-bottom: 0px;
 }
+
+.loading-container{
+  width: 60%;
+  height: 20%;
+}
+
+#loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 30%;
+  height: 100%;
+  z-index: 1;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: url('../images/gif1.gif') no-repeat center center;
+  background-size: contain;
+}
+
+
