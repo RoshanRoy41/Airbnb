@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Location Map</title>
+    <!-- Include Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  </head>
+  <body>
+    <!-- Input box for location -->
+    <input
+      type="text"
+      id="locationInput"
+      placeholder="Type location and press Enter"
+    />
+
+    <!-- Latitude and Longitude fields -->
+    <label for="latitude">Latitude:</label>
+    <input type="text" id="latitude" readonly />
+    <label for="longitude">Longitude:</label>
+    <input type="text" id="longitude" readonly />
+
+    <!-- Map container -->
+    <div id="map" style="height: 400px"></div>
+
+    <script>
+      // Initialize Leaflet map
+      var map = L.map("map").setView([0, 0], 2);
+
+      // Add OpenStreetMap as the base map
+      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+        attribution: "© OpenStreetMap contributors",
+      }).addTo(map);
+
+      var marker;
+
+      // Function to geocode location and update map
+      function geocodeLocation(location) {
+        // Use OpenTripMap API to convert location to coordinates
+        fetch(
+          `https://api.opentripmap.com/0.1/en/places/geoname?name=${location}&apikey=5ae2e3f221c38a28845f05b66bd1d0f72739e54291361135e77c3a3b`
+        )
+          .then((response) => response.json())
+          .then((data) => {
+            if (data.lon && data.lat) {
+              // Clear previous pinpoint
+              if (marker) {
+                map.removeLayer(marker);
+              }
+
+              // Set map center to the geocoded coordinates
+              map.setView([data.lat, data.lon], 10);
+
+              // Update input and fields with information
+              document.getElementById("latitude").value = data.lat;
+              document.getElementById("longitude").value = data.lon;
+
+              // Add a pinpoint to the map
+              marker = L.marker([data.lat, data.lon]).addTo(map);
+            } else {
+              alert("Location not found");
+            }
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+            alert("An error occurred while fetching data");
+          });
+      }
+
+      // Add event listener for input box
+      document
+        .getElementById("locationInput")
+        .addEventListener("keydown", function (e) {
+          if (e.key === "Enter") {
+            // When Enter key is pressed, geocode the location
+            var location = e.target.value;
+            geocodeLocation(location);
+          }
+        });
+
+      // Add event listener for map click
+      map.on("click", function (e) {
+        // When the map is clicked, update the input box and fields with coordinates
+        var latitude = e.latlng.lat;
+        var longitude = e.latlng.lng;
+
+        document.getElementById(
+          "locationInput"
+        ).value = `Lat: ${latitude}, Lon: ${longitude}`;
+        document.getElementById("latitude").value = latitude;
+        document.getElementById("longitude").value = longitude;
+
+        // Clear previous pinpoint
+        if (marker) {
+          map.removeLayer(marker);
+        }
+
+        // Add a pinpoint to the map
+        marker = L.marker([latitude, longitude]).addTo(map);
+      });
+    </script>
+  </body>
+</html>

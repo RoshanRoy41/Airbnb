@@ -3,19 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="/css/hostTraveller.css" />
+    <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="css/signup.css" />
   </head>
   <body>
     <!-- <nav>
       <div class="logo">
-        <img src="/images/logo.png" alt="Airbnb Logo" />
+        <img src="logo.png" alt="Airbnb Logo" />
       </div>
       <div class="button">
         <div class="im">
-          <a href="#" id="image-button">
-            <img src="/images/three line.png" alt="Button Image" />
-            <img src="/images/account-icon2.png" alt="Button Image" />
+          <a>
+            <img src="three line.png" alt="Button Image" />
+            <img src="account-icon2.png" alt="Button Image" />
           </a>
         </div>
         <div class="dropdown-content" id="image-button-dropdown">
@@ -27,66 +27,99 @@
         </div>
       </div>
     </nav> -->
-    <!-- <hr /> -->
-    <div style="background-color: #f8999c; padding: 20px">
-      <div class="outer-box card" style="background-color: white; width: 45%">
-        <div class="box" style="width: 100%; align-content: center">
-          <h1 style="margin: 20px; text-align: center; font-size: 40px">
-            Welcome to airbnb
-          </h1>
-          <hr style="margin: 0px 15px 10px 15px" />
-          <h2 style="margin: 10px">Log In</h2>
-          <form
-            class="login-form"
-            style="margin: 0px 25px 0px 25px; align-items: center"
-          >
-            <label for="email"></label>
+    <div
+      style="
+        background-image: url(images/careers/pinkForest.png);
+        padding: 20px;
+      "
+    >
+      <div class="outer-box card">
+        <div class="box">
+          <h2>Sign Up</h2>
+          <form class="login-form">
+            <label for="name">Name</label>
             <input
+              type="text"
+              id="name"
               class="input"
+              name="name"
+              placeholder="Enter your name"
+              required
+            />
+
+            <label for="email">Email Id</label>
+            <input
               type="email"
               id="email"
+              class="input"
               name="email"
               placeholder="Enter your email"
               required
             />
-            <p id="email-error-message" class="error-message">
-              Please enter a valid email address.
-            </p>
-            <br />
-            <label for="password"></label>
+
+            <label for="dob">Date Of Birth</label>
             <input
+              type="date"
+              id="dob"
+              name="dob"
               class="input"
+              required
+              placeholder="DD-MM-YYYY"
+            />
+
+            <label for="phone">Phone</label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              class="input"
+              placeholder="Enter your phone number"
+              required
+            />
+            <label for="role">Select your role:</label>
+            <select id="role" name="role">
+              <option value="traveler">Traveler</option>
+              <option value="host">Host</option>
+            </select>
+            <br />
+
+            <label for="password">Enter the password</label>
+            <input
               type="password"
               id="password"
               name="password"
+              class="input"
               placeholder="Enter your password"
               required
             />
-            <p id="password-error-message" class="error-message">
-              Password must have at least 6 characters.
-            </p>
+
+            <label for="confirmPassword">Confirm password</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              class="input"
+              placeholder="Confirm your password"
+              required
+            />
+
+            <button class="Sign Up" type="sign" id="signupButton">
+              Sign Up
+            </button>
           </form>
-          <button class="continue" onclick="validateForm()">Continue</button>
-          <br />
-          <p id="fp">
-            <a href="" style="text-decoration: none; color: black"
-              >Forgot Password?</a
-            >
-          </p>
-          <!-- <br /> -->
-          <p id="or" style="margin-bottom: 0px"><b>Or</b></p>
-          <div class="container">
-            <h2>Login with Social Media</h2>
-            <button class="social-button facebook">Login with Facebook</button>
-            <button class="social-button google">Login with Google</button>
-            <button class="social-button apple">Login with Apple</button>
-          </div>
+          <a
+            href="login.html"
+            style="
+              text-decoration: none;
+              color: black;
+              font-family: Poppins-reg;
+            "
+            >Already have an account? Log In</a
+          >
         </div>
       </div>
+      <br />
     </div>
-
-    <br />
-    <hr />
     <div class="fetch">
       <div class="fetch2">
         <h2>Inspiration for future getaways</h2>
@@ -151,6 +184,7 @@
       </div>
     </div>
   </body>
-  <script src="/js/hostTraveller.js"></script>
-  <script src="/js/traveller.js"></script>
+  <script src="js/signup_ts.js"></script>
+  <script src="js/signup.js" defer type="module"></script>
+  <script src="js/fetch.js"></script>
 </html>

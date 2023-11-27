@@ -115,6 +115,10 @@
   border-radius: 0px;
   align-self: center;
 }
+a {
+  color: black !important;
+  text-decoration: none !important;
+}
 .p {
   font-family: Poppins-thin;
 }
@@ -274,7 +278,7 @@
   margin-bottom: 0px;
 }
 .oneReview p {
-  font-weight: 800;
+  font-weight: 300;
   font-size: 14px;
   margin-left: 10px;
   margin-bottom: 0px;

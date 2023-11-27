@@ -29,12 +29,12 @@ dataURL
     // Set src attributes for image elements
     document.getElementById("title1").innerHTML = dataset[rand].name;
     document.getElementById("locationOfUnit").textContent =
-      "\u00A0 \u00A0" + dataset[rand++].location;
-    document.getElementById("img1").src = dataset[rand++].download_url;
+      "\u00A0 \u00A0" + dataset[rand].location;
+    document.getElementById("img1").src = dataset[rand].download_url;
     document.getElementById("img2").src = dataset[rand++].download_url;
     document.getElementById("img3").src = dataset[rand++].download_url;
     document.getElementById("img4").src = dataset[rand++].download_url;
-    document.getElementById("img5").src = dataset[rand].download_url;
+    document.getElementById("img5").src = dataset[rand++].download_url;
     // Set author names
     // document.getElementById("rating").textContent =
     //   "   " + dataset[rand].rating.toFixed(2);

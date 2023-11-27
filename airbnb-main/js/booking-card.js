@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
   const urlParams = new URLSearchParams(window.location.search);
   const userPrice = urlParams.get("price");
+
   let priceElement = document.getElementById("rate");
 
   if (priceElement) {
@@ -60,75 +61,6 @@ document.addEventListener("DOMContentLoaded", function () {
     openDatePickerIfDatesNotSet();
     checkAndDisplayAvailability();
   });
-
-  // Function to check and display availability
-  function checkAndDisplayAvailability() {
-    const checkinDate = flatpickr("#txtCheckin").selectedDates[0];
-    const checkoutDate = flatpickr("#txtCheckout").selectedDates[0];
-
-    if (checkinDate && checkoutDate) {
-      // Fetch availability and create the new booking card
-      const newBookingCard = createNewBookingCard(checkinDate, checkoutDate);
-      const newBookingCardContainer =
-        document.querySelector(".new-booking-card");
-
-      // Clear any existing new cards
-      newBookingCardContainer.innerHTML = "";
-
-      // Append the new card to the booking container and display it
-      newBookingCardContainer.appendChild(newBookingCard);
-      newBookingCardContainer.style.display = "block";
-      checkAvailabilityButton.textContent = "Reserve now";
-
-      if (!reserveNowClicked) {
-        // Change the text to "Reserve now" on the first click
-        checkAvailabilityButton.textContent = "Reserve now";
-        checkAvailabilityButton.className ="reservenow";
-        reserveNowClicked = true;
-
-      } else {
-        // Redirect to payment page on the second click
-        const button = document.querySelector(".reservenow");
-        
-          button.addEventListener("click", async () => {
-            try {
-              const response = await fetch("http://localhost:3000/create-checkout-session", {
-                method: "POST",
-                headers: {
-                  "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                  items: [
-                    { id: 1, quantity: 3 },
-                    { id: 2, quantity: 1 },
-                  ],
-                }),
-              });
-        
-              if (response.ok) {
-                const { url } = await response.json();
-                window.location.href = url;
-              } else {
-                const { error } = await response.json();
-                console.error("Error:", error);
-              }
-            } catch (error) {
-              console.error("Error:", error.message);
-            }
-          });
-        // Assuming checkinDate and checkoutDate are JavaScript Date objects
-        // const formattedCheckinDate = checkinDate.toISOString().split("T")[0];
-        // const formattedCheckoutDate = checkoutDate.toISOString().split("T")[0];
-       
-          
-        // Now, use these formatted dates in your URL
-        // const url = ;
-
-        // Redirect to the confirmation page
-        // window.location.href = `confirmation_page.html?chkin=${formattedCheckinDate}&chkout=${formattedCheckoutDate}`;
-      }
-    }
-  }
 
   let totalPrice;
   // Function to create a new booking card with availability details
@@ -200,28 +132,52 @@ document.addEventListener("DOMContentLoaded", function () {
       newBookingCardContainer.style.display = "block";
       checkAvailabilityButton.textContent = "Reserve now";
       checkAvailabilityButton.className = "reservenow";
-      
-      
+
       if (!reserveNowClicked) {
         // Change the text to "Reserve now" on the first click
         checkAvailabilityButton.textContent = "Reserve now";
         const button = document.querySelector(".reservenow");
+        const urlParams = new URLSearchParams(window.location.search);
+        let stayingPlace = urlParams.get("place");
+        const unitId = urlParams.get("id");
+        let dataURL = fetch(
+          "https://mocki.io/v1/a333851f-8d2f-473c-bd8e-7c3b1a39e8c8"
+        );
+        let dataArray = [];
+        let hotelName;
+        dataURL
+          .then((response) => response.json())
+          .then((data) => {
+            dataArray = data;
+            hotelName = dataArray[unitId].name;
+          })
+          .catch((error) => {
+            console.error("Error fetching data:", error);
+          });
 
         button.addEventListener("click", async () => {
           try {
             console.log(totalPrice);
-            const response = await fetch("http://localhost:3000/create-checkout-session", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-              },
-              body: JSON.stringify({
-                dates: [
-                  { checkinDate, checkoutDate},
-                ],
-              }),
-            });
-      
+            const response = await fetch(
+              "http://localhost:3000/create-checkout-session",
+              {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                  dates: [
+                    {
+                      checkinDate: checkinDate.toISOString().split("T")[0],
+                      checkoutDate: checkoutDate.toISOString().split("T")[0],
+                    },
+                  ],
+                  totalPrice: totalPrice,
+                  place: " " + hotelName + " " + stayingPlace,
+                }),
+              }
+            );
+
             if (response.ok) {
               const { url } = await response.json();
               window.location.href = url;
@@ -234,21 +190,9 @@ document.addEventListener("DOMContentLoaded", function () {
           }
         });
         // reserveNowClicked = true;
-      } else {
-        
-        // Redirect to a new HTML page on the second click
-        // const formattedCheckinDate = checkinDate.toISOString().split("T")[0];
-        // const formattedCheckoutDate = checkoutDate.toISOString().split("T")[0];
-
-        // Now, use these formatted dates in your URL
-        // const url = ;
-
-        // Redirect to the confirmation page
-        // window.location.href = `confirmation_page.html?chkin=${formattedCheckinDate}&chkout=${formattedCheckoutDate}&total=${totalPrice}`;
       }
     }
   }
-
 });
 
 // Add an event listener to check the scroll position

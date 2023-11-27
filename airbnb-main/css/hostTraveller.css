@@ -1,5 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
-
+.fetch {
+  font-family: "Poppins", sans-serif;
+}
+.fetch2 {
+  margin-left: 50px;
+}
+#container {
+  height: 160px;
+  width: 160px;
+}
+.fetch {
+  background-color: aliceblue;
+}
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -8,7 +20,6 @@ body {
   display: flex;
   margin-left: 3px;
 }
-
 body,
 ul {
   margin: 0;
@@ -56,7 +67,6 @@ ul {
   box-shadow: 0px 0px 0px 7px rgb(74, 157, 236, 20%);
   background-color: white;
 }
-
 .button:hover {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }
@@ -91,11 +101,10 @@ ul {
   margin-bottom: 20px;
   margin-left: 10px;
 }
-
 .outer-box {
   /* margin-left: 380px; */
   /* border: solid black; */
-  height: 750px;
+  height: 700px;
   width: 600px;
   border-width: 0.5px;
   border-radius: 10px;
@@ -106,7 +115,6 @@ ul {
   margin-left: 20px;
   font-size: 50px;
 }
-
 .box h2 {
   text-align: center;
 }
@@ -137,6 +145,14 @@ ul {
   transform: scale(0.95) rotateZ(1.7deg);
 }
 #email,
+#phone {
+  height: 60px;
+  width: 550px;
+  border-radius: 7px;
+  border-width: 0.5px;
+  margin-bottom: 10px;
+}
+
 #password {
   height: 60px;
   width: 97%;
@@ -174,11 +190,9 @@ ul {
   transform: translateY(-3px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
-
 #or {
   text-align: center;
 }
-
 .container {
   display: flex;
   flex-direction: column;
@@ -228,9 +242,9 @@ h1 {
   border-width: 1px;
 }
 
-.apple {
+.github {
   background-color: white;
-  background-image: url(https://cdn-icons-png.flaticon.com/512/25/25345.png); /* Replace with the actual Apple logo image URL */
+  background-image: url(https://cdn4.iconfinder.com/data/icons/iconsimple-logotypes/512/github-512.png); /* Replace with the actual Apple logo image URL */
   background-size: 24px;
   background-repeat: no-repeat;
   background-position: 10px center;
@@ -243,7 +257,6 @@ h1 {
 .social-button:hover {
   filter: brightness(90%);
 }
-
 .future-getaways {
   margin-left: 80px;
   margin-right: 80px;
@@ -306,6 +319,8 @@ h1 {
 
 .footer {
   height: 450px;
+  position: relative;
+  top: 0px;
   background-color: rgb(247, 244, 244);
 }
 
@@ -341,14 +356,14 @@ h1 {
 }
 
 hr {
-  margin: 50px;
+  margin: 20px 50px 10px 50px;
 }
 
 .copyright-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin: 50px;
+  margin: 0px 50px 10px 50px;
   padding-bottom: 20px;
 }
 
@@ -382,10 +397,13 @@ hr {
 .fetch {
   font-family: "Poppins", sans-serif;
   background-color: aliceblue;
+  position: relative;
+  top: -18px;
 }
 
 .fetch2 {
   margin-left: 50px;
+  top: 5px;
 }
 
 #container {
